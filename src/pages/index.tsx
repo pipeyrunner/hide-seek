@@ -3,10 +3,12 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import './Home.css';
 import './font/stylesheet.css';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
 	return (
 		<Layout description='A real-world game played on public transit'>
+			<Analytics />
 			<div className='homepage-hero'>
 				<div className='hide-seek-logo'>
 					<div className='logo'>
