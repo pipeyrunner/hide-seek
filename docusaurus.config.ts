@@ -80,7 +80,7 @@ const config: Config = {
 					position: 'left',
 					label: 'Rulebook',
 				},
-				// {to: '/blog', label: 'Blog', position: 'left'},
+				{ to: '/deck', label: 'Hider Deck', position: 'left' },
 				{
 					href: 'https://github.com/facebook/docusaurus',
 					label: 'GitHub',
