@@ -17,8 +17,8 @@ const config: Config = {
 
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
-	organizationName: 'facebook', // Usually your GitHub org/user name.
-	projectName: 'docusaurus', // Usually your repo name.
+	organizationName: 'teakivy', // Usually your GitHub org/user name.
+	projectName: 'jet-lag', // Usually your repo name.
 
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -39,8 +39,7 @@ const config: Config = {
 					sidebarPath: './sidebars.ts',
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
-					editUrl:
-						'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+					editUrl: 'https://github.com/teakivy/jet-lag/tree/master/',
 				},
 				// blog: {
 				//   showReadingTime: true,
@@ -82,7 +81,7 @@ const config: Config = {
 				},
 				{ to: '/deck', label: 'Hider Deck', position: 'left' },
 				{
-					href: 'https://github.com/facebook/docusaurus',
+					href: 'https://github.com/teakivy/jet-lag',
 					label: 'GitHub',
 					position: 'right',
 				},
