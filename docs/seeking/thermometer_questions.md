@@ -19,10 +19,10 @@ These are the thermometer questions available to the seekers in <LabelPill label
 - ½ Mile
 - 3 Miles
 
-### For <LabelPill label='MEDIUM'/> and <LabelPill label='LARGE'/> Sized Games, Add the Following:
+### For <LabelPill label='MEDIUM' fontSize='1rem'/> and <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
 
 - 10 Miles
 
-### For <LabelPill label='LARGE'/> Sized Games, Add the Following:
+### For <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
 
 - 50 Miles

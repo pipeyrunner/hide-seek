@@ -4,9 +4,7 @@ sidebar_position: 2
 
 # Playing With Cars (Or On Foot)
 
-It is not lost on us that your hometown may not have sufficient public transit to play even the smallest version of _Hide and Seek_. Of course, there's always the possibility of
-
-playing when you're out of town, but you may still be determined to make it work with cars and feet. In this case, you'll have to make a few modifications to the game's traditional ruleset:
+It is not lost on us that your hometown may not have sufficient public transit to play even the smallest version of _Hide and Seek_. Of course, there's always the possibility of playing when you're out of town, but you may still be determined to make it work with cars and feet. In this case, you'll have to make a few modifications to the game's traditional ruleset:
 
 **Setting your map:** Without a transit system, setting your map will become a matter of simply setting map borders. Make sure that these are drawn carefully, as it'll be even easier to confuse what is or isn't a valid hiding spot without a transit system.
 

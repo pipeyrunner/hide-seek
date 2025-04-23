@@ -1,11 +1,12 @@
 ---
 sidebar_position: 7
 ---
+
 # Photo Questions
 
-Photo questions follow the format, "Send me a photo of \_\_\_\_.." Valid answers are a photo that meets the full specifications of the photo question, or "I cannot answer the question," in situations where the subject of the photograph doesn't exist in the hiding zone. Hiders have ten minutes to answer in small and medium games, and twenty minutes to answer in large games. All photos must be sent in your phone's normal aspect ratio. Photos are a useful way of getting a general sense of where the hider is, or for verifying that you've arrived at the right location, but you cannot access Google Street View to assess photos or verify stations from afar.
+Photo questions follow the format, "Send me a photo of \_\_\_\_." Valid answers are a photo that meets the full specifications of the photo question, or "I cannot answer the question," in situations where the subject of the photograph doesn't exist in the hiding zone. Hiders have ten minutes to answer in small and medium games, and twenty minutes to answer in large games. All photos must be sent in your phone's normal aspect ratio. Photos are a useful way of getting a general sense of where the hider is, or for verifying that you've arrived at the right location, but you cannot access Google Street View to assess photos or verify stations from afar.
 
-These are photo questions available to the seekers in **small sized games**:
+These are photo questions available to the seekers in **<LabelPill label='SMALL'/> sized games**:
 
 #### Any Building Visible from Transit Station
 
@@ -35,7 +36,7 @@ Place phone on ground, shoot directly up using your phone's default lens with no
 
 import LabelPill from '@site/src/components/LabelPill';
 
-### For <LabelPill label='MEDIUM'/> and <LabelPill label='LARGE'/> Sized Games, Add the Following:
+### For <LabelPill label='MEDIUM' fontSize='1rem'/> and <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
 
 #### Tallest Building Visible from Transit Station
 
@@ -57,7 +58,7 @@ Must include bottom and up to four stories.
 
 #### Restaurant Interior
 
-No zoom. Must take the picture through the window from outside the restaurant. 
+No zoom. Must take the picture through the window from outside the restaurant.
 
 #### Park
 
@@ -65,7 +66,7 @@ No zoom, phone perpendicular to the ground. Must stand 5 feet from any obstructi
 
 #### Grocery Store Aisle
 
-o zoom. Stand at the end of the aisle, shoot directly down.
+No zoom. Stand at the end of the aisle, shoot directly down.
 
 #### Place of Worship
 
@@ -75,7 +76,7 @@ Must include a 5' × 5' section with three distinct elements. The litmus test fo
 
 Must include a 5' × 5' section with three distinct elements. The litmus test for the distinct elements is: if someone went to that place and found what you took a picture of, they could confidently match it, and be sure it wasn't taken somewhere else.
 
-### For <LabelPill label='LARGE'/> Sized Games, Add the Following:
+### For <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
 
 #### ½ Mile of Streets Traced
 
@@ -90,6 +91,7 @@ Tallest from your perspective/sightline. If you could see Mount Everest many man
 Max 3x zoom; top of mountain must be in top ⅓ of frame.
 
 #### The Biggest Body of Water in Your Zone
+
 Max 3x zoom. Must include either both sides of body of water or the horizon. If a body of water is visible from the hider's zone, but no part of it touches the zone, it does not count. However, if a large body of water partially touches the hider's zone, but the part of it inside the zone is smaller than another body of water in the zone, the larger overall body water would still be considered the largest in the zone.
 
 #### 5 Buildings

@@ -1,7 +1,6 @@
 ---
 sidebar_position: 4
 ---
-
 # Curses
 
 Curse cards are played against the seekers as a means to slow them down, prevent them from asking questions, or just to annoy them. Every curse is unique, and has some kind of one-time effect on the seekers that lasts for a certain duration; much like powerups, once a curse has been used, it is then discarded and removed from your hand.
@@ -78,7 +77,7 @@ The restaurants used in this curse must explicit reference a single country or r
 
 ### Curse of the Lemon Phylactery
 
-The lemon must be a real lemon. It can be affixed using any means, but must be constantly touching the seekers's skin or clothes. Once the lemon falls, the hider should be informed of their bonus immediately. "Cemetery" in this context, refers to any land specifically designated as a burial ground.
+The lemon must be a real lemon. It can be affixed using any means, but must be constantly touching the seekers's skin or clothes. Once the lemon falls, the hider should be informed of their bonus immediately.
 
 ### Curse of the Gambler's Feet
 

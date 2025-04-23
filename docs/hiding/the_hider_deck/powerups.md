@@ -7,7 +7,7 @@ There are several different types of powerup cards you can draw from the hider d
 
 ### Veto
 
-The veto powerup can be played in response to any question instead of answering. The seekers are given no answer to their question, and are instead informed that you have used a veto. The question is still considered to have been asked, and therefore can only be asked again for its additional cost. Since you have not answered their question, however; you are given no reward and do not draw any cards from the hider deck. You may play a veto at any time during the response window after a question has been asked.
+The veto powerup can be played in response to any question instead of answering. The seekers are given no answer to their question, and are instead informed that you have used a veto. The question is still considered to have been asked, and therefore can only be asked again for its additional cost. Since you have not answered their question, however, you are given no reward and do not draw any cards from the hider deck. You may play a veto at any time during the response window after a question has been asked.
 
 ### Randomize
 
@@ -15,7 +15,7 @@ The randomize powerup can be played in response to any question instead of answe
 
 ### Discard 1, draw 2 and Discard 2, draw 3
 
-These powerups can be played at any time and allow you to dispose of some undesirabe cards in your hand in exchange for new random draws. For example, if you play 'Discard 1, draw 2' you will discard one undesirable card from your hand, and draw and keep two new ones. Because the 'Discard 1, draw 2' card wil also leave your hand when you play it, you will end up with the same number of cards you started with. If you do not have enough extra cards to discard, these powerups cannot be played.
+These powerups can be played at any time and allow you to dispose of some undesirable cards in your hand in exchange for new random draws. For example, if you play 'Discard 1, draw 2' you will discard one undesirable card from your hand, and draw and keep two new ones. Because the 'Discard 1, draw 2' card wil also leave your hand when you play it, you will end up with the same number of cards you started with. If you do not have enough extra cards to discard, these powerups cannot be played.
 
 ### Draw 1, expand maximum hand size by 1
 

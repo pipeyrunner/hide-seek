@@ -1,13 +1,14 @@
 ---
 sidebar_position: 6
 ---
+
 # General Tips
 
 Make no mistake, _Hide and Seek_ is a physically and mentally demanding game. Particularly for medium and large sized games, which can last multiple days, adequate preparation is hugely important and should not be disregarded when organizing your game. Here are a few tips for staying healthy and comfortable while playing _Hide and Seek_:
 
 **Always pack enough food and water for at least one full day of gameplay**. As the hider, you may very well find yourself in situations where there is no way to access food or water for hours at a time. Use the rest period to restock any snacks you might have consumed during the game day.
 
-Consider **weather in all parts of the game map**, across every day you'll be playing. Look out in particular for mountainous regions, where the weather may drop precipously, or areas prone to flash rainstorms–you do not want to be playing _Hide and Seek_ soaking wet.
+Consider **weather in all parts of the game map**, across every day you'll be playing. Look out in particular for mountainous regions, where the weather may drop precipitously, or areas prone to flash rainstorms–you do not want to be playing _Hide and Seek_ soaking wet.
 
 In any configuration of the game, we **highly recommend that all players carry a portable battery** to charge your phones. You will be using your phone fairly often for research and communication, and there is a very good chance it will not last a full day of gameplay.
 
