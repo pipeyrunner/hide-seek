@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
-import InvestigationNav from '../components/investigationNav';
+import InvestigationNav from '../../components/investigationNav';
 import uploadPlaceholder from '/static/img/default-placeholder.png'; // replace with your actual placeholder image path
 
 const allPrompts: Record<string, string[]> = {

@@ -80,7 +80,11 @@ const config: Config = {
 					label: 'Rulebook',
 				},
 				{ to: '/deck', label: 'Hider Deck', position: 'left' },
-				{ to: '/matching', label: 'Investigation Book', position: 'left' },
+				{
+					to: '/investigation/matching',
+					label: 'Investigation Book',
+					position: 'left',
+				},
 				{
 					href: 'https://github.com/teakivy/jet-lag',
 					label: 'GitHub',
@@ -141,12 +145,8 @@ const config: Config = {
 					title: 'More',
 					items: [
 						{
-							label: 'Blog',
-							to: '/blog',
-						},
-						{
 							label: 'GitHub',
-							href: 'https://github.com/facebook/docusaurus',
+							href: 'https://github.com/teakivy/jet-lag',
 						},
 					],
 				},

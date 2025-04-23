@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import InvestigationForm from '../components/investigationForm';
-import InvestigationNav from '../components/investigationNav';
+import InvestigationForm from '../../components/investigationForm';
+import InvestigationNav from '../../components/investigationNav';
 
 export default function Measuring() {
 	return (

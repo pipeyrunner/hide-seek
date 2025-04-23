@@ -53,7 +53,7 @@ export default function Home() {
 						<Link className='button' to='/deck'>
 							Hider Deck
 						</Link>
-						<Link className='button' to='/matching'>
+						<Link className='button' to='/investigation/matching'>
 							Investigation Book
 						</Link>
 					</div>

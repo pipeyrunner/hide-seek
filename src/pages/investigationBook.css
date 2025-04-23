@@ -183,3 +183,52 @@
 	max-height: 90%;
 	padding: 1rem;
 }
+
+.investigation-nav {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+}
+
+.investigation-nav-tabs {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.nav-tab {
+	padding: 0.4rem 1rem;
+	border: 2px solid black;
+	border-radius: 999px;
+	background: white;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.nav-tab.active {
+	background: black;
+	color: white;
+}
+
+.investigation-nav-divider {
+	width: 1px;
+	height: 24px;
+	background: #ccc;
+}
+
+.nav-reset {
+	padding: 0.4rem 1rem;
+	background: #e74c3c;
+	color: white;
+	border: none;
+	border-radius: 999px;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.nav-reset:hover {
+	background: #c0392b;
+}
