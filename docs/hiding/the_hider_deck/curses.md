@@ -1,9 +1,10 @@
 ---
 sidebar_position: 4
 ---
+
 # Curses
 
-Curse cards are played against the seekers as a means to slow them down, prevent them from asking questions, or just to annoy them. Every curse is unique, and has some kind of one-time effect on the seekers that lasts for a certain duration; much like powerups, once a curse has been used, it is then discarded and removed from your hand. 
+Curse cards are played against the seekers as a means to slow them down, prevent them from asking questions, or just to annoy them. Every curse is unique, and has some kind of one-time effect on the seekers that lasts for a certain duration; much like powerups, once a curse has been used, it is then discarded and removed from your hand.
 
 Curses cannot necessarily be played at any time; each curse has a **casting cost** that must be met before it can be played. In some cases, these casting costs are resources that must be paid by the hider, such as discarding other cards in your hand. In other cases, these casting costs reference certain conditions of the game, such as requiring that seekers are at least 10 miles away (You may notice that, on the cards, these casting costs are sometimes different for different game sizes, which will be indicated by the game size icons next to each cost.)
 
@@ -33,7 +34,7 @@ Any liquid already traveling with the seekers at the time that this card is play
 
 ### Curse of the Egg Partner
 
-The egg can be from any type of animal, but it must be a real egg (a chocolate egg or a plastic egg, for example, would not count.) Any visible fracture, however small, counts as killing the egg. If you do not want to buy items during the course of your game, or object to this curse on ethical grounds, this curse should be removed from the deck. For any other curse that requires all seekers to do something, the egg counts as a seeker. For example, using the Curse of the Lemon Phylactery after this curse has been played would require the egg to have a lemonn attached to it.
+The egg can be from any type of animal, but it must be a real egg (a chocolate egg or a plastic egg, for example, would not count.) Any visible fracture, however small, counts as killing the egg. If you do not want to buy items during the course of your game, or object to this curse on ethical grounds, this curse should be removed from the deck. For any other curse that requires all seekers to do something, the egg counts as a seeker. For example, using the Curse of the Lemon Phylactery after this curse has been played would require the egg to have a lemon attached to it.
 
 ### Curse of the Jammed Door
 
@@ -65,7 +66,7 @@ Any object or display whose primary purpose is to raise awareness of a product, 
 
 ### Curse of the U-Turn
 
-"Next Station," in this context, refers to the next station that the seekers' current mode of transit will stop at; if there are any stops along the line that their current route will skip, those should be disreguarded. If you are not sure whether the seekers are on transit, or whether their route will stop at a particular station, you may ask them for that information. If there is any ambiguity, you should tell them what you believe their next station is when this curse is cast to confirm that you didn't misread their tracker. Even if the seekers' current mode of transit would eventually bring them closer to you, this curse may still be played so long as their next station is further; a line that heads in your direction but temporarily curves away is a particularly advantageous situation for this curse. 
+"Next Station," in this context, refers to the next station that the seekers' current mode of transit will stop at; if there are any stops along the line that their current route will skip, those should be disreguarded. If you are not sure whether the seekers are on transit, or whether their route will stop at a particular station, you may ask them for that information. If there is any ambiguity, you should tell them what you believe their next station is when this curse is cast to confirm that you didn't misread their tracker. Even if the seekers' current mode of transit would eventually bring them closer to you, this curse may still be played so long as their next station is further; a line that heads in your direction but temporarily curves away is a particularly advantageous situation for this curse.
 
 ### Curse of the Cairn
 
