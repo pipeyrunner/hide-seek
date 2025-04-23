@@ -163,16 +163,6 @@ const config: Config = {
 			theme: prismThemes.github,
 			darkTheme: prismThemes.dracula,
 		},
-		plugins: [
-			[
-				require.resolve('@cmfcmf/docusaurus-search-local'),
-				{
-					indexDocs: true,
-					indexPages: false,
-					language: ['en'], // or multiple like ['en', 'de']
-				},
-			],
-		],
 	} satisfies Preset.ThemeConfig,
 };
 
