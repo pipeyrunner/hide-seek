@@ -14,7 +14,7 @@ For any rule disputes, here are additional notes for each curse in the hider dec
 
 ### Curse of the Luxury Car
 
-You must be able to identify the car in question when sending the photo, and the seekers must agree that it is, in fact, the car that you claim that it is. Use the MSRP of the car, factoring it its year of production, and disreguarding any add-ons or modifications that may have been paid for. (For example: upgrades to the car's interior, special tires, custom colors, etc.) The photo sent to the seekers must include enough of the car for it to be identifiable. All of these rules also apply to the car found by the seekers. If you cannot confirm a car's exact production year or exact model, both sides must come to a consensus on which model and year to use for determining price.
+You must be able to identify the car in question when sending the photo, and the seekers must agree that it is, in fact, the car that you claim that it is. Use the MSRP of the car, factoring it its year of production, and disregarding any add-ons or modifications that may have been paid for. (For example: upgrades to the car's interior, special tires, custom colors, etc.) The photo sent to the seekers must include enough of the car for it to be identifiable. All of these rules also apply to the car found by the seekers. If you cannot confirm a car's exact production year or exact model, both sides must come to a consensus on which model and year to use for determining price.
 
 ### Curse of the Bridge Troll
 
@@ -66,7 +66,7 @@ Any object or display whose primary purpose is to raise awareness of a product, 
 
 ### Curse of the U-Turn
 
-"Next Station," in this context, refers to the next station that the seekers' current mode of transit will stop at; if there are any stops along the line that their current route will skip, those should be disreguarded. If you are not sure whether the seekers are on transit, or whether their route will stop at a particular station, you may ask them for that information. If there is any ambiguity, you should tell them what you believe their next station is when this curse is cast to confirm that you didn't misread their tracker. Even if the seekers' current mode of transit would eventually bring them closer to you, this curse may still be played so long as their next station is further; a line that heads in your direction but temporarily curves away is a particularly advantageous situation for this curse.
+"Next Station," in this context, refers to the next station that the seekers' current mode of transit will stop at; if there are any stops along the line that their current route will skip, those should be disregarded. If you are not sure whether the seekers are on transit, or whether their route will stop at a particular station, you may ask them for that information. If there is any ambiguity, you should tell them what you believe their next station is when this curse is cast to confirm that you didn't misread their tracker. Even if the seekers' current mode of transit would eventually bring them closer to you, this curse may still be played so long as their next station is further; a line that heads in your direction but temporarily curves away is a particularly advantageous situation for this curse.
 
 ### Curse of the Cairn
 

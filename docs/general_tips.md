@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # General Tips
 
-Make no mistake, _Hide and Seek_ is a physically and mentally demanding game. Particularly for medium and large sized games, which can last multiple days, adequate preparation is hugely important and should not be disreguarded when organizing your game. Here are a few tips for staying healthy and comfortable while playing _Hide and Seek_:
+Make no mistake, _Hide and Seek_ is a physically and mentally demanding game. Particularly for medium and large sized games, which can last multiple days, adequate preparation is hugely important and should not be disregarded when organizing your game. Here are a few tips for staying healthy and comfortable while playing _Hide and Seek_:
 
 **Always pack enough food and water for at least one full day of gameplay**. As the hider, you may very well find yourself in situations where there is no way to access food or water for hours at a time. Use the rest period to restock any snacks you might have consumed during the game day.
 

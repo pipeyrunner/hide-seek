@@ -64,6 +64,11 @@ const config: Config = {
 	],
 
 	themeConfig: {
+		colorMode: {
+			defaultMode: 'light',
+			disableSwitch: true,
+			respectPrefersColorScheme: false,
+		},
 		// Replace with your project's social card
 		image: 'img/docusaurus-social-card.jpg',
 		navbar: {
@@ -84,6 +89,7 @@ const config: Config = {
 					to: '/investigation/matching',
 					label: 'Investigation Book',
 					position: 'left',
+					activeBaseRegex: '/investigation/',
 				},
 				{
 					href: 'https://github.com/teakivy/jet-lag',
@@ -96,31 +102,23 @@ const config: Config = {
 			style: 'dark',
 			links: [
 				{
-					title: 'Rulebook',
+					title: 'Hide and Seek',
 					items: [
 						{
-							label: 'Quick Start Guide',
+							label: 'Rulebook',
 							to: '/docs/quick_start_guide',
 						},
 						{
-							label: 'Setting Up Your Map',
-							to: '/docs/setting_up_your_map',
+							label: 'Hider Deck',
+							to: '/deck',
 						},
 						{
-							label: 'Seeking',
-							to: '/docs/seeking',
+							label: 'Investigation Book',
+							to: '/investigation/matching',
 						},
 						{
-							label: 'Hiding',
-							to: '/docs/hiding',
-						},
-						{
-							label: 'General Tips',
-							to: '/docs/general_tips',
-						},
-						{
-							label: 'Experimental Game Designs',
-							to: '/docs/experimental_game_designs',
+							label: 'Disclaimer',
+							to: '/disclaimer',
 						},
 					],
 				},
@@ -142,21 +140,39 @@ const config: Config = {
 					],
 				},
 				{
-					title: 'More',
+					title: 'From the Creator',
 					items: [
 						{
+							label: 'Portfolio',
+							href: 'https://collinj.dev',
+						},
+						{
 							label: 'GitHub',
-							href: 'https://github.com/teakivy/jet-lag',
+							href: 'https://github.com/teakivy',
+						},
+						{
+							label: 'X/Twitter',
+							href: 'https://twitter.com/TeakIvyYT',
 						},
 					],
 				},
 			],
-			copyright: `Copyright © ${new Date().getFullYear()} Collin Jones. Built with Docusaurus. Not affiliated with Jet Lag The Game or Wendover Productions.`,
+			copyright: `Copyright © ${new Date().getFullYear()} Collin Jones. Not affiliated with Jet Lag: The Game, Nebula, or Wendover Productions.`,
 		},
 		prism: {
 			theme: prismThemes.github,
 			darkTheme: prismThemes.dracula,
 		},
+		plugins: [
+			[
+				require.resolve('@cmfcmf/docusaurus-search-local'),
+				{
+					indexDocs: true,
+					indexPages: false,
+					language: ['en'], // or multiple like ['en', 'de']
+				},
+			],
+		],
 	} satisfies Preset.ThemeConfig,
 };
 

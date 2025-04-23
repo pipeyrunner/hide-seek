@@ -159,3 +159,40 @@
 		transform: scale(0.9);
 	}
 }
+
+.navbar {
+	background-color: #0c131b !important;
+}
+
+.navbar__title {
+	color: white;
+	font-weight: bold;
+	transition: color 0.2s ease;
+}
+
+.navbar__brand:hover .navbar__title {
+	color: #f86c6c; /* your highlight color */
+}
+
+.navbar__link {
+	color: #eee;
+	font-size: 0.95rem;
+	transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+	color: #f86c6c;
+}
+
+.navbar__link--active {
+	color: #ff3b3b; /* optional: highlight color */
+}
+
+.lightToggleIcon_pyhR {
+	font-size: 1.25rem;
+	color: #fff;
+	transition: color 0.1s ease;
+}
+.colorModeToggle_DEke:hover .lightToggleIcon_pyhR {
+	color: #f86c6c !important;
+}
