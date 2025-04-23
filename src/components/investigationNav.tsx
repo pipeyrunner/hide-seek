@@ -17,7 +17,7 @@ export default function InvestigationNav() {
 
 	const handleReset = () => {
 		const confirm = window.confirm(
-			'Are you sure you want to reset all data on this page?'
+			'Are you sure you want to reset all investigation notes? This will delete all your progress and cannot be undone.'
 		);
 		if (!confirm) return;
 

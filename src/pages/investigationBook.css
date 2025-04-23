@@ -232,3 +232,40 @@
 .nav-reset:hover {
 	background: #c0392b;
 }
+
+.investigation-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+
+.investigation-nav-tabs {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex: 1;
+}
+
+.investigation-nav-divider {
+	display: none;
+}
+
+.nav-reset {
+	margin-left: auto;
+	padding: 0.4rem 1rem;
+	background: #e74c3c;
+	color: white;
+	border: none;
+	border-radius: 999px;
+	font-size: 0.9rem;
+	cursor: pointer;
+	margin-right: 2rem;
+}
+
+.nav-reset:hover {
+	background: #c0392b;
+}
