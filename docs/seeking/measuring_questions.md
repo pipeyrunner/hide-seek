@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Measuring Questions
 
-Measuring questions follow the format, "compared to me, are you closer to or further from \_\_\_\_?" Valid answers are **closer** or **further**. Hiders have five minutes to answer. These questions are also universally useful, and good for slicing the map in unique and clever ways. **It is important to note that if locations are not within a map's boundaries, players must operate as if they do not exist**. For example, if the seekers asked if they were closer to or further from an international border than the hider, but there were no international borders in the map's boundaries, it would return a null answer (null answers count as answered questions, and hiders get to draw cards).
+Measuring questions follow the format, "Compared to me, are you closer to or further from \_\_\_\_?" Valid answers are **closer** or **further**. Hiders have five minutes to answer. These questions are also universally useful, and good for slicing the map in unique and clever ways. **It is important to note that if locations are not within a map's boundaries, players must operate as if they do not exist**. For example, if the seekers asked if they were closer to or further from an international border than the hider, but there were no international borders in the map's boundaries, it would return a null answer (null answers count as answered questions, and hiders get to draw cards).
 
 After a measuring question has been answered, the hider may **draw 3 cards and keep 1**.
 

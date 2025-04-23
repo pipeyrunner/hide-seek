@@ -36,7 +36,7 @@ Number of characters (hyphens and spaces count) in the station, as defined by yo
 
 A street or path is considered to have ended when it aquires a different name. This includes changing from, say, "Jet Lag St. East" to "Jet Lag St. West"
 
-If a street or path is unnamed, it is considere to start or end wherever it has an intersection.
+If a street or path is unnamed, it is considered to start or end wherever it has an intersection.
 
 ### Administrative Divisions
 
