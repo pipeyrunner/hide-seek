@@ -24,7 +24,7 @@ If there is any ambiguity, an airport is considered commercial if you can view f
 
 #### High-Speed Train Line
 
-Different countries sometimes have different definitions of high-speed rail, so it is worth using whatever definition is locally applicable. Otherwise, we reccomend following the EU definition: _Minimum speed of 250 km/h (155 mph) on lines specifically built for high speed rail and of about 200 km/h (124 mph) on existing lines which have been specifically upgraded._
+Different countries sometimes have different definitions of high-speed rail, so it is worth using whatever definition is locally applicable. Otherwise, we recommend following the EU definition: _Minimum speed of 250 km/h (155 mph) on lines specifically built for high speed rail and of about 200 km/h (124 mph) on existing lines which have been specifically upgraded._
 
 #### Rail Station
 
@@ -66,7 +66,7 @@ You can see this illustrated below:
 
 ![Coastline Illustration](../assets/seeking_measuring_questions3.png)
 
-We reccomend you don't rely on this to be super precise, and that you consult with each other if there's any weirdness.
+We recommend you don't rely on this to be super precise, and that you consult with each other if there's any weirdness.
 
 #### Mountain
 

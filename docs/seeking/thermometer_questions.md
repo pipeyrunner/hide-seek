@@ -1,9 +1,10 @@
 ---
 sidebar_position: 6
 ---
+
 # Thermometer Questions
 
-Thermometer questions follow the format, "After traveling \_\_\_\_, am I hotter or colder?" Valid answers are **hotter** or **colder**. Hiders have five minutes to answer. When starting a thermometer question, you should inform the hider that you are starting a thermometer and send them your current location (we reccomend sending a pin through Google or Apple Maps.) Then, after traveling a sufficient distance–measured as the crow flies–send them your new location. If the new location is closer to the hider's current location, then you are hotter. Otherwise, you are colder. These questions are a good way of determining whether you are moving in the right direction.
+Thermometer questions follow the format, "After traveling \_\_\_\_, am I hotter or colder?" Valid answers are **hotter** or **colder**. Hiders have five minutes to answer. When starting a thermometer question, you should inform the hider that you are starting a thermometer and send them your current location (we recommend sending a pin through Google or Apple Maps.) Then, after traveling a sufficient distance–measured as the crow flies–send them your new location. If the new location is closer to the hider's current location, then you are hotter. Otherwise, you are colder. These questions are a good way of determining whether you are moving in the right direction.
 
 After a thermometer question has been answered, the hider may **draw 2 cards and keep 1**.
 
