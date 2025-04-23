@@ -36,7 +36,7 @@ export default function Home() {
 
 					<div className='badges'>
 						<span className='badge'>AGES 14+</span>
-						<span className='badge'>2–4+ PLAYERS</span>
+						<span className='badge'>2-4+ PLAYERS</span>
 					</div>
 
 					<div
@@ -53,7 +53,7 @@ export default function Home() {
 						<Link className='button' to='/deck'>
 							Hider Deck
 						</Link>
-						<Link className='button' to='/deck'>
+						<Link className='button' to='/matching'>
 							Investigation Book
 						</Link>
 					</div>

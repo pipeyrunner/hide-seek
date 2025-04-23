@@ -1,0 +1,185 @@
+.investigation-container {
+	max-width: 1300px;
+	margin: 2rem auto;
+	padding: 1rem;
+}
+
+@media (min-width: 640px) {
+	.investigation-field {
+		flex-wrap: nowrap;
+	}
+
+	.field-label {
+		flex: 0 0 320px;
+		margin-right: 1rem;
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	.field-input {
+		flex: 1;
+		min-width: 400px;
+	}
+}
+
+.investigation-title {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.investigation-meta {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.investigation-question {
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 2rem;
+}
+
+.investigation-section {
+	margin-bottom: 2rem;
+}
+
+.investigation-section-title {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+	font-size: 1.1rem;
+}
+
+.investigation-field {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+	.investigation-field {
+		flex-wrap: nowrap;
+	}
+
+	.field-label {
+		flex: 0 0 250px;
+		margin-right: 1rem;
+		text-align: right;
+	}
+
+	.field-input {
+		flex: 1;
+	}
+}
+
+.field-label {
+	flex: 1 1 200px;
+}
+
+.field-input {
+	flex: 2 1 300px;
+	padding: 0.5rem;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	width: 100%;
+	max-width: 100%;
+}
+
+.investigation-buttons {
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.investigation-buttons button {
+	margin: 0 0.5rem;
+	padding: 0.6rem 1.2rem;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+/* Hide buttons when printing */
+@media print {
+	.no-print {
+		display: none !important;
+	}
+
+	.field-input {
+		border: 1px solid #000;
+	}
+
+	.field-label {
+		font-size: 1rem;
+	}
+}
+
+.investigation-chips {
+	text-align: center;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.chip {
+	display: inline-block;
+	background: #222;
+	color: white;
+	padding: 0.3rem 0.75rem;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+}
+
+/* Smaller preview image with rounded corners */
+.investigation-field img {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	transition: transform 0.2s ease;
+}
+
+.investigation-field img:hover {
+	transform: scale(1.02);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove button below image */
+.investigation-field button {
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+	border: none;
+	background-color: #e74c3c;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-top: 4px;
+}
+
+.investigation-field button:hover {
+	background-color: #c0392b;
+}
+
+/* Zoom overlay reuses modal style */
+.card-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+}
+
+.card-modal-content {
+	background: white;
+	border-radius: 12px;
+	max-width: 90%;
+	max-height: 90%;
+	padding: 1rem;
+}

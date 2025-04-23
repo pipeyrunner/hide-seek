@@ -80,6 +80,7 @@ const config: Config = {
 					label: 'Rulebook',
 				},
 				{ to: '/deck', label: 'Hider Deck', position: 'left' },
+				{ to: '/matching', label: 'Investigation Book', position: 'left' },
 				{
 					href: 'https://github.com/teakivy/jet-lag',
 					label: 'GitHub',
