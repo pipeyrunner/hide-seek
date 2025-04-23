@@ -44,10 +44,34 @@ export default function Photos() {
 	}, [photos]);
 
 	const handleUpload = (label: string, file: File) => {
+		if (!file.type.toLowerCase().includes('image')) return;
+		const img = new Image();
 		const reader = new FileReader();
-		reader.onloadend = () => {
-			setPhotos((prev) => ({ ...prev, [label]: reader.result as string }));
+
+		reader.onload = (event) => {
+			img.onload = () => {
+				const maxDim = 1024;
+				const scale = Math.min(maxDim / img.width, maxDim / img.height, 1);
+
+				const canvas = document.createElement('canvas');
+				canvas.width = img.width * scale;
+				canvas.height = img.height * scale;
+
+				const ctx = canvas.getContext('2d');
+				if (!ctx) return;
+
+				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+				// Export as JPEG at ~70% quality
+				const compressed = canvas.toDataURL('image/jpeg', 0.7);
+				setPhotos((prev) => ({ ...prev, [label]: compressed }));
+			};
+
+			if (event.target?.result) {
+				img.src = event.target.result as string;
+			}
 		};
+
 		reader.readAsDataURL(file);
 	};
 
