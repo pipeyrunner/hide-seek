@@ -3,10 +3,11 @@ import React, { forwardRef } from 'react';
 type CardDeckStackProps = {
 	count: number;
 	onDraw: (drawCount: number, maxSelection: number) => void;
+	setBlurred: (blurred: boolean) => void;
 };
 
 const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
-	({ count, onDraw }, ref) => {
+	({ count, onDraw, setBlurred }, ref) => {
 		const [showOptions, setShowOptions] = React.useState(false);
 		const [selectingQuestion, setSelectingQuestion] = React.useState(false);
 		const visibleCards = Math.min(count, 10);
@@ -22,7 +23,11 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						cursor: count > 0 ? 'pointer' : 'default',
 						margin: 'auto',
 					}}
-					onClick={() => setShowOptions((prev) => !prev)}
+					onClick={() => {
+						setShowOptions((prev) => !prev);
+						setSelectingQuestion(true);
+						setBlurred(true);
+					}}
 				>
 					{Array.from({ length: visibleCards }).map((_, i) => (
 						<img
@@ -44,20 +49,40 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 					))}
 				</div>
 
-				{showOptions && (
+				{
 					<div
 						style={{
-							marginTop: '1.5rem',
+							position: 'fixed',
+							top: 0,
+							left: 0,
+							width: '100%',
+							height: '100%',
 							display: 'flex',
 							flexDirection: 'column',
-							gap: '0.5rem',
 							alignItems: 'center',
+							justifyContent: 'center',
+							zIndex: 1000,
+							opacity: selectingQuestion ? 1 : 0,
+							pointerEvents: selectingQuestion ? 'auto' : 'none',
+							transition: '0.3s',
+							rowGap: '1rem',
 						}}
 					>
+						<h2
+							style={{
+								color: 'white',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+							}}
+						>
+							Which type of question did you answer?
+						</h2>
 						<button
 							onClick={() => {
-								onDraw(3, 1);
-								setShowOptions(false);
+								setSelectingQuestion(false);
+								// delay 100ms
+								setTimeout(() => {
+									onDraw(3, 1);
+								}, 500);
 							}}
 							style={{
 								width: 160,
@@ -77,8 +102,11 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						</button>
 						<button
 							onClick={() => {
-								onDraw(3, 1);
-								setShowOptions(false);
+								setSelectingQuestion(false);
+								// delay 100ms
+								setTimeout(() => {
+									onDraw(3, 1);
+								}, 500);
 							}}
 							style={{
 								width: 160,
@@ -98,8 +126,11 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						</button>
 						<button
 							onClick={() => {
-								onDraw(2, 1);
-								setShowOptions(false);
+								setSelectingQuestion(false);
+								// delay 100ms
+								setTimeout(() => {
+									onDraw(2, 1);
+								}, 500);
 							}}
 							style={{
 								width: 160,
@@ -119,8 +150,11 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						</button>
 						<button
 							onClick={() => {
-								onDraw(2, 1);
-								setShowOptions(false);
+								setSelectingQuestion(false);
+								// delay 100ms
+								setTimeout(() => {
+									onDraw(2, 1);
+								}, 500);
 							}}
 							style={{
 								width: 160,
@@ -140,8 +174,11 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						</button>
 						<button
 							onClick={() => {
-								onDraw(4, 2);
-								setShowOptions(false);
+								setSelectingQuestion(false);
+								// delay 100ms
+								setTimeout(() => {
+									onDraw(4, 2);
+								}, 500);
 							}}
 							style={{
 								width: 160,
@@ -161,8 +198,11 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						</button>
 						<button
 							onClick={() => {
-								onDraw(1, 1);
-								setShowOptions(false);
+								setSelectingQuestion(false);
+								// delay 100ms
+								setTimeout(() => {
+									onDraw(1, 1);
+								}, 500);
 							}}
 							style={{
 								width: 160,
@@ -181,7 +221,7 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 							<strong>PHOTO</strong>
 						</button>
 					</div>
-				)}
+				}
 			</div>
 		);
 	}
