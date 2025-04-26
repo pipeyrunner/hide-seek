@@ -145,7 +145,7 @@ export default function Draw() {
 	}, [forceUseCards, pendingDraw]);
 
 	return (
-		<Layout title='Draw Cards'>
+		<Layout title='Your Hand' description='Draw cards from the deck'>
 			<main
 				className='container'
 				style={{

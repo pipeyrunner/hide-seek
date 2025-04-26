@@ -74,7 +74,7 @@ const config: Config = {
 		navbar: {
 			title: 'Hide and Seek',
 			logo: {
-				alt: 'My Site Logo',
+				alt: 'Jet Lag Logo',
 				src: 'img/jetlag.png',
 			},
 			items: [
@@ -90,6 +90,11 @@ const config: Config = {
 					label: 'Investigation Book',
 					position: 'left',
 					activeBaseRegex: '/investigation/',
+				},
+				{
+					to: '/your_hand',
+					label: 'Your Hand',
+					position: 'left',
 				},
 				{
 					href: 'https://github.com/teakivy/jet-lag',
