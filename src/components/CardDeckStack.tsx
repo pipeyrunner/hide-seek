@@ -1,58 +1,190 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 type CardDeckStackProps = {
 	count: number;
-	onDraw?: () => void;
+	onDraw: (drawCount: number, maxSelection: number) => void;
 };
 
-export default function CardDeckStack({ count, onDraw }: CardDeckStackProps) {
-	const maxVisible = 10; // show only top 5 cards visually
-	const visibleCards = Math.min(count, maxVisible);
+const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
+	({ count, onDraw }, ref) => {
+		const [showOptions, setShowOptions] = React.useState(false);
+		const [selectingQuestion, setSelectingQuestion] = React.useState(false);
+		const visibleCards = Math.min(count, 10);
 
-	return (
-		<div
-			style={{
-				position: 'relative',
-				width: 120 * 1.5,
-				height: 168 * 1.5,
-				cursor: onDraw ? 'pointer' : 'default',
-				margin: 'auto',
-			}}
-			onClick={onDraw}
-		>
-			{Array.from({ length: visibleCards }).map((_, i) => (
-				<img
-					key={i}
-					src='/img/cards/card_back.png'
-					alt='Card Back'
-					style={{
-						position: 'absolute',
-						bottom: i * 2,
-						left: i * 1,
-						width: 120 * 1.5,
-						height: 168 * 1.5,
-						objectFit: 'cover',
-						borderRadius: 8,
-						boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
-						zIndex: i,
-					}}
-				/>
-			))}
-			{/* {count > maxVisible && (
+		return (
+			<div style={{ textAlign: 'center' }}>
 				<div
+					ref={ref}
 					style={{
-						position: 'absolute',
-						top: maxVisible * 3 + 10,
-						left: 0,
-						width: '100%',
-						textAlign: 'center',
-						color: '#555',
-						fontSize: '0.9rem',
+						position: 'relative',
+						width: 180,
+						height: 252,
+						cursor: count > 0 ? 'pointer' : 'default',
+						margin: 'auto',
 					}}
+					onClick={() => setShowOptions((prev) => !prev)}
 				>
-					+{count - maxVisible} more
+					{Array.from({ length: visibleCards }).map((_, i) => (
+						<img
+							key={i}
+							src='/img/cards/card_back.png'
+							alt='Card Back'
+							style={{
+								position: 'absolute',
+								bottom: i * 2,
+								left: i * 1,
+								width: 180,
+								height: 252,
+								objectFit: 'cover',
+								borderRadius: 8,
+								boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+								zIndex: i,
+							}}
+						/>
+					))}
 				</div>
-			)} */}
-		</div>
-	);
-}
+
+				{showOptions && (
+					<div
+						style={{
+							marginTop: '1.5rem',
+							display: 'flex',
+							flexDirection: 'column',
+							gap: '0.5rem',
+							alignItems: 'center',
+						}}
+					>
+						<button
+							onClick={() => {
+								onDraw(3, 1);
+								setShowOptions(false);
+							}}
+							style={{
+								width: 160,
+								padding: '0.5rem',
+								color: 'white',
+								border: '0px solid black',
+								borderRadius: 4,
+								background: '#202b39',
+								cursor: 'pointer',
+								letterSpacing: '0.1rem',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+								fontWeight: '900',
+								fontSize: '1rem',
+							}}
+						>
+							<strong>MATCHING</strong>
+						</button>
+						<button
+							onClick={() => {
+								onDraw(3, 1);
+								setShowOptions(false);
+							}}
+							style={{
+								width: 160,
+								padding: '0.5rem',
+								color: 'white',
+								border: '0px solid black',
+								borderRadius: 4,
+								background: '#4a9a5e',
+								cursor: 'pointer',
+								letterSpacing: '0.1rem',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+								fontWeight: '900',
+								fontSize: '1rem',
+							}}
+						>
+							<strong>MEASURING</strong>
+						</button>
+						<button
+							onClick={() => {
+								onDraw(2, 1);
+								setShowOptions(false);
+							}}
+							style={{
+								width: 160,
+								padding: '0.5rem',
+								color: 'white',
+								border: '0px solid black',
+								borderRadius: 4,
+								background: '#f56d3e',
+								cursor: 'pointer',
+								letterSpacing: '0.1rem',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+								fontWeight: '900',
+								fontSize: '1rem',
+							}}
+						>
+							<strong>RADAR</strong>
+						</button>
+						<button
+							onClick={() => {
+								onDraw(2, 1);
+								setShowOptions(false);
+							}}
+							style={{
+								width: 160,
+								padding: '0.5rem',
+								color: 'white',
+								border: '0px solid black',
+								borderRadius: 4,
+								background: '#feb846',
+								cursor: 'pointer',
+								letterSpacing: '0.1rem',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+								fontWeight: '900',
+								fontSize: '1rem',
+							}}
+						>
+							<strong>THERMOMETER</strong>
+						</button>
+						<button
+							onClick={() => {
+								onDraw(4, 2);
+								setShowOptions(false);
+							}}
+							style={{
+								width: 160,
+								padding: '0.5rem',
+								color: 'white',
+								border: '0px solid black',
+								borderRadius: 4,
+								background: '#8969a6',
+								cursor: 'pointer',
+								letterSpacing: '0.1rem',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+								fontWeight: '900',
+								fontSize: '1rem',
+							}}
+						>
+							<strong>TENTACLES</strong>
+						</button>
+						<button
+							onClick={() => {
+								onDraw(1, 1);
+								setShowOptions(false);
+							}}
+							style={{
+								width: 160,
+								padding: '0.5rem',
+								color: 'white',
+								border: '0px solid black',
+								borderRadius: 4,
+								background: '#80b2c6',
+								cursor: 'pointer',
+								letterSpacing: '0.1rem',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+								fontWeight: '900',
+								fontSize: '1rem',
+							}}
+						>
+							<strong>PHOTO</strong>
+						</button>
+					</div>
+				)}
+			</div>
+		);
+	}
+);
+
+export default CardDeckStack;
