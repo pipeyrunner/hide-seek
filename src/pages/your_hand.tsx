@@ -159,13 +159,13 @@ export default function Draw() {
 						setFreeQuestions={setFreeQuestions}
 						setFreeQuestionUsed={setFreeQuestionUsed}
 					/>
-					<button
+					{/* <button
 						onClick={() => {
 							setHand([findCardByFile('curse_impressionable_consumer', deck)!]);
 						}}
 					>
 						Test Hand
-					</button>
+					</button> */}
 
 					<h2 style={{ marginTop: '2rem' }}>Your Hand</h2>
 					<div
@@ -381,7 +381,9 @@ export default function Draw() {
 											setHand(hand.filter((_, index) => index !== i));
 											setForceUseCards(forceUseCards - 1);
 										}}
-										disabled={!card.file.includes('curse_')}
+										disabled={
+											card.file.includes('time_bonus_') && !card.canUse(hand)
+										}
 									/>
 									<CardButton
 										title={'DISCARD'}
@@ -449,24 +451,6 @@ export default function Draw() {
 										backgroundColor={'#202b39'}
 										onClick={() => {
 											if (showcaseCards.length <= 0) return;
-											// setHand((prev) => {
-											// 	const index = prev.indexOf(card);
-											// 	if (index !== -1) {
-											// 		const newCards = [...prev];
-											// 		newCards.splice(index, 1);
-											// 		return newCards;
-											// 	}
-											// 	return prev;
-											// });
-
-											// if (selectedCards.length > 1) {
-											// 	setSelectedCards(
-											// 		selectedCards.filter((c) => c !== card)
-											// 	);
-											// } else {
-											// 	setShowcaseCards([]);
-											// 	setAllowClose(false);
-											// }
 											setShowcaseCards([]);
 
 											setUseText(card.file);
