@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import CardDeckStack from '../components/CardDeckStack';
+import CardDisplay from '../components/CardDisplay';
+import { v4 as uuidv4 } from 'uuid';
+import CardButton from '../components/CardButton';
 
 type Card = { file: string; count?: number };
+type DeckCard = {
+	file: string;
+	id: string;
+};
 
 const cardDefinitions = [
 	{ file: 'time_bonus_5', count: 25 },
@@ -45,10 +52,15 @@ const cardDefinitions = [
 	].map((file) => ({ file, count: 1 })),
 ];
 
-function generateDeck(): string[] {
-	const fullDeck: string[] = [];
+function generateDeck(): DeckCard[] {
+	const fullDeck: DeckCard[] = [];
 	for (const { file, count } of cardDefinitions) {
-		fullDeck.push(...Array(count).fill(file));
+		for (let i = 0; i < (count || 1); i++) {
+			fullDeck.push({
+				file,
+				id: uuidv4(),
+			});
+		}
 	}
 	return shuffle(fullDeck);
 }
@@ -62,13 +74,35 @@ function shuffle<T>(array: T[]): T[] {
 	return result;
 }
 
+const Overlay = ({ visible, children, blur = true }) => (
+	<div
+		style={{
+			position: 'fixed',
+			top: 0,
+			left: 0,
+			width: '100%',
+			height: '100%',
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center',
+			justifyContent: 'center',
+			zIndex: 1000,
+			opacity: visible ? 1 : 0,
+			pointerEvents: visible ? 'auto' : 'none',
+			transition: '0.3s',
+		}}
+	>
+		{children}
+	</div>
+);
+
 export default function Draw() {
 	const [deck, setDeck] = useState(shuffle(generateDeck()));
-	const [hand, setHand] = useState<string[]>([]);
-	const [drawn, setDrawn] = useState<string[]>([]);
+	const [hand, setHand] = useState<DeckCard[]>([]);
+	const [drawn, setDrawn] = useState<DeckCard[]>([]);
 	const [selecting, setSelecting] = useState(false);
-	const [flipped, setFlipped] = useState<string[]>([]);
-	const [selectedCards, setSelectedCards] = useState<string[]>([]);
+	const [flipped, setFlipped] = useState<DeckCard[]>([]);
+	const [selectedCards, setSelectedCards] = useState<DeckCard[]>([]);
 	const [maxSelectedCards, setMaxSelectedCards] = useState(3);
 	const [blurred, setBlurred] = useState(false);
 	const [handSize, setHandSize] = useState(5);
@@ -77,6 +111,10 @@ export default function Draw() {
 		cards: number;
 		maxSelection: number;
 	}>(null);
+	const [showcaseCards, setShowcaseCards] = useState<[DeckCard] | []>([]);
+	const [allowClose, setAllowClose] = useState(false);
+	const [useText, setUseText] = useState('');
+	const [useCard, setUseCard] = useState<DeckCard | null>(null);
 
 	const handleDraw = (cards: number, maxSelection: number) => {
 		if (maxSelection + hand.length > handSize) {
@@ -87,11 +125,7 @@ export default function Draw() {
 		const actual = Math.min(cards, deck.length);
 		setMaxSelectedCards(maxSelection);
 		const drawnNow = deck.slice(0, actual);
-		let tempDrawn = drawnNow.map(
-			(card) =>
-				(card += `_${Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000}`)
-		);
-		setDrawn(tempDrawn);
+		setDrawn(drawnNow);
 		setDeck(deck.slice(actual));
 		setSelecting(true);
 
@@ -100,15 +134,15 @@ export default function Draw() {
 			setFlipped(drawnNow);
 
 			if (cards == 1) {
-				setSelectedCards([tempDrawn[0]]);
+				setSelectedCards([drawnNow[0]]);
 			}
 		}, 200);
 	};
 
-	const handleKeep = (card: string) => {
-		setHand([...hand, card.slice(0, -5)]);
-		setDrawn(drawn.filter((c) => c !== card));
-		setFlipped(flipped.filter((c) => c !== card.slice(0, -5)));
+	const handleKeep = (card: DeckCard) => {
+		setHand([...hand, card]);
+		setDrawn(drawn.filter((c) => c.id !== card.id));
+		setFlipped(flipped.filter((c) => c.id !== card.id));
 	};
 
 	const handleDiscard = () => {
@@ -166,9 +200,20 @@ export default function Draw() {
 						width: '100%',
 						height: '100%',
 						background: 'rgba(0, 0, 0, 0.5)',
-						zIndex: 1000,
+						zIndex: 100,
 						opacity: blurred ? 1 : 0,
-						pointerEvents: blurred ? 'auto' : 'none',
+						pointerEvents: 'none',
+						// cursor: 'pointer',
+					}}
+					onClick={() => {
+						if (!blurred) return;
+						if (allowClose) {
+							setShowcaseCards([]);
+							setBlurred(false);
+							setAllowClose(false);
+						} else {
+							setAllowClose(true);
+						}
 					}}
 				></div>
 				{/* blurred background */}
@@ -196,14 +241,20 @@ export default function Draw() {
 						{hand.map((card, i) => (
 							<img
 								key={i}
-								src={`/img/cards/${card}.png`}
-								alt={card}
+								src={`/img/cards/${card.file}.png`}
+								alt={card.id}
 								style={{
 									width: 100,
 									height: 140,
 									objectFit: 'cover',
 									borderRadius: 6,
 									border: '1px solid #ccc',
+									cursor: 'pointer',
+								}}
+								onClick={() => {
+									setShowcaseCards([card]);
+									setBlurred(true);
+									setAllowClose(true);
 								}}
 							/>
 						))}
@@ -226,286 +277,371 @@ export default function Draw() {
 					</div>
 				</div>
 
-				{
-					<div
+				<Overlay visible={selecting}>
+					<h2
 						style={{
-							position: 'fixed',
-							top: 0,
-							left: 0,
-							width: '100%',
-							height: '100%',
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							justifyContent: 'center',
-							zIndex: 1000,
-							opacity: selecting ? 1 : 0,
-							pointerEvents: selecting ? 'auto' : 'none',
-							transition: '0.3s',
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
 						}}
 					>
-						<h2
-							style={{
-								color: 'white',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-							}}
-						>
-							Click Cards to Keep
-						</h2>
-						<div
-							style={{
-								display: 'flex',
-								flexWrap: 'wrap',
-								gap: '1rem',
-								marginTop: '1rem',
-								justifyContent: 'center',
-							}}
-						>
-							{drawn.map((card, i) => (
+						Click Cards to Keep
+					</h2>
+					<div
+						style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							gap: '1rem',
+							marginTop: '1rem',
+							justifyContent: 'center',
+						}}
+					>
+						{drawn.map((card, i) => (
+							<div
+								key={i}
+								style={{
+									width: 120 * 1.5,
+									height: 168 * 1.5,
+									perspective: 1000,
+								}}
+							>
 								<div
-									key={i}
 									style={{
-										width: 120 * 1.5,
-										height: 168 * 1.5,
-										perspective: 1000,
+										width: '100%',
+										height: '100%',
+										position: 'relative',
+										transformStyle: 'preserve-3d',
+										transform:
+											(flipped.includes(card)
+												? 'rotateY(0deg)'
+												: 'rotateY(180deg)') +
+											` translateY(${
+												selectedCards.includes(card) ? -20 : 0
+											}px)`,
+										transition: 'transform 0.6s ease',
 									}}
 								>
-									<div
-										style={{
-											width: '100%',
-											height: '100%',
-											position: 'relative',
-											transformStyle: 'preserve-3d',
-											transform:
-												(flipped.includes(card.slice(0, -5))
-													? 'rotateY(0deg)'
-													: 'rotateY(180deg)') +
-												` translateY(${
-													selectedCards.includes(card) ? -20 : 0
-												}px)`,
-											transition: 'transform 0.6s ease',
+									<CardDisplay
+										card={card.file}
+										onClick={() => {
+											if (!selecting) return;
+											if (selectedCards.includes(card)) {
+												setSelectedCards(
+													selectedCards.filter((c) => c.id !== card.id)
+												);
+											} else if (selectedCards.length < maxSelectedCards) {
+												setSelectedCards([...selectedCards, card]);
+											} else {
+												// remove the first selected card if max is reached
+												setSelectedCards([...selectedCards.slice(1), card]);
+											}
 										}}
-									>
-										{/* Front (actual card) */}
-										<img
-											src={`/img/cards/${card.slice(0, -5)}.png`}
-											alt={card}
-											onClick={() => {
-												if (selectedCards.includes(card)) {
-													setSelectedCards(
-														selectedCards.filter((c) => c !== card)
-													);
-												} else if (selectedCards.length < maxSelectedCards) {
-													setSelectedCards([...selectedCards, card]);
-												} else {
-													// remove the first selected card if max is reached
-													setSelectedCards([...selectedCards.slice(1), card]);
-												}
-											}}
-											style={{
-												position: 'absolute',
-												width: '100%',
-												height: '100%',
-												marginLeft: '-50%',
-												backfaceVisibility: 'hidden',
-												borderRadius: 8,
-												objectFit: 'cover',
-												border: '1px solid #ccc',
-											}}
-										/>
-
-										{/* Back (card_back.png) */}
-										<img
-											src='/img/cards/card_back.png'
-											alt='Card back'
-											style={{
-												position: 'absolute',
-												width: '100%',
-												height: '100%',
-												transform: 'rotateY(180deg)',
-												backfaceVisibility: 'hidden',
-												borderRadius: 8,
-												objectFit: 'cover',
-												border: '1px solid #ccc',
-												marginLeft: '-50%',
-											}}
-										/>
-									</div>
+										style={{ marginLeft: '-50%' }}
+									/>
+									<CardDisplay
+										card={'card_back'}
+										style={{
+											marginLeft: '-50%',
+											objectFit: 'cover',
+											transform: 'rotateY(180deg)',
+										}}
+									/>
 								</div>
-							))}
-						</div>
-
-						<button
-							onClick={() => {
-								let s = selectedCards.map((card) => card.slice(0, -5));
-								setHand([...hand, ...s]);
-								setDrawn(drawn.filter((c) => !selectedCards.includes(c)));
-								handleDiscard();
-								setFlipped([]);
-								setSelectedCards([]);
-							}}
-							disabled={selectedCards.length !== maxSelectedCards}
-							style={{
-								marginTop: '2rem',
-								background:
-									selectedCards.length !== maxSelectedCards
-										? 'rgba(255, 59, 59, 0.5)'
-										: '#ff3b3b',
-								color: 'white',
-								border: 'none',
-								borderRadius: 6,
-								padding: '0.7rem 1.5rem',
-								fontSize: '1rem',
-								cursor: 'pointer',
-								transition: 'background 0.3s',
-							}}
-						>
-							{selectedCards.length !== maxSelectedCards ? (
-								<span style={{ fontWeight: 'bold' }}>
-									{`Select ${
-										maxSelectedCards - selectedCards.length
-									} more card${
-										maxSelectedCards - selectedCards.length > 1 ? 's' : ''
-									}`}
-								</span>
-							) : (
-								<span style={{ fontWeight: 'bold' }}>
-									Keep {maxSelectedCards} card{maxSelectedCards > 1 ? 's' : ''}
-								</span>
-							)}
-						</button>
+							</div>
+						))}
 					</div>
-				}
 
-				{
-					<div
+					<CardButton
+						title={
+							selectedCards.length !== maxSelectedCards
+								? `Select ${maxSelectedCards - selectedCards.length} more card${
+										maxSelectedCards - selectedCards.length > 1 ? 's' : ''
+								  }`
+								: `Keep ${maxSelectedCards} card${
+										maxSelectedCards > 1 ? 's' : ''
+								  }`
+						}
+						disabled={selectedCards.length !== maxSelectedCards}
+						backgroundColor={'#ff3b3b'}
+						onClick={() => {
+							if (!selecting) return;
+							let s = selectedCards.map((card) => card);
+							setHand([...hand, ...s]);
+							setDrawn(drawn.filter((c) => !selectedCards.includes(c)));
+							handleDiscard();
+							setFlipped([]);
+							setSelectedCards([]);
+						}}
 						style={{
-							position: 'fixed',
-							top: 0,
-							left: 0,
-							width: '100%',
-							height: '100%',
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							justifyContent: 'center',
-							zIndex: 1000,
-							opacity: forceUseCards > 0 ? 1 : 0,
-							pointerEvents: forceUseCards > 0 ? 'auto' : 'none',
-							transition: '0.3s',
+							marginTop: '2rem',
+							width: 200,
+						}}
+					/>
+				</Overlay>
+
+				<Overlay visible={forceUseCards > 0}>
+					<h2
+						style={{
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
 						}}
 					>
-						<h2
-							style={{
-								color: 'white',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-							}}
-						>
-							You must use or discard {forceUseCards} card
-							{forceUseCards > 1 ? 's' : ''} before drawing more.
-						</h2>
-						<div
-							style={{
-								display: 'flex',
-								flexWrap: 'wrap',
-								gap: '1rem',
-								marginTop: '1rem',
-								justifyContent: 'center',
-							}}
-						>
-							{hand.map((card, i) => (
+						You must use or discard {forceUseCards} card
+						{forceUseCards > 1 ? 's' : ''} before drawing more.
+					</h2>
+					<div
+						style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							gap: '1rem',
+							marginTop: '1rem',
+							justifyContent: 'center',
+						}}
+					>
+						{hand.map((card, i) => (
+							<div
+								key={i}
+								style={{
+									width: 120 * 1.5,
+									height: (168 + 90) * 1.5, // more height for two vertical buttons
+									perspective: 1000,
+									display: 'flex',
+									flexDirection: 'column',
+									alignItems: 'center',
+									justifyContent: 'flex-start',
+									gap: '0.75rem',
+								}}
+							>
 								<div
-									key={i}
 									style={{
-										width: 120 * 1.5,
-										height: (168 + 90) * 1.5, // more height for two vertical buttons
-										perspective: 1000,
+										width: '100%',
+										height: 168 * 1.5,
+										position: 'relative',
+										display: 'flex',
+										flexDirection: 'row',
+									}}
+								>
+									{/* Front (actual card) */}
+									<CardDisplay card={card.file} />
+								</div>
+
+								{/* Buttons stacked vertically */}
+								<div
+									style={{
 										display: 'flex',
 										flexDirection: 'column',
-										alignItems: 'center',
-										justifyContent: 'flex-start',
-										gap: '0.75rem',
+										gap: '0.5rem',
+										width: '80%', // slightly narrower than the card
+										marginTop: '0.5rem',
 									}}
 								>
-									<div
-										style={{
-											width: '100%',
-											height: 168 * 1.5,
-											position: 'relative',
-											display: 'flex',
-											flexDirection: 'row',
+									<CardButton
+										title={'USE'}
+										backgroundColor={'#202b39'}
+										onClick={() => {
+											if (forceUseCards <= 0) return;
+											setHand(hand.filter((_, index) => index !== i));
+											setForceUseCards(forceUseCards - 1);
 										}}
-									>
-										{/* Front (actual card) */}
-										<img
-											src={`/img/cards/${card}.png`}
-											alt={card}
-											style={{
-												position: 'absolute',
-												width: '100%',
-												height: '100%',
-												backfaceVisibility: 'hidden',
-												borderRadius: 8,
-												objectFit: 'cover',
-												border: '1px solid #ccc',
-											}}
-										/>
-									</div>
-
-									{/* Buttons stacked vertically */}
-									<div
-										style={{
-											display: 'flex',
-											flexDirection: 'column',
-											gap: '0.5rem',
-											width: '80%', // slightly narrower than the card
-											marginTop: '0.5rem',
+										disabled={!card.file.includes('curse_')}
+									/>
+									<CardButton
+										title={'DISCARD'}
+										backgroundColor={'#ff3b3b'}
+										onClick={() => {
+											if (forceUseCards <= 0) return;
+											setHand(hand.filter((_, index) => index !== i));
+											setForceUseCards(forceUseCards - 1);
 										}}
-									>
-										<button
-											onClick={() => {
-												setHand(hand.filter((_, index) => index !== i));
-												setForceUseCards(forceUseCards - 1);
-											}}
-											style={{
-												background: '#ff3b3b',
-												color: 'white',
-												border: 'none',
-												borderRadius: 6,
-												padding: '0.4rem 0.8rem',
-												fontSize: '0.9rem',
-												cursor: 'pointer',
-												width: '100%',
-											}}
-										>
-											Discard
-										</button>
-										{card.includes('curse_') && (
-											<button
-												onClick={() => {
-													setHand(hand.filter((_, index) => index !== i));
-													setForceUseCards(forceUseCards - 1);
-												}}
-												style={{
-													background: '#4caf50',
-													color: 'white',
-													border: 'none',
-													borderRadius: 6,
-													padding: '0.4rem 0.8rem',
-													fontSize: '0.9rem',
-													cursor: 'pointer',
-													width: '100%',
-												}}
-											>
-												Use
-											</button>
-										)}
-									</div>
+									/>
 								</div>
-							))}
+							</div>
+						))}
+					</div>
+				</Overlay>
+
+				<Overlay visible={showcaseCards.length > 0}>
+					<div
+						style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							gap: '1rem',
+							marginTop: '1rem',
+							justifyContent: 'center',
+						}}
+					>
+						{showcaseCards.map((card, i) => (
+							<div
+								key={i}
+								style={{
+									width: 120 * 2,
+									height: (168 + 90) * 2, // more height for two vertical buttons
+									perspective: 1000,
+									display: 'flex',
+									flexDirection: 'column',
+									alignItems: 'center',
+									justifyContent: 'flex-start',
+									gap: '0.75rem',
+								}}
+							>
+								<div
+									style={{
+										width: '100%',
+										height: 168 * 2,
+										position: 'relative',
+										display: 'flex',
+										flexDirection: 'row',
+									}}
+								>
+									<CardDisplay card={card.file} />
+								</div>
+
+								{/* Buttons stacked vertically */}
+								<div
+									style={{
+										display: 'flex',
+										flexDirection: 'column',
+										gap: '0.5rem',
+										width: '80%', // slightly narrower than the card
+										marginTop: '0.5rem',
+									}}
+								>
+									<CardButton
+										title={'USE'}
+										backgroundColor={'#202b39'}
+										onClick={() => {
+											if (showcaseCards.length <= 0) return;
+											setHand((prev) => {
+												const index = prev.indexOf(card);
+												if (index !== -1) {
+													const newCards = [...prev];
+													newCards.splice(index, 1);
+													return newCards;
+												}
+												return prev;
+											});
+
+											if (selectedCards.length > 1) {
+												setSelectedCards(
+													selectedCards.filter((c) => c !== card)
+												);
+											} else {
+												setShowcaseCards([]);
+												setBlurred(false);
+												setAllowClose(false);
+											}
+
+											setUseText(card.file);
+											setUseCard(card);
+										}}
+										onClick={() => {
+											if (showcaseCards.length <= 0) return;
+											setHand(hand.filter((_, index) => index !== i));
+											if (selectedCards.length > 1) {
+												setSelectedCards(
+													selectedCards.filter((c) => c !== card)
+												);
+											} else {
+												setShowcaseCards([]);
+												// setBlurred(false);
+												setAllowClose(false);
+											}
+
+											setUseText(card.file);
+											setUseCard(card);
+										}}
+										disabled={!card.file.includes('curse_')}
+									/>
+									<CardButton
+										title={'DISCARD'}
+										backgroundColor={'#ff3b3b'}
+										onClick={() => {
+											if (showcaseCards.length <= 0) return;
+											setHand((prev) => {
+												const index = prev.indexOf(card);
+												if (index !== -1) {
+													const newCards = [...prev];
+													newCards.splice(index, 1);
+													return newCards;
+												}
+												return prev;
+											});
+
+											if (selectedCards.length > 1) {
+												setSelectedCards(
+													selectedCards.filter((c) => c !== card)
+												);
+											} else {
+												setShowcaseCards([]);
+												setBlurred(false);
+												setAllowClose(false);
+											}
+										}}
+									/>
+								</div>
+							</div>
+						))}
+					</div>
+				</Overlay>
+
+				<Overlay visible={useCard !== null}>
+					<div
+						style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							gap: '1rem',
+							marginTop: '1rem',
+							justifyContent: 'center',
+						}}
+					>
+						<div
+							style={{
+								width: 120 * 2,
+								height: (168 + 90) * 2,
+								perspective: 1000,
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								justifyContent: 'flex-start',
+								gap: '0.75rem',
+							}}
+						>
+							<div
+								style={{
+									width: '100%',
+									height: 168 * 2,
+									position: 'relative',
+									display: 'flex',
+									flexDirection: 'row',
+								}}
+							>
+								<CardDisplay
+									card={useCard == null ? 'card_back' : useCard.file}
+								/>
+							</div>
+
+							<div
+								style={{
+									display: 'flex',
+									flexDirection: 'column',
+									gap: '0.5rem',
+									width: '80%',
+									marginTop: '0.5rem',
+								}}
+							>
+								<CardButton
+									title={'CONTINUE'}
+									backgroundColor={'#ff3b3b'}
+									onClick={() => {
+										if (useCard === null) return;
+										setUseText('');
+										setUseCard(null);
+										setBlurred(false);
+									}}
+								/>
+							</div>
 						</div>
 					</div>
-				}
+				</Overlay>
 			</main>
 		</Layout>
 	);

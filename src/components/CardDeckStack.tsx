@@ -1,10 +1,51 @@
 import React, { forwardRef } from 'react';
+import Overlay from './Overlay';
+import CardButton from './CardButton';
 
 type CardDeckStackProps = {
 	count: number;
 	onDraw: (drawCount: number, maxSelection: number) => void;
 	setBlurred: (blurred: boolean) => void;
 };
+
+const questionTypes = [
+	{
+		title: 'MATCHING',
+		color: '#202b39',
+		drawn: 3,
+		maxSelection: 1,
+	},
+	{
+		title: 'MEASURING',
+		color: '#4a9a5e',
+		drawn: 3,
+		maxSelection: 1,
+	},
+	{
+		title: 'RADAR',
+		color: '#f56d3e',
+		drawn: 2,
+		maxSelection: 1,
+	},
+	{
+		title: 'THERMOMETER',
+		color: '#feb846',
+		drawn: 2,
+		maxSelection: 1,
+	},
+	{
+		title: 'TENTACLES',
+		color: '#8969a6',
+		drawn: 4,
+		maxSelection: 2,
+	},
+	{
+		title: 'PHOTO',
+		color: '#80b2c6',
+		drawn: 1,
+		maxSelection: 1,
+	},
+];
 
 const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 	({ count, onDraw, setBlurred }, ref) => {
@@ -38,7 +79,7 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 								position: 'absolute',
 								bottom: i * 2,
 								left: i * 1,
-								width: 180,
+								width: 250,
 								height: 252,
 								objectFit: 'cover',
 								borderRadius: 8,
@@ -49,179 +90,55 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 					))}
 				</div>
 
-				{
+				<Overlay visible={selectingQuestion}>
+					<h2
+						style={{
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
+						}}
+					>
+						Which type of question did you answer?
+					</h2>
+
 					<div
 						style={{
-							position: 'fixed',
-							top: 0,
-							left: 0,
-							width: '100%',
-							height: '100%',
+							marginTop: '1rem',
 							display: 'flex',
 							flexDirection: 'column',
 							alignItems: 'center',
 							justifyContent: 'center',
-							zIndex: 1000,
-							opacity: selectingQuestion ? 1 : 0,
-							pointerEvents: selectingQuestion ? 'auto' : 'none',
-							transition: '0.3s',
 							rowGap: '1rem',
 						}}
 					>
-						<h2
-							style={{
-								color: 'white',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-							}}
-						>
-							Which type of question did you answer?
-						</h2>
-						<button
+						{questionTypes.map((question, index) => (
+							<CardButton
+								key={index}
+								title={question.title}
+								backgroundColor={question.color}
+								onClick={() => {
+									setSelectingQuestion(false);
+									// delay 100ms
+									setTimeout(() => {
+										onDraw(question.drawn, question.maxSelection);
+									}, 500);
+								}}
+								style={{
+									width: 220,
+								}}
+							/>
+						))}
+
+						<CardButton
+							title='CANCEL DRAW'
+							backgroundColor='#ff3b3b'
 							onClick={() => {
 								setSelectingQuestion(false);
-								// delay 100ms
-								setTimeout(() => {
-									onDraw(3, 1);
-								}, 500);
+								setBlurred(false);
 							}}
-							style={{
-								width: 160,
-								padding: '0.5rem',
-								color: 'white',
-								border: '0px solid black',
-								borderRadius: 4,
-								background: '#202b39',
-								cursor: 'pointer',
-								letterSpacing: '0.1rem',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-								fontWeight: '900',
-								fontSize: '1rem',
-							}}
-						>
-							<strong>MATCHING</strong>
-						</button>
-						<button
-							onClick={() => {
-								setSelectingQuestion(false);
-								// delay 100ms
-								setTimeout(() => {
-									onDraw(3, 1);
-								}, 500);
-							}}
-							style={{
-								width: 160,
-								padding: '0.5rem',
-								color: 'white',
-								border: '0px solid black',
-								borderRadius: 4,
-								background: '#4a9a5e',
-								cursor: 'pointer',
-								letterSpacing: '0.1rem',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-								fontWeight: '900',
-								fontSize: '1rem',
-							}}
-						>
-							<strong>MEASURING</strong>
-						</button>
-						<button
-							onClick={() => {
-								setSelectingQuestion(false);
-								// delay 100ms
-								setTimeout(() => {
-									onDraw(2, 1);
-								}, 500);
-							}}
-							style={{
-								width: 160,
-								padding: '0.5rem',
-								color: 'white',
-								border: '0px solid black',
-								borderRadius: 4,
-								background: '#f56d3e',
-								cursor: 'pointer',
-								letterSpacing: '0.1rem',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-								fontWeight: '900',
-								fontSize: '1rem',
-							}}
-						>
-							<strong>RADAR</strong>
-						</button>
-						<button
-							onClick={() => {
-								setSelectingQuestion(false);
-								// delay 100ms
-								setTimeout(() => {
-									onDraw(2, 1);
-								}, 500);
-							}}
-							style={{
-								width: 160,
-								padding: '0.5rem',
-								color: 'white',
-								border: '0px solid black',
-								borderRadius: 4,
-								background: '#feb846',
-								cursor: 'pointer',
-								letterSpacing: '0.1rem',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-								fontWeight: '900',
-								fontSize: '1rem',
-							}}
-						>
-							<strong>THERMOMETER</strong>
-						</button>
-						<button
-							onClick={() => {
-								setSelectingQuestion(false);
-								// delay 100ms
-								setTimeout(() => {
-									onDraw(4, 2);
-								}, 500);
-							}}
-							style={{
-								width: 160,
-								padding: '0.5rem',
-								color: 'white',
-								border: '0px solid black',
-								borderRadius: 4,
-								background: '#8969a6',
-								cursor: 'pointer',
-								letterSpacing: '0.1rem',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-								fontWeight: '900',
-								fontSize: '1rem',
-							}}
-						>
-							<strong>TENTACLES</strong>
-						</button>
-						<button
-							onClick={() => {
-								setSelectingQuestion(false);
-								// delay 100ms
-								setTimeout(() => {
-									onDraw(1, 1);
-								}, 500);
-							}}
-							style={{
-								width: 160,
-								padding: '0.5rem',
-								color: 'white',
-								border: '0px solid black',
-								borderRadius: 4,
-								background: '#80b2c6',
-								cursor: 'pointer',
-								letterSpacing: '0.1rem',
-								fontFamily: 'VAG Rounded Next, sans-serif',
-								fontWeight: '900',
-								fontSize: '1rem',
-							}}
-						>
-							<strong>PHOTO</strong>
-						</button>
+							style={{ marginTop: '1rem', width: 220 }}
+						/>
 					</div>
-				}
+				</Overlay>
 			</div>
 		);
 	}
