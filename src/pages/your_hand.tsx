@@ -353,11 +353,11 @@ export default function Draw() {
 					<CardButton
 						title={
 							selectedCards.length !== maxSelectedCards
-								? `Select ${maxSelectedCards - selectedCards.length} more card${
-										maxSelectedCards - selectedCards.length > 1 ? 's' : ''
+								? `SELECT ${maxSelectedCards - selectedCards.length} MORE CARD${
+										maxSelectedCards - selectedCards.length > 1 ? 'S' : ''
 								  }`
-								: `Keep ${maxSelectedCards} card${
-										maxSelectedCards > 1 ? 's' : ''
+								: `KEEP ${maxSelectedCards} CARD${
+										maxSelectedCards > 1 ? 'S' : ''
 								  }`
 						}
 						disabled={selectedCards.length !== maxSelectedCards}
@@ -373,7 +373,7 @@ export default function Draw() {
 						}}
 						style={{
 							marginTop: '2rem',
-							width: 200,
+							width: 250,
 						}}
 					/>
 				</Overlay>
@@ -527,22 +527,6 @@ export default function Draw() {
 											} else {
 												setShowcaseCards([]);
 												setBlurred(false);
-												setAllowClose(false);
-											}
-
-											setUseText(card.file);
-											setUseCard(card);
-										}}
-										onClick={() => {
-											if (showcaseCards.length <= 0) return;
-											setHand(hand.filter((_, index) => index !== i));
-											if (selectedCards.length > 1) {
-												setSelectedCards(
-													selectedCards.filter((c) => c !== card)
-												);
-											} else {
-												setShowcaseCards([]);
-												// setBlurred(false);
 												setAllowClose(false);
 											}
 
