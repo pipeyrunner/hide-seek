@@ -2,102 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import CardDeckStack from '../components/CardDeckStack';
 import CardDisplay from '../components/CardDisplay';
-import { v4 as uuidv4 } from 'uuid';
 import CardButton from '../components/CardButton';
-
-type Card = { file: string; count?: number };
-type DeckCard = {
-	file: string;
-	id: string;
-};
-
-const cardDefinitions = [
-	{ file: 'time_bonus_5', count: 25 },
-	{ file: 'time_bonus_10', count: 15 },
-	{ file: 'time_bonus_15', count: 10 },
-	{ file: 'time_bonus_20', count: 3 },
-	{ file: 'time_bonus_30', count: 2 },
-	{ file: 'powerup_discard_1_draw_2', count: 4 },
-	{ file: 'powerup_discard_2_draw_3', count: 4 },
-	{ file: 'powerup_draw_1_expand_1', count: 2 },
-	{ file: 'powerup_duplicate_another_card', count: 2 },
-	{ file: 'powerup_move', count: 1 },
-	{ file: 'powerup_randomize_question', count: 4 },
-	{ file: 'powerup_veto_question', count: 4 },
-	...[
-		'curse_bridge_troll',
-		'curse_cairn',
-		'curse_distant_cuisine',
-		'curse_drained_brain',
-		'curse_egg_partner',
-		'curse_endless_tumble',
-		'curse_gamblers_feet',
-		'curse_hidden_hangman',
-		'curse_impressionable_consumer',
-		'curse_jammed_door',
-		'curse_labyrinth',
-		'curse_lemon_phylactery',
-		'curse_luxury_car',
-		'curse_mediocre_travel_agent',
-		'curse_overflowing_chalice',
-		'curse_ransom_note',
-		'curse_right_turn',
-		'curse_spotty_memory',
-		'curse_the_bird_guide',
-		'curse_the_unguided_tourist',
-		'curse_the_uturn',
-		'curse_urban_explorer',
-		'curse_water_weight',
-		'curse_zoologist',
-	].map((file) => ({ file, count: 1 })),
-];
-
-function generateDeck(): DeckCard[] {
-	const fullDeck: DeckCard[] = [];
-	for (const { file, count } of cardDefinitions) {
-		for (let i = 0; i < (count || 1); i++) {
-			fullDeck.push({
-				file,
-				id: uuidv4(),
-			});
-		}
-	}
-	return shuffle(fullDeck);
-}
-
-function shuffle<T>(array: T[]): T[] {
-	const result = [...array];
-	for (let i = result.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[result[i], result[j]] = [result[j], result[i]];
-	}
-	return result;
-}
-
-const Overlay = ({ visible, children, blur = true }) => (
-	<div
-		style={{
-			position: 'fixed',
-			top: 0,
-			left: 0,
-			width: '100%',
-			height: '100%',
-			display: 'flex',
-			flexDirection: 'column',
-			alignItems: 'center',
-			justifyContent: 'center',
-			zIndex: 1000,
-			opacity: visible ? 1 : 0,
-			pointerEvents: visible ? 'auto' : 'none',
-			transition: '0.3s',
-		}}
-	>
-		{children}
-	</div>
-);
+import {
+	cardDefinitions,
+	DeckCard,
+	findCardByFile,
+	getDeck,
+	getUseText,
+} from '../core/deck';
+import Overlay from '../components/Overlay';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Draw() {
-	const [deck, setDeck] = useState(shuffle(generateDeck()));
+	const [deck, setDeck] = useState(getDeck());
 	const [hand, setHand] = useState<DeckCard[]>([]);
 	const [drawn, setDrawn] = useState<DeckCard[]>([]);
 	const [selecting, setSelecting] = useState(false);
@@ -112,9 +29,24 @@ export default function Draw() {
 		maxSelection: number;
 	}>(null);
 	const [showcaseCards, setShowcaseCards] = useState<[DeckCard] | []>([]);
+	const [showcaseShowCancel, setShowcaseShowCancel] = useState(false);
 	const [allowClose, setAllowClose] = useState(false);
 	const [useText, setUseText] = useState('');
 	const [useCard, setUseCard] = useState<DeckCard | null>(null);
+
+	const [discardOptions, setDiscardOptions] = useState<DeckCard[]>([]);
+	const [discardCount, setDiscardCount] = useState(0);
+	const [discardSelection, setDiscardSelection] = useState<DeckCard[]>([]);
+
+	const [duplicating, setDuplicating] = useState(false);
+	const [duplicateSelection, setDuplicateSelection] = useState<DeckCard | null>(
+		null
+	);
+
+	const [freeQuestions, setFreeQuestions] = useState(0);
+	const [overflowingChaliceRounds, setOverflowingChaliceRounds] = useState(0);
+
+	const [freeQuestionUsed, setFreeQuestionUsed] = useState(false);
 
 	const handleDraw = (cards: number, maxSelection: number) => {
 		if (maxSelection + hand.length > handSize) {
@@ -133,16 +65,10 @@ export default function Draw() {
 		setTimeout(() => {
 			setFlipped(drawnNow);
 
-			if (cards == 1) {
-				setSelectedCards([drawnNow[0]]);
+			if (cards == maxSelection) {
+				setSelectedCards(drawnNow);
 			}
 		}, 200);
-	};
-
-	const handleKeep = (card: DeckCard) => {
-		setHand([...hand, card]);
-		setDrawn(drawn.filter((c) => c.id !== card.id));
-		setFlipped(flipped.filter((c) => c.id !== card.id));
 	};
 
 	const handleDiscard = () => {
@@ -171,12 +97,12 @@ export default function Draw() {
 	}, []);
 
 	useEffect(() => {
-		if (forceUseCards === 0 && pendingDraw) {
+		if (forceUseCards === 0 && discardCount === 0 && pendingDraw) {
 			const { cards, maxSelection } = pendingDraw;
 			setPendingDraw(null); // clear pending
 			handleDraw(cards, maxSelection); // rerun it
 		}
-	}, [forceUseCards, pendingDraw]);
+	}, [forceUseCards, pendingDraw, discardCount]);
 
 	return (
 		<Layout title='Your Hand' description='Draw cards from the deck'>
@@ -227,7 +153,19 @@ export default function Draw() {
 						count={deck.length}
 						onDraw={handleDraw}
 						setBlurred={setBlurred}
+						overFlowingChaliceRounds={overflowingChaliceRounds}
+						setOverFlowingChaliceRounds={setOverflowingChaliceRounds}
+						freeQuestions={freeQuestions}
+						setFreeQuestions={setFreeQuestions}
+						setFreeQuestionUsed={setFreeQuestionUsed}
 					/>
+					<button
+						onClick={() => {
+							setHand([findCardByFile('curse_impressionable_consumer', deck)!]);
+						}}
+					>
+						Test Hand
+					</button>
 
 					<h2 style={{ marginTop: '2rem' }}>Your Hand</h2>
 					<div
@@ -255,6 +193,7 @@ export default function Draw() {
 									setShowcaseCards([card]);
 									setBlurred(true);
 									setAllowClose(true);
+									setShowcaseShowCancel(true);
 								}}
 							/>
 						))}
@@ -510,30 +449,31 @@ export default function Draw() {
 										backgroundColor={'#202b39'}
 										onClick={() => {
 											if (showcaseCards.length <= 0) return;
-											setHand((prev) => {
-												const index = prev.indexOf(card);
-												if (index !== -1) {
-													const newCards = [...prev];
-													newCards.splice(index, 1);
-													return newCards;
-												}
-												return prev;
-											});
+											// setHand((prev) => {
+											// 	const index = prev.indexOf(card);
+											// 	if (index !== -1) {
+											// 		const newCards = [...prev];
+											// 		newCards.splice(index, 1);
+											// 		return newCards;
+											// 	}
+											// 	return prev;
+											// });
 
-											if (selectedCards.length > 1) {
-												setSelectedCards(
-													selectedCards.filter((c) => c !== card)
-												);
-											} else {
-												setShowcaseCards([]);
-												setBlurred(false);
-												setAllowClose(false);
-											}
+											// if (selectedCards.length > 1) {
+											// 	setSelectedCards(
+											// 		selectedCards.filter((c) => c !== card)
+											// 	);
+											// } else {
+											// 	setShowcaseCards([]);
+											// 	setAllowClose(false);
+											// }
+											setShowcaseCards([]);
 
 											setUseText(card.file);
 											setUseCard(card);
+											setShowcaseShowCancel(false);
 										}}
-										disabled={!card.file.includes('curse_')}
+										disabled={card.file.includes('time_bonus_')}
 									/>
 									<CardButton
 										title={'DISCARD'}
@@ -559,8 +499,25 @@ export default function Draw() {
 												setBlurred(false);
 												setAllowClose(false);
 											}
+											setShowcaseShowCancel(false);
 										}}
 									/>
+									{showcaseShowCancel && (
+										<CardButton
+											title={'CANCEL'}
+											backgroundColor={'#202b39'}
+											onClick={() => {
+												if (showcaseCards.length < 1) return;
+												setShowcaseCards([]);
+												setBlurred(false);
+												setAllowClose(false);
+												setShowcaseShowCancel(false);
+											}}
+											style={{
+												marginTop: '2rem',
+											}}
+										/>
+									)}
 								</div>
 							</div>
 						))}
@@ -568,6 +525,14 @@ export default function Draw() {
 				</Overlay>
 
 				<Overlay visible={useCard !== null}>
+					<h2
+						style={{
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
+						}}
+					>
+						{useCard === null ? '' : getUseText(useCard)}
+					</h2>
 					<div
 						style={{
 							display: 'flex',
@@ -613,7 +578,170 @@ export default function Draw() {
 								}}
 							>
 								<CardButton
-									title={'CONTINUE'}
+									title={'CONFIRM USE'}
+									backgroundColor={'#202b39'}
+									onClick={() => {
+										if (useCard === null) return;
+
+										setHand((prev) => {
+											const index = prev.indexOf(useCard);
+											if (index !== -1) {
+												const newCards = [...prev];
+												newCards.splice(index, 1);
+												return newCards;
+											}
+											return prev;
+										});
+										let morePages =
+											useCard === null ? false : useCard.hasMorePages;
+
+										switch (useCard.file) {
+											case 'powerup_discard_1_draw_2':
+												setDiscardCount(1);
+												setDiscardOptions(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												setDiscardSelection([]);
+												if (hand.length === 2) {
+													setDiscardSelection(
+														hand
+															.map((card) => card)
+															.filter((c) => c.id !== useCard.id)
+													);
+												}
+												setPendingDraw({ cards: 2, maxSelection: 2 });
+												break;
+											case 'powerup_discard_2_draw_3':
+												setDiscardCount(2);
+												setDiscardOptions(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												setDiscardSelection([]);
+												if (hand.length === 3) {
+													setDiscardSelection(
+														hand
+															.map((card) => card)
+															.filter((c) => c.id !== useCard.id)
+													);
+												}
+												setPendingDraw({ cards: 3, maxSelection: 3 });
+												break;
+											case 'powerup_draw_1_expand_1':
+												setHandSize((prev) => prev + 1);
+												setPendingDraw({ cards: 1, maxSelection: 1 });
+												break;
+											case 'powerup_duplicate_another_card':
+												setDuplicating(true);
+												setDuplicateSelection(null);
+												break;
+											case 'curse_egg_partner':
+											case 'curse_hidden_hangman':
+											case 'curse_jammed_door':
+											case 'curse_urban_explorer':
+												setDiscardCount(2);
+												setDiscardOptions(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												setDiscardSelection([]);
+												if (hand.length === 3) {
+													setDiscardSelection(
+														hand
+															.map((card) => card)
+															.filter((c) => c.id !== useCard.id)
+													);
+												}
+												break;
+											case 'curse_right_turn':
+												setDiscardCount(1);
+												setDiscardOptions(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												setDiscardSelection([]);
+												if (hand.length === 2) {
+													setDiscardSelection(
+														hand
+															.map((card) => card)
+															.filter((c) => c.id !== useCard.id)
+													);
+												}
+												break;
+											case 'curse_overflowing_chalice':
+												setOverflowingChaliceRounds((prev) => prev + 3);
+												setDiscardCount(1);
+												setDiscardOptions(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												setDiscardSelection([]);
+												if (hand.length === 2) {
+													setDiscardSelection(
+														hand
+															.map((card) => card)
+															.filter((c) => c.id !== useCard.id)
+													);
+												}
+												break;
+											case 'curse_lemon_phylactery':
+												setDiscardCount(1);
+												let tHand = hand.filter((c) =>
+													c.file.includes('powerup_')
+												);
+												setDiscardOptions(tHand);
+												setDiscardSelection([]);
+												if (tHand.length === 1) {
+													setDiscardSelection(tHand);
+												}
+												break;
+											case 'curse_spotty_memory':
+												setDiscardCount(1);
+												let jhand = hand.filter((c) =>
+													c.file.includes('time_bonus_')
+												);
+												setDiscardOptions(jhand);
+												setDiscardSelection([]);
+												if (jhand.length === 1) {
+													setDiscardSelection(jhand);
+												}
+												break;
+											case 'powerup_move':
+											case 'curse_drained_brain':
+												setDiscardCount(hand.length - 1);
+												setDiscardOptions(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												setDiscardSelection([]);
+												setDiscardSelection(
+													hand
+														.map((card) => card)
+														.filter((c) => c.id !== useCard.id)
+												);
+												break;
+											case 'curse_impressionable_consumer':
+												setFreeQuestions((prev) => prev + 1);
+												setBlurred(false);
+												break;
+											default:
+												setBlurred(false);
+												break;
+										}
+										setUseText('');
+										setUseCard(null);
+									}}
+									disabled={useCard !== null && !useCard.canUse(hand)}
+								/>
+								<CardButton
+									title={'CANCEL'}
 									backgroundColor={'#ff3b3b'}
 									onClick={() => {
 										if (useCard === null) return;
@@ -621,10 +749,203 @@ export default function Draw() {
 										setUseCard(null);
 										setBlurred(false);
 									}}
+									style={{
+										marginTop: '2rem',
+									}}
 								/>
 							</div>
 						</div>
 					</div>
+				</Overlay>
+
+				<Overlay visible={discardCount > 0}>
+					<h2
+						style={{
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
+						}}
+					>
+						Select {discardCount} card{discardCount > 1 ? 's' : ''} to discard.
+					</h2>
+
+					<div
+						style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							gap: '1rem',
+							marginTop: '1rem',
+							justifyContent: 'center',
+						}}
+					>
+						{discardOptions.map((card, i) => (
+							<div
+								key={i}
+								style={{
+									width: 120 * 1.5,
+									height: 168 * 1.5,
+									perspective: 1000,
+								}}
+							>
+								<CardDisplay
+									card={card.file}
+									onClick={() => {
+										if (!(discardCount > 0)) return;
+										if (discardSelection.includes(card)) {
+											setDiscardSelection(
+												discardSelection.filter((c) => c.id !== card.id)
+											);
+										} else if (discardSelection.length < discardCount) {
+											setDiscardSelection([...discardSelection, card]);
+										} else {
+											// remove the first selected card if max is reached
+											setDiscardSelection([...discardSelection.slice(1), card]);
+										}
+									}}
+									style={{
+										transform: `translateY(${
+											discardSelection.includes(card) ? -20 : 0
+										}px)`,
+										left: '0%',
+									}}
+								/>
+							</div>
+						))}
+					</div>
+
+					<CardButton
+						title={
+							discardSelection.length !== discardCount
+								? `SELECT ${discardCount - discardSelection.length} MORE CARD${
+										discardCount - discardSelection.length > 1 ? 'S' : ''
+								  }`
+								: `DISCARD ${discardCount} CARD${discardCount > 1 ? 'S' : ''}`
+						}
+						disabled={discardSelection.length !== discardCount}
+						backgroundColor={'#ff3b3b'}
+						onClick={() => {
+							if (discardCount < 1) return;
+							let s = discardSelection.map((card) => card);
+							let newHand = [];
+
+							for (let card of hand) {
+								let kept = true;
+								for (let c of s) {
+									if (card.id === c.id) kept = false;
+								}
+								if (kept) newHand.push(card);
+							}
+
+							setHand(newHand);
+
+							setDiscardSelection([]);
+							setDiscardCount(0);
+							setDiscardOptions([]);
+
+							if (pendingDraw === null) {
+								setBlurred(false);
+							}
+						}}
+						style={{
+							marginTop: '2rem',
+							width: 250,
+						}}
+					/>
+				</Overlay>
+
+				<Overlay visible={duplicating}>
+					<h2
+						style={{
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
+						}}
+					>
+						Select a card to duplicate.
+					</h2>
+
+					<div
+						style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							gap: '1rem',
+							marginTop: '1rem',
+							justifyContent: 'center',
+						}}
+					>
+						{hand.map((card, i) => (
+							<div
+								key={i}
+								style={{
+									width: 120 * 1.5,
+									height: 168 * 1.5,
+									perspective: 1000,
+								}}
+							>
+								<CardDisplay
+									card={card.file}
+									onClick={() => {
+										if (!duplicating) return;
+										setDuplicateSelection(card);
+									}}
+									style={{
+										transform: `translateY(${
+											duplicateSelection !== null &&
+											duplicateSelection!.id == card.id
+												? -20
+												: 0
+										}px)`,
+										left: '0%',
+									}}
+								/>
+							</div>
+						))}
+					</div>
+
+					<CardButton
+						title={
+							duplicateSelection === null ? `SELECT A CARD` : `DUPLICATE CARD`
+						}
+						disabled={duplicateSelection === null}
+						backgroundColor={'#ff3b3b'}
+						onClick={() => {
+							if (!duplicating) return;
+							let newCard = duplicateSelection!;
+							newCard = { ...newCard, id: uuidv4() };
+
+							setHand([...hand, newCard]);
+
+							setDuplicateSelection(null);
+							setDuplicating(false);
+							setBlurred(false);
+						}}
+						style={{
+							marginTop: '2rem',
+							width: 250,
+						}}
+					/>
+				</Overlay>
+
+				<Overlay visible={freeQuestionUsed}>
+					<h2
+						style={{
+							color: 'white',
+							fontFamily: 'VAG Rounded Next, sans-serif',
+						}}
+					>
+						Due to the Curse of the Impressionable Consumer, you have recieived
+						no reward for this question.
+					</h2>
+					<CardButton
+						title={'OK'}
+						backgroundColor={'#ff3b3b'}
+						onClick={() => {
+							setFreeQuestionUsed(false);
+							setBlurred(false);
+						}}
+						style={{
+							marginTop: '2rem',
+							width: 250,
+						}}
+					/>
 				</Overlay>
 			</main>
 		</Layout>

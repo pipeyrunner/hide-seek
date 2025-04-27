@@ -6,7 +6,11 @@ type OverlayProps = {
 	blur?: boolean;
 };
 
-function Overlay({ visible, children }: OverlayProps) {
+const Overlay: React.FC<OverlayProps> = ({
+	visible,
+	children,
+	blur = true,
+}) => {
 	return (
 		<div
 			style={{
@@ -23,11 +27,12 @@ function Overlay({ visible, children }: OverlayProps) {
 				opacity: visible ? 1 : 0,
 				pointerEvents: visible ? 'auto' : 'none',
 				transition: '0.3s',
+				backdropFilter: blur ? 'blur(8px)' : undefined,
 			}}
 		>
 			{children}
 		</div>
 	);
-}
+};
 
 export default Overlay;

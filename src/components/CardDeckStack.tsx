@@ -6,6 +6,11 @@ type CardDeckStackProps = {
 	count: number;
 	onDraw: (drawCount: number, maxSelection: number) => void;
 	setBlurred: (blurred: boolean) => void;
+	overFlowingChaliceRounds: number;
+	freeQuestions: number;
+	setOverFlowingChaliceRounds: (rounds: number) => void;
+	setFreeQuestions: (questions: number) => void;
+	setFreeQuestionUsed: (used: boolean) => void;
 };
 
 const questionTypes = [
@@ -48,7 +53,19 @@ const questionTypes = [
 ];
 
 const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
-	({ count, onDraw, setBlurred }, ref) => {
+	(
+		{
+			count,
+			onDraw,
+			setBlurred,
+			overFlowingChaliceRounds,
+			setOverFlowingChaliceRounds,
+			freeQuestions,
+			setFreeQuestions,
+			setFreeQuestionUsed,
+		},
+		ref
+	) => {
 		const [showOptions, setShowOptions] = React.useState(false);
 		const [selectingQuestion, setSelectingQuestion] = React.useState(false);
 		const visibleCards = Math.min(count, 10);
@@ -117,9 +134,20 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 								backgroundColor={question.color}
 								onClick={() => {
 									setSelectingQuestion(false);
-									// delay 100ms
+									if (freeQuestions > 0) {
+										setFreeQuestions(freeQuestions - 1);
+										setFreeQuestionUsed(true);
+										return;
+									}
+
 									setTimeout(() => {
-										onDraw(question.drawn, question.maxSelection);
+										if (overFlowingChaliceRounds > 0) {
+											setOverFlowingChaliceRounds(overFlowingChaliceRounds - 1);
+										}
+										onDraw(
+											question.drawn + (overFlowingChaliceRounds > 0 ? 1 : 0),
+											question.maxSelection
+										);
 									}, 500);
 								}}
 								style={{
