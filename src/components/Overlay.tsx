@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 type OverlayProps = {
 	visible: boolean;
@@ -11,6 +11,17 @@ const Overlay: React.FC<OverlayProps> = ({
 	children,
 	blur = true,
 }) => {
+	useEffect(() => {
+		if (visible) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [visible]);
+
 	return (
 		<div
 			style={{
@@ -19,18 +30,29 @@ const Overlay: React.FC<OverlayProps> = ({
 				left: 0,
 				width: '100%',
 				height: '100%',
-				display: 'flex',
+				overflowY: visible ? 'auto' : 'hidden', // ✅ allow vertical scroll inside overlay
+				// backgroundColor: blur ? 'rgba(0, 0, 0, 0.5)' : 'transparent', // ✅ make sure there's a dim background
+				backdropFilter: blur ? 'blur(8px)' : undefined,
+				display: visible ? 'flex' : 'none', // ✅ hide completely when not visible
 				flexDirection: 'column',
 				alignItems: 'center',
-				justifyContent: 'center',
+				justifyContent: 'flex-start', // ✅ start from top, allow scrolling down
+				padding: '2rem 1rem', // ✅ some space at top/bottom
 				zIndex: 1000,
-				opacity: visible ? 1 : 0,
-				pointerEvents: visible ? 'auto' : 'none',
-				transition: '0.3s',
-				backdropFilter: blur ? 'blur(8px)' : undefined,
 			}}
 		>
-			{children}
+			<div
+				style={{
+					width: '100%',
+					maxWidth: 600,
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					gap: '1rem',
+				}}
+			>
+				{children}
+			</div>
 		</div>
 	);
 };
