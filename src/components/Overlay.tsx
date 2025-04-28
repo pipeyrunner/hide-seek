@@ -44,7 +44,6 @@ const Overlay: React.FC<OverlayProps> = ({
 			<div
 				style={{
 					width: '100%',
-					maxWidth: 600,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
