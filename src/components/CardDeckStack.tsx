@@ -76,8 +76,8 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 					ref={ref}
 					style={{
 						position: 'relative',
-						width: 180,
-						height: 252,
+						width: 180 * 0.6,
+						height: 252 * 0.6,
 						cursor: count > 0 ? 'pointer' : 'default',
 						margin: 'auto',
 					}}
@@ -96,8 +96,8 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 								position: 'absolute',
 								bottom: i * 2,
 								left: i * 1,
-								width: 250,
-								height: 252,
+								width: 250 * 0.6,
+								height: 252 * 0.6,
 								objectFit: 'cover',
 								borderRadius: 8,
 								boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
@@ -124,37 +124,46 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 							flexDirection: 'column',
 							alignItems: 'center',
 							justifyContent: 'center',
-							rowGap: '1rem',
 						}}
 					>
-						{questionTypes.map((question, index) => (
-							<CardButton
-								key={index}
-								title={question.title}
-								backgroundColor={question.color}
-								onClick={() => {
-									setSelectingQuestion(false);
-									if (freeQuestions > 0) {
-										setFreeQuestions(freeQuestions - 1);
-										setFreeQuestionUsed(true);
-										return;
-									}
-
-									setTimeout(() => {
-										if (overFlowingChaliceRounds > 0) {
-											setOverFlowingChaliceRounds(overFlowingChaliceRounds - 1);
+						<div
+							style={{
+								display: 'grid',
+								gridTemplateColumns: '1fr 1fr',
+								gap: '1rem',
+							}}
+						>
+							{questionTypes.map((question, index) => (
+								<CardButton
+									key={index}
+									title={question.title}
+									backgroundColor={question.color}
+									onClick={() => {
+										setSelectingQuestion(false);
+										if (freeQuestions > 0) {
+											setFreeQuestions(freeQuestions - 1);
+											setFreeQuestionUsed(true);
+											return;
 										}
-										onDraw(
-											question.drawn + (overFlowingChaliceRounds > 0 ? 1 : 0),
-											question.maxSelection
-										);
-									}, 500);
-								}}
-								style={{
-									width: 220,
-								}}
-							/>
-						))}
+
+										setTimeout(() => {
+											if (overFlowingChaliceRounds > 0) {
+												setOverFlowingChaliceRounds(
+													overFlowingChaliceRounds - 1
+												);
+											}
+											onDraw(
+												question.drawn + (overFlowingChaliceRounds > 0 ? 1 : 0),
+												question.maxSelection
+											);
+										}, 500);
+									}}
+									style={{
+										width: 180, // slightly smaller width to fit grid
+									}}
+								/>
+							))}
+						</div>
 
 						<CardButton
 							title='CANCEL DRAW'
@@ -163,7 +172,10 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 								setSelectingQuestion(false);
 								setBlurred(false);
 							}}
-							style={{ marginTop: '1rem', width: 220 }}
+							style={{
+								marginTop: '2rem',
+								width: 220,
+							}}
 						/>
 					</div>
 				</Overlay>

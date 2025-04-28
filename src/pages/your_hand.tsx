@@ -22,7 +22,7 @@ export default function Draw() {
 	const [selectedCards, setSelectedCards] = useState<DeckCard[]>([]);
 	const [maxSelectedCards, setMaxSelectedCards] = useState(3);
 	const [blurred, setBlurred] = useState(false);
-	const [handSize, setHandSize] = useState(5);
+	const [handSize, setHandSize] = useState(6);
 	const [forceUseCards, setForceUseCards] = useState(0);
 	const [pendingDraw, setPendingDraw] = useState<null | {
 		cards: number;
@@ -182,8 +182,8 @@ export default function Draw() {
 								src={`/img/cards/${card.file}.png`}
 								alt={card.id}
 								style={{
-									width: 100,
-									height: 140,
+									width: 100 * 1.25,
+									height: 140 * 1.25,
 									objectFit: 'cover',
 									borderRadius: 6,
 									border: '1px solid #ccc',
@@ -204,8 +204,8 @@ export default function Draw() {
 								src='/img/cards/card_back.png'
 								alt='Card back'
 								style={{
-									width: 100,
-									height: 140,
+									width: 100 * 1.25,
+									height: 140 * 1.25,
 									objectFit: 'cover',
 									borderRadius: 6,
 									border: '1px solid #ccc',
@@ -217,14 +217,16 @@ export default function Draw() {
 				</div>
 
 				<Overlay visible={selecting}>
-					<h2
-						style={{
-							color: 'white',
-							fontFamily: 'VAG Rounded Next, sans-serif',
-						}}
-					>
-						Click Cards to Keep
-					</h2>
+					{drawn.length !== maxSelectedCards && (
+						<h2
+							style={{
+								color: 'white',
+								fontFamily: 'VAG Rounded Next, sans-serif',
+							}}
+						>
+							Click Cards to Select Them
+						</h2>
+					)}
 					<div
 						style={{
 							display: 'flex',
@@ -253,9 +255,11 @@ export default function Draw() {
 											(flipped.includes(card)
 												? 'rotateY(0deg)'
 												: 'rotateY(180deg)') +
-											` translateY(${
-												selectedCards.includes(card) ? -20 : 0
-											}px)`,
+											(drawn.length !== maxSelectedCards
+												? ` translateY(${
+														selectedCards.includes(card) ? -20 : 0
+												  }px)`
+												: ''),
 										transition: 'transform 0.6s ease',
 									}}
 								>
@@ -263,6 +267,7 @@ export default function Draw() {
 										card={card.file}
 										onClick={() => {
 											if (!selecting) return;
+											if (drawn.length === maxSelectedCards) return;
 											if (selectedCards.includes(card)) {
 												setSelectedCards(
 													selectedCards.filter((c) => c.id !== card.id)
@@ -274,7 +279,13 @@ export default function Draw() {
 												setSelectedCards([...selectedCards.slice(1), card]);
 											}
 										}}
-										style={{ marginLeft: '-50%' }}
+										style={{
+											marginLeft: '-50%',
+											cursor:
+												drawn.length === maxSelectedCards
+													? 'default'
+													: 'pointer',
+										}}
 									/>
 									<CardDisplay
 										card={'card_back'}
