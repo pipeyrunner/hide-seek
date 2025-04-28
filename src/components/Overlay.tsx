@@ -43,11 +43,11 @@ const Overlay: React.FC<OverlayProps> = ({
 		>
 			<div
 				style={{
-					display: 'flex',
-					flexWrap: 'wrap',
-					justifyContent: 'center',
-					gap: '1rem',
 					width: '100%',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					gap: '1rem',
 				}}
 			>
 				{children}
