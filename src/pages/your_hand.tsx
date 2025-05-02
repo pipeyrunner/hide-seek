@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import CardDeckStack from '../components/CardDeckStack';
-import CardDisplay from '../components/CardDisplay';
-import CardButton from '../components/CardButton';
 import {
 	cardDefinitions,
 	DeckCard,
-	findCardByFile,
+	DeckCardData,
+	deserializeDeck,
 	getDeck,
-	getUseText,
+	serializeDeck,
 } from '../core/deck';
-import Overlay from '../components/Overlay';
-import { v4 as uuidv4 } from 'uuid';
 import { OverlayType } from '../core/overlay';
 import QuestionSelectOverlay from '../components/hand/overlays/QuestionSelectOverlay';
 import SelectingOverlay from '../components/hand/overlays/SelectingOverlay';
@@ -22,15 +19,47 @@ import DiscardOverlay from '../components/hand/overlays/DiscardOverlay';
 import ShowcaseOverlay from '../components/hand/overlays/ShowcaseOverlay';
 import UseCardOverlay from '../components/hand/overlays/UseCardOverlay';
 
+const saveGameState = (state: {
+	deck: DeckCardData[];
+	hand: DeckCardData[];
+	handSize: number;
+	freeQuestions: number;
+	overflowingChaliceRounds: number;
+}) => {
+	localStorage.setItem('gameState', JSON.stringify(state));
+};
+
+const loadGameState = (): Partial<{
+	deck: DeckCardData[];
+	hand: DeckCardData[];
+	handSize: number;
+	freeQuestions: number;
+	overflowingChaliceRounds: number;
+}> => {
+	const stored = localStorage.getItem('gameState');
+	if (!stored) return {};
+	try {
+		return JSON.parse(stored);
+	} catch {
+		return {};
+	}
+};
+
 export default function Draw() {
-	const [deck, setDeck] = useState(getDeck());
-	const [hand, setHand] = useState<DeckCard[]>([]);
+	const gameState = loadGameState();
+
+	const [deck, setDeck] = useState(
+		deserializeDeck(gameState.deck) ?? getDeck()
+	);
+	const [hand, setHand] = useState<DeckCard[]>(
+		deserializeDeck(gameState.hand) ?? []
+	);
 	const [drawn, setDrawn] = useState<DeckCard[]>([]);
 	const [flipped, setFlipped] = useState<DeckCard[]>([]);
 	const [selectedCards, setSelectedCards] = useState<DeckCard[]>([]);
 	const [maxSelectedCards, setMaxSelectedCards] = useState(3);
 	const [blurred, setBlurred] = useState(false);
-	const [handSize, setHandSize] = useState(6);
+	const [handSize, setHandSize] = useState(gameState.handSize ?? 6);
 	const [forceUseCards, setForceUseCards] = useState(0);
 	const [pendingDraw, setPendingDraw] = useState<null | {
 		cards: number;
@@ -42,7 +71,6 @@ export default function Draw() {
 	}>(null);
 	const [showcaseCards, setShowcaseCards] = useState<[DeckCard] | []>([]);
 	const [showcaseShowCancel, setShowcaseShowCancel] = useState(false);
-	const [allowClose, setAllowClose] = useState(false);
 	const [useCard, setUseCard] = useState<DeckCard | null>(null);
 
 	const [discardOptions, setDiscardOptions] = useState<DeckCard[]>([]);
@@ -53,8 +81,12 @@ export default function Draw() {
 		null
 	);
 
-	const [freeQuestions, setFreeQuestions] = useState(0);
-	const [overflowingChaliceRounds, setOverflowingChaliceRounds] = useState(0);
+	const [freeQuestions, setFreeQuestions] = useState(
+		gameState.freeQuestions ?? 0
+	);
+	const [overflowingChaliceRounds, setOverflowingChaliceRounds] = useState(
+		gameState.overflowingChaliceRounds ?? 0
+	);
 
 	const [currentOverlay, setCurrentOverlay] = useState<OverlayType>(
 		OverlayType.NONE
@@ -101,37 +133,24 @@ export default function Draw() {
 	}, []);
 
 	useEffect(() => {
-		// if (forceUseCards === 0 && discardCount === 0 && pendingDraw) {
-		// 	const { cards, maxSelection } = pendingDraw;
-		// 	setPendingDraw(null); // clear pending
-		// 	handleDraw(cards, maxSelection); // rerun it
-		// }
-
-		console.log(
-			`forceUseCards: ${forceUseCards}\npendingDraw: ${pendingDraw}\ndiscardCount: ${discardCount}\ndiscardPendingDraw: ${discardPendingDraw}`
-		);
 		if (currentOverlay === OverlayType.DUPLICATING) return;
 		if (currentOverlay === OverlayType.FREE_QUESTION_USED) return;
 		if (discardPendingDraw && discardCount === 0) {
-			console.log('this is discard pending draw');
 			const { cards, maxSelection } = discardPendingDraw;
 			doDraw(cards, maxSelection);
 			return;
 		}
 
 		if (pendingDraw && forceUseCards > 0 && discardCount === 0) {
-			console.log('this is force use pending draw');
 			setCurrentOverlay(OverlayType.FORCE_USE);
 			return;
 		}
 
 		if (discardCount > 0) {
-			console.log('this is discard count');
 			setCurrentOverlay(OverlayType.DISCARD);
 			return;
 		}
 		if (pendingDraw && forceUseCards === 0) {
-			console.log('this is pending draw');
 			const { cards, maxSelection } = pendingDraw;
 			if (maxSelection + hand.length > handSize) {
 				setForceUseCards(maxSelection + hand.length - handSize);
@@ -151,9 +170,18 @@ export default function Draw() {
 	]);
 
 	useEffect(() => {
-		console.log(currentOverlay);
 		setBlurred(currentOverlay !== OverlayType.NONE);
 	}, [currentOverlay]);
+
+	useEffect(() => {
+		saveGameState({
+			deck: serializeDeck(deck),
+			hand: serializeDeck(hand),
+			handSize,
+			freeQuestions,
+			overflowingChaliceRounds,
+		});
+	}, [deck, hand, handSize, freeQuestions, overflowingChaliceRounds]);
 
 	return (
 		<Layout title='Your Hand' description='Draw cards from the deck'>
