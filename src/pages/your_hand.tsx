@@ -27,6 +27,7 @@ const saveGameState = (state: {
 	freeQuestions: number;
 	overflowingChaliceRounds: number;
 }) => {
+	if (typeof window === 'undefined') return;
 	localStorage.setItem('gameState', JSON.stringify(state));
 };
 
@@ -37,6 +38,7 @@ const loadGameState = (): Partial<{
 	freeQuestions: number;
 	overflowingChaliceRounds: number;
 }> => {
+	if (typeof window === 'undefined') return;
 	const stored = localStorage.getItem('gameState');
 	if (!stored) return {};
 	try {

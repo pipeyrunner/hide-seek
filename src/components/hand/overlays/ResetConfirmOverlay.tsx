@@ -28,6 +28,8 @@ function ResetConfirmOverlay({
 				backgroundColor={'#ff3b3b'}
 				onClick={() => {
 					if (currentOverlay !== OverlayType.RESET_CONFIRM) return;
+
+					if (typeof window === 'undefined') return;
 					localStorage.removeItem('gameState');
 					window.location.reload();
 				}}
