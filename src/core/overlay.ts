@@ -8,5 +8,6 @@ export enum OverlayType {
 	FREE_QUESTION_USED = 'freeQuestionUsed',
 	SHOWCASE = 'showcase',
 	RESET_CONFIRM = 'resetConfirm',
+	SHARE_CARD = 'shareCard',
 	NONE = 'none',
 }

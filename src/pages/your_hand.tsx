@@ -20,6 +20,7 @@ import ShowcaseOverlay from '../components/hand/overlays/ShowcaseOverlay';
 import UseCardOverlay from '../components/hand/overlays/UseCardOverlay';
 import ResetConfirmOverlay from '../components/hand/overlays/ResetConfirmOverlay';
 import { shareCardImage } from '../core/sharing';
+import ShareCardOverlay from '../components/hand/overlays/ShareCardOverlay';
 
 const saveGameState = (state: {
 	deck: DeckCardData[];
@@ -103,6 +104,8 @@ export default function Draw() {
 		OverlayType.NONE
 	);
 
+	const [sharedCards, setSharedCards] = useState<DeckCard[]>([]);
+
 	const handleDraw = (cards: number, maxSelection: number) => {
 		setPendingDraw({ cards, maxSelection });
 	};
@@ -171,6 +174,9 @@ export default function Draw() {
 			doDraw(cards, maxSelection);
 			return;
 		}
+
+		if (sharedCards.length < 1) return;
+		setCurrentOverlay(OverlayType.SHARE_CARD);
 	}, [
 		forceUseCards,
 		pendingDraw,
@@ -178,6 +184,8 @@ export default function Draw() {
 		discardCount,
 		hand,
 		handSize,
+		sharedCards,
+		// currentOverlay,
 	]);
 
 	useEffect(() => {
@@ -291,24 +299,6 @@ export default function Draw() {
 					Reset Game
 				</button>
 
-				<button
-					onClick={() => {
-						shareCardImage('card_back');
-					}}
-					style={{
-						marginBottom: '1rem',
-						background: '#f44336',
-						color: 'white',
-						padding: '0.5rem 1rem',
-						border: 'none',
-						borderRadius: '6px',
-						cursor: 'pointer',
-						marginTop: '2rem',
-					}}
-				>
-					Share Veto
-				</button>
-
 				<QuestionSelectOverlay
 					currentOverlay={currentOverlay}
 					setCurrentOverlay={setCurrentOverlay}
@@ -393,6 +383,8 @@ export default function Draw() {
 					setForceUseCards={setForceUseCards}
 					freeQuestions={freeQuestions}
 					setFreeQuestions={setFreeQuestions}
+					sharedCard={sharedCards}
+					setSharedCard={setSharedCards}
 				/>
 
 				<DiscardOverlay
@@ -425,6 +417,13 @@ export default function Draw() {
 				<ResetConfirmOverlay
 					currentOverlay={currentOverlay}
 					setCurrentOverlay={setCurrentOverlay}
+				/>
+
+				<ShareCardOverlay
+					currentOverlay={currentOverlay}
+					setCurrentOverlay={setCurrentOverlay}
+					sharedCard={sharedCards}
+					setSharedCard={setSharedCards}
 				/>
 			</main>
 		</Layout>

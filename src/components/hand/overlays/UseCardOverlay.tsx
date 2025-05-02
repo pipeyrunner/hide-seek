@@ -4,6 +4,7 @@ import Overlay from '../../Overlay';
 import CardDisplay from '../../CardDisplay';
 import CardButton from '../../CardButton';
 import { DeckCard, getUseText } from '@site/src/core/deck';
+import { canBeShared } from '@site/src/core/sharing';
 
 type UseCardOverlayProps = {
 	currentOverlay: OverlayType;
@@ -37,6 +38,8 @@ type UseCardOverlayProps = {
 	setForceUseCards: (cards: number) => void;
 	freeQuestions: number;
 	setFreeQuestions: (questions: number) => void;
+	sharedCard: DeckCard[];
+	setSharedCard: (card: DeckCard[]) => void;
 };
 
 function UseCardOverlay({
@@ -66,6 +69,8 @@ function UseCardOverlay({
 	setForceUseCards,
 	freeQuestions,
 	setFreeQuestions,
+	sharedCard,
+	setSharedCard,
 }: UseCardOverlayProps) {
 	return (
 		<Overlay visible={currentOverlay === OverlayType.USE_CARD}>
@@ -278,6 +283,10 @@ function UseCardOverlay({
 								setUseCard(null);
 								if (forceUseCards > 0) {
 									setForceUseCards(forceUseCards - 1);
+								}
+
+								if (canBeShared(useCard.file)) {
+									setSharedCard([...sharedCard, useCard]);
 								}
 							}}
 							disabled={useCard !== null && !useCard.canUse(hand)}
