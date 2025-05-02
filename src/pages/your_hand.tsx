@@ -18,6 +18,7 @@ import DuplicatingOverlay from '../components/hand/overlays/DuplicatingOverlay';
 import DiscardOverlay from '../components/hand/overlays/DiscardOverlay';
 import ShowcaseOverlay from '../components/hand/overlays/ShowcaseOverlay';
 import UseCardOverlay from '../components/hand/overlays/UseCardOverlay';
+import ResetConfirmOverlay from '../components/hand/overlays/ResetConfirmOverlay';
 
 const saveGameState = (state: {
 	deck: DeckCardData[];
@@ -262,6 +263,24 @@ export default function Draw() {
 					))}
 				</div>
 
+				<button
+					onClick={() => {
+						setCurrentOverlay(OverlayType.RESET_CONFIRM);
+					}}
+					style={{
+						marginBottom: '1rem',
+						background: '#f44336',
+						color: 'white',
+						padding: '0.5rem 1rem',
+						border: 'none',
+						borderRadius: '6px',
+						cursor: 'pointer',
+						marginTop: '2rem',
+					}}
+				>
+					Reset Game
+				</button>
+
 				<QuestionSelectOverlay
 					currentOverlay={currentOverlay}
 					setCurrentOverlay={setCurrentOverlay}
@@ -371,6 +390,11 @@ export default function Draw() {
 				/>
 
 				<FreeQuestionUsedOverlay
+					currentOverlay={currentOverlay}
+					setCurrentOverlay={setCurrentOverlay}
+				/>
+
+				<ResetConfirmOverlay
 					currentOverlay={currentOverlay}
 					setCurrentOverlay={setCurrentOverlay}
 				/>

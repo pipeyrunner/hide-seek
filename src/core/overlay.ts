@@ -7,5 +7,6 @@ export enum OverlayType {
 	DUPLICATING = 'duplicating',
 	FREE_QUESTION_USED = 'freeQuestionUsed',
 	SHOWCASE = 'showcase',
+	RESET_CONFIRM = 'resetConfirm',
 	NONE = 'none',
 }
