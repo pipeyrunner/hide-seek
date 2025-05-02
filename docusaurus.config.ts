@@ -96,6 +96,8 @@ const config: Config = {
 					label: 'Your Hand',
 					position: 'left',
 				},
+
+				{ to: '/map_generator', label: 'Map Generator', position: 'right' },
 				{
 					href: 'https://github.com/teakivy/jet-lag',
 					label: 'GitHub',
