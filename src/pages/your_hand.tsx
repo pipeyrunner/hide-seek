@@ -293,7 +293,7 @@ export default function Draw() {
 
 				<button
 					onClick={() => {
-						shareCardImage('powerup_veto');
+						shareCardImage('card_back');
 					}}
 					style={{
 						marginBottom: '1rem',
