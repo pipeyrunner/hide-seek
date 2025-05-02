@@ -116,8 +116,8 @@ const config: Config = {
 							to: '/docs/quick_start_guide',
 						},
 						{
-							label: 'Hider Deck',
-							to: '/deck',
+							label: 'Cards',
+							to: '/cards',
 						},
 						{
 							label: 'Investigation Book',
