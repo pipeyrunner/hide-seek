@@ -19,8 +19,8 @@ import DiscardOverlay from '../components/hand/overlays/DiscardOverlay';
 import ShowcaseOverlay from '../components/hand/overlays/ShowcaseOverlay';
 import UseCardOverlay from '../components/hand/overlays/UseCardOverlay';
 import ResetConfirmOverlay from '../components/hand/overlays/ResetConfirmOverlay';
-import { shareCardImage } from '../core/sharing';
 import ShareCardOverlay from '../components/hand/overlays/ShareCardOverlay';
+import PastUsedCardsOverlay from '../components/hand/overlays/PastUsedCardsOverlay';
 
 const saveGameState = (state: {
 	deck: DeckCardData[];
@@ -28,8 +28,10 @@ const saveGameState = (state: {
 	handSize: number;
 	freeQuestions: number;
 	overflowingChaliceRounds: number;
+	pastUsedCards: DeckCardData[];
 }) => {
 	if (typeof window === 'undefined') return;
+	console.log('Saving game state', state);
 	localStorage.setItem('gameState', JSON.stringify(state));
 };
 
@@ -39,6 +41,7 @@ const loadGameState = (): Partial<{
 	handSize: number;
 	freeQuestions: number;
 	overflowingChaliceRounds: number;
+	pastUsedCards: DeckCardData[];
 }> => {
 	if (typeof window === 'undefined')
 		return {
@@ -47,6 +50,7 @@ const loadGameState = (): Partial<{
 			handSize: 6,
 			freeQuestions: 0,
 			overflowingChaliceRounds: 0,
+			pastUsedCards: [],
 		};
 	const stored = localStorage.getItem('gameState');
 	if (!stored) return {};
@@ -57,7 +61,7 @@ const loadGameState = (): Partial<{
 	}
 };
 
-export default function Draw() {
+export default function YourDeckPage() {
 	const gameState = loadGameState();
 
 	const [deck, setDeck] = useState(
@@ -105,6 +109,9 @@ export default function Draw() {
 	);
 
 	const [sharedCards, setSharedCards] = useState<DeckCard[]>([]);
+	const [pastUsedCards, setPastUsedCards] = useState<DeckCard[]>(
+		deserializeDeck(gameState.pastUsedCards) ?? []
+	);
 
 	const handleDraw = (cards: number, maxSelection: number) => {
 		setPendingDraw({ cards, maxSelection });
@@ -199,8 +206,16 @@ export default function Draw() {
 			handSize,
 			freeQuestions,
 			overflowingChaliceRounds,
+			pastUsedCards: serializeDeck(pastUsedCards),
 		});
-	}, [deck, hand, handSize, freeQuestions, overflowingChaliceRounds]);
+	}, [
+		deck,
+		hand,
+		handSize,
+		freeQuestions,
+		overflowingChaliceRounds,
+		pastUsedCards,
+	]);
 
 	return (
 		<Layout title='Your Hand' description='Draw cards from the deck'>
@@ -208,8 +223,6 @@ export default function Draw() {
 				className='container'
 				style={{
 					maxWidth: 900,
-					margin: '2rem auto',
-					padding: '1rem',
 					textAlign: 'center',
 					position: 'relative',
 				}}
@@ -229,6 +242,31 @@ export default function Draw() {
 						pointerEvents: 'none',
 					}}
 				></div>
+
+				<div
+					className='investigation-nav'
+					style={{
+						marginBottom: '3rem',
+					}}
+				>
+					<div className='investigation-nav-tabs'>
+						<button
+							className={`nav-tab`}
+							onClick={() => setCurrentOverlay(OverlayType.PAST_USED_CARDS)}
+							style={{ float: 'left' }}
+						>
+							Past Cards
+						</button>
+					</div>
+					<div className='investigation-nav-divider' />
+					<button
+						className='nav-reset'
+						onClick={() => setCurrentOverlay(OverlayType.RESET_CONFIRM)}
+					>
+						Reset Game
+					</button>
+				</div>
+
 				<CardDeckStack
 					count={deck.length}
 					setCurrentOverlay={setCurrentOverlay}
@@ -280,24 +318,6 @@ export default function Draw() {
 						/>
 					))}
 				</div>
-
-				<button
-					onClick={() => {
-						setCurrentOverlay(OverlayType.RESET_CONFIRM);
-					}}
-					style={{
-						marginBottom: '1rem',
-						background: '#f44336',
-						color: 'white',
-						padding: '0.5rem 1rem',
-						border: 'none',
-						borderRadius: '6px',
-						cursor: 'pointer',
-						marginTop: '2rem',
-					}}
-				>
-					Reset Game
-				</button>
 
 				<QuestionSelectOverlay
 					currentOverlay={currentOverlay}
@@ -385,6 +405,8 @@ export default function Draw() {
 					setFreeQuestions={setFreeQuestions}
 					sharedCard={sharedCards}
 					setSharedCard={setSharedCards}
+					pastUsedCards={pastUsedCards}
+					setPastUsedCards={setPastUsedCards}
 				/>
 
 				<DiscardOverlay
@@ -424,6 +446,13 @@ export default function Draw() {
 					setCurrentOverlay={setCurrentOverlay}
 					sharedCard={sharedCards}
 					setSharedCard={setSharedCards}
+				/>
+
+				<PastUsedCardsOverlay
+					currentOverlay={currentOverlay}
+					setCurrentOverlay={setCurrentOverlay}
+					pastUsedCards={pastUsedCards}
+					setPastUsedCards={setPastUsedCards}
 				/>
 			</main>
 		</Layout>

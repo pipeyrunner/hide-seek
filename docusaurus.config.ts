@@ -84,7 +84,7 @@ const config: Config = {
 					position: 'left',
 					label: 'Rulebook',
 				},
-				{ to: '/deck', label: 'Hider Deck', position: 'left' },
+				{ to: '/cards', label: 'Cards', position: 'left' },
 				{
 					to: '/investigation/matching',
 					label: 'Investigation Book',
@@ -92,8 +92,8 @@ const config: Config = {
 					activeBaseRegex: '/investigation/',
 				},
 				{
-					to: '/your_hand',
-					label: 'Your Hand',
+					to: '/your_deck',
+					label: 'Your Deck',
 					position: 'left',
 				},
 

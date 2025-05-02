@@ -196,3 +196,7 @@
 .colorModeToggle_DEke:hover .lightToggleIcon_pyhR {
 	color: #f86c6c !important;
 }
+
+path {
+	stroke: #fff !important;
+}

@@ -9,5 +9,6 @@ export enum OverlayType {
 	SHOWCASE = 'showcase',
 	RESET_CONFIRM = 'resetConfirm',
 	SHARE_CARD = 'shareCard',
+	PAST_USED_CARDS = 'pastUsedCards',
 	NONE = 'none',
 }

@@ -50,11 +50,11 @@ export default function Home() {
 						<Link className='button' to='/docs/quick_start_guide'>
 							Rule Book
 						</Link>
-						<Link className='button' to='/deck'>
-							Hider Deck
-						</Link>
 						<Link className='button' to='/investigation/matching'>
 							Investigation Book
+						</Link>
+						<Link className='button' to='/your_deck'>
+							Your Deck
 						</Link>
 					</div>
 				</div>

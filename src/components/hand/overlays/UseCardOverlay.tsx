@@ -40,6 +40,8 @@ type UseCardOverlayProps = {
 	setFreeQuestions: (questions: number) => void;
 	sharedCard: DeckCard[];
 	setSharedCard: (card: DeckCard[]) => void;
+	pastUsedCards: DeckCard[];
+	setPastUsedCards: (cards: DeckCard[]) => void;
 };
 
 function UseCardOverlay({
@@ -71,6 +73,8 @@ function UseCardOverlay({
 	setFreeQuestions,
 	sharedCard,
 	setSharedCard,
+	pastUsedCards,
+	setPastUsedCards,
 }: UseCardOverlayProps) {
 	return (
 		<Overlay visible={currentOverlay === OverlayType.USE_CARD}>
@@ -288,6 +292,7 @@ function UseCardOverlay({
 								if (canBeShared(useCard.file)) {
 									setSharedCard([...sharedCard, useCard]);
 								}
+								setPastUsedCards([useCard, ...pastUsedCards]);
 							}}
 							disabled={useCard !== null && !useCard.canUse(hand)}
 						/>

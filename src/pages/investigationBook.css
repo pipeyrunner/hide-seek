@@ -196,6 +196,7 @@
 	display: flex;
 	gap: 0.5rem;
 	flex-wrap: wrap;
+	align-items: left;
 }
 
 .nav-tab {
@@ -238,15 +239,16 @@
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
 }
 
 .investigation-nav-tabs {
 	display: flex;
 	gap: 0.5rem;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
+	padding: 0.4rem 1rem;
 	flex: 1;
 }
 
