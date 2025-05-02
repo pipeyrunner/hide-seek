@@ -1,73 +1,13 @@
 import React, { forwardRef } from 'react';
-import Overlay from './Overlay';
-import CardButton from './CardButton';
+import { OverlayType } from '../core/overlay';
 
 type CardDeckStackProps = {
 	count: number;
-	onDraw: (drawCount: number, maxSelection: number) => void;
-	setBlurred: (blurred: boolean) => void;
-	overFlowingChaliceRounds: number;
-	freeQuestions: number;
-	setOverFlowingChaliceRounds: (rounds: number) => void;
-	setFreeQuestions: (questions: number) => void;
-	setFreeQuestionUsed: (used: boolean) => void;
+	setCurrentOverlay: (overlay: OverlayType) => void;
 };
 
-const questionTypes = [
-	{
-		title: 'MATCHING',
-		color: '#202b39',
-		drawn: 3,
-		maxSelection: 1,
-	},
-	{
-		title: 'MEASURING',
-		color: '#4a9a5e',
-		drawn: 3,
-		maxSelection: 1,
-	},
-	{
-		title: 'RADAR',
-		color: '#f56d3e',
-		drawn: 2,
-		maxSelection: 1,
-	},
-	{
-		title: 'THERMOMETER',
-		color: '#feb846',
-		drawn: 2,
-		maxSelection: 1,
-	},
-	{
-		title: 'TENTACLES',
-		color: '#8969a6',
-		drawn: 4,
-		maxSelection: 2,
-	},
-	{
-		title: 'PHOTO',
-		color: '#80b2c6',
-		drawn: 1,
-		maxSelection: 1,
-	},
-];
-
 const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
-	(
-		{
-			count,
-			onDraw,
-			setBlurred,
-			overFlowingChaliceRounds,
-			setOverFlowingChaliceRounds,
-			freeQuestions,
-			setFreeQuestions,
-			setFreeQuestionUsed,
-		},
-		ref
-	) => {
-		const [showOptions, setShowOptions] = React.useState(false);
-		const [selectingQuestion, setSelectingQuestion] = React.useState(false);
+	({ count, setCurrentOverlay }, ref) => {
 		const visibleCards = Math.min(count, 10);
 
 		return (
@@ -82,9 +22,7 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						margin: 'auto',
 					}}
 					onClick={() => {
-						setShowOptions((prev) => !prev);
-						setSelectingQuestion(true);
-						setBlurred(true);
+						setCurrentOverlay(OverlayType.QUESTION_SELECT);
 					}}
 				>
 					{Array.from({ length: visibleCards }).map((_, i) => (
@@ -106,79 +44,6 @@ const CardDeckStack = forwardRef<HTMLDivElement, CardDeckStackProps>(
 						/>
 					))}
 				</div>
-
-				<Overlay visible={selectingQuestion}>
-					<h2
-						style={{
-							color: 'white',
-							fontFamily: 'VAG Rounded Next, sans-serif',
-						}}
-					>
-						Which type of question did you answer?
-					</h2>
-
-					<div
-						style={{
-							marginTop: '1rem',
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							justifyContent: 'center',
-						}}
-					>
-						<div
-							style={{
-								display: 'grid',
-								gridTemplateColumns: '1fr 1fr',
-								gap: '1rem',
-							}}
-						>
-							{questionTypes.map((question, index) => (
-								<CardButton
-									key={index}
-									title={question.title}
-									backgroundColor={question.color}
-									onClick={() => {
-										setSelectingQuestion(false);
-										if (freeQuestions > 0) {
-											setFreeQuestions(freeQuestions - 1);
-											setFreeQuestionUsed(true);
-											return;
-										}
-
-										setTimeout(() => {
-											if (overFlowingChaliceRounds > 0) {
-												setOverFlowingChaliceRounds(
-													overFlowingChaliceRounds - 1
-												);
-											}
-											onDraw(
-												question.drawn + (overFlowingChaliceRounds > 0 ? 1 : 0),
-												question.maxSelection
-											);
-										}, 500);
-									}}
-									style={{
-										width: 180, // slightly smaller width to fit grid
-									}}
-								/>
-							))}
-						</div>
-
-						<CardButton
-							title='CANCEL DRAW'
-							backgroundColor='#ff3b3b'
-							onClick={() => {
-								setSelectingQuestion(false);
-								setBlurred(false);
-							}}
-							style={{
-								marginTop: '2rem',
-								width: 220,
-							}}
-						/>
-					</div>
-				</Overlay>
 			</div>
 		);
 	}

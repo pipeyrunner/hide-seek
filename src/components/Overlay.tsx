@@ -30,14 +30,13 @@ const Overlay: React.FC<OverlayProps> = ({
 				left: 0,
 				width: '100%',
 				height: '100%',
-				overflowY: visible ? 'auto' : 'hidden', // ✅ allow vertical scroll inside overlay
-				// backgroundColor: blur ? 'rgba(0, 0, 0, 0.5)' : 'transparent', // ✅ make sure there's a dim background
+				overflowY: visible ? 'auto' : 'hidden',
 				backdropFilter: blur ? 'blur(8px)' : undefined,
-				display: visible ? 'flex' : 'none', // ✅ hide completely when not visible
+				display: visible ? 'flex' : 'none',
 				flexDirection: 'column',
 				alignItems: 'center',
-				justifyContent: 'flex-start', // ✅ start from top, allow scrolling down
-				padding: '2rem 1rem', // ✅ some space at top/bottom
+				justifyContent: 'flex-start',
+				// padding: '2rem 1rem',
 				zIndex: 1000,
 			}}
 		>
@@ -47,7 +46,7 @@ const Overlay: React.FC<OverlayProps> = ({
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
-					gap: '1rem',
+					marginTop: '2rem',
 				}}
 			>
 				{children}
