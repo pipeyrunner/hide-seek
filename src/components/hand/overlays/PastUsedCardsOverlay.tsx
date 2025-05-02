@@ -50,6 +50,7 @@ function PastUsedCardsOverlay({
 							style={{
 								position: 'relative',
 								animationDelay: `${i * 60}ms`,
+								width: 120 * 2,
 							}}
 						>
 							<img
