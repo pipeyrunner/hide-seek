@@ -3,6 +3,7 @@ import React from 'react';
 import Overlay from '../../Overlay';
 import CardButton from '../../CardButton';
 import { DeckCard } from '@site/src/core/deck';
+import CardDisplay from '../../CardDisplay';
 
 type PastUsedCardsOverlayProps = {
 	currentOverlay: OverlayType;
