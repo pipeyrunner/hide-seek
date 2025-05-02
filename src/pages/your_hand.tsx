@@ -19,6 +19,7 @@ import DiscardOverlay from '../components/hand/overlays/DiscardOverlay';
 import ShowcaseOverlay from '../components/hand/overlays/ShowcaseOverlay';
 import UseCardOverlay from '../components/hand/overlays/UseCardOverlay';
 import ResetConfirmOverlay from '../components/hand/overlays/ResetConfirmOverlay';
+import { shareCardImage } from '../core/sharing';
 
 const saveGameState = (state: {
 	deck: DeckCardData[];
@@ -288,6 +289,24 @@ export default function Draw() {
 					}}
 				>
 					Reset Game
+				</button>
+
+				<button
+					onClick={() => {
+						shareCardImage('powerup_veto');
+					}}
+					style={{
+						marginBottom: '1rem',
+						background: '#f44336',
+						color: 'white',
+						padding: '0.5rem 1rem',
+						border: 'none',
+						borderRadius: '6px',
+						cursor: 'pointer',
+						marginTop: '2rem',
+					}}
+				>
+					Share Veto
 				</button>
 
 				<QuestionSelectOverlay
