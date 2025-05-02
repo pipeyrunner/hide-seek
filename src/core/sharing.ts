@@ -216,14 +216,14 @@ function getText(cardFile: string): string {
 	let text = '';
 	if (card.type === 'curse') {
 		text += "You've been cursed!\n\n";
-		text += `**${card.title}**\n\n`;
+		text += `${card.title}\n\n`;
 	} else {
 		text += `I've played a ${card.title} card!\n\n`;
 	}
 
-	text += card.description + '\n\n';
-	text += 'Information about this card:\n\n';
-	text += card.bylaws;
+	text += card.description;
+	// text += 'Information about this card:\n\n';
+	// text += card.bylaws;
 
 	return text;
 }
