@@ -38,7 +38,14 @@ const loadGameState = (): Partial<{
 	freeQuestions: number;
 	overflowingChaliceRounds: number;
 }> => {
-	if (typeof window === 'undefined') return;
+	if (typeof window === 'undefined')
+		return {
+			deck: [],
+			hand: [],
+			handSize: 6,
+			freeQuestions: 0,
+			overflowingChaliceRounds: 0,
+		};
 	const stored = localStorage.getItem('gameState');
 	if (!stored) return {};
 	try {
