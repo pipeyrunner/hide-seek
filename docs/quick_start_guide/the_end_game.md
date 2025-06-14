@@ -2,6 +2,7 @@
 sidebar_position: 9
 ---
 
-# The End Game
+# Финал раунда
 
-Once the seekers have entered the hider's hiding zone–and are no longer on a mode of transit–the **end game** will begin. At this point, the hider may no longer move freely; they must stay put in a publicly accessible **hiding spot** until they are found. (For more information on permissible hiding spots, visit [Hiding Spots](../hiding/hiding_spots)) During the end game, some questions may be impossible to answer due to restrictions on the hider's movement. For example, a photo question that would require the hider to take a photo from the train station, when they are not at the train station, would not be possible. In these cases, "I cannot answer the question" is considered a valid answer, and the hider would still pull a card. All questions other than photo questions that must be taken from a particular location should be possible to answer during the end game.
+Как только ищущие попадают в зону укрытия и перестают пользоваться транспортом, начинается финальная стадия игры. С этого момента прячущийся больше не может свободно перемещаться — он должен оставаться на месте в публично доступном укрытии до момента обнаружения (подробнее о допустимых укрытиях можно узнать в разделе [Укрытие](../hiding/hiding_spots).
+В финальной стадии некоторые вопросы могут оказаться невыполнимыми из-за ограничений в передвижении прячущегося. Например, если вопрос требует сделать фотографию со станции, а игрок уже ушёл оттуда, ответ будет: «Не могу ответить на этот вопрос». Это считается допустимым ответом, и прячущийся всё равно тянет карту. Большинство вопросов (кроме специальных фото-заданий, привязанных к конкретному месту) остаются выполнимыми даже в финальной стадии.
