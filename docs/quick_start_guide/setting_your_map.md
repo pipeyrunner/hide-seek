@@ -3,4 +3,12 @@ sidebar_position: 4
 ---
 # Setting Your Map
 
-After you have chosen a game size and assembled your players, you'll need to set up your game map. This involves choosing a **transit system** and establishing **map borders**. (For more information on setting up your map, visit [Setting Up Your Map](../setting_up_your_map))
+После выбора масштаба игры и сбора участников нужно настроить игровую карту. Это включает два ключевых шага:
+
+**Выбор транспортной системы:**
+Определите, какие виды общественного транспорта будут использоваться в игре (метро, автобусы, трамваи и т.д.).
+
+**Обозначение границ:**
+Чётко установите территориальные пределы игры, за которые нельзя выходить.
+
+Подробное руководство по настройке карты доступно в разделе [Подготовка карты](../setting_up_your_map))
