@@ -6,7 +6,7 @@ type LabelPillProps = {
 };
 
 const colorMap: Record<string, string> = {
-	SMALL: '#ffc800',
+	Маленький: '#ffc800',
 	MEDIUM: '#ff8c00',
 	LARGE: '#fc1403',
 };
