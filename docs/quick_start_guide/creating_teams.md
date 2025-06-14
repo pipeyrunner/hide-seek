@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
-# Creating Teams
+# Создание команд
 
-Generally, **we do not recommend playing with more than four players**. If you do want to play with more than four players, we would suggest grouping some players into teams. Those teams (of two or more) could collectively act as a single player, all hiding together when it is their turn to hide. There may be some unforseen awkwardness with how to answer certain questions that are intended for a single player, which will need to be resolved on a case-by-case basis. Teams are also recommended when playing with younger players, or in any context where a hider would feel unsafe or uncomfortable being alone for an extended period of time.
+Обычно мы не рекомендуем играть более чем вчетвером. Если всё же хотите задействовать больше людей, лучше разбить их на команды. В этом случае команда (из двух или более игроков) действует как один участник — все прячутся вместе, когда наступает их очередь.
+Могут возникнуть неочевидные сложности, например, как отвечать на вопросы, предназначенные для одного игрока — такие моменты придётся решать по ситуации.
+Команды также стоит создавать, если играют дети или если участнику в принципе некомфортно оставаться в укрытии в одиночестве долгое время.
