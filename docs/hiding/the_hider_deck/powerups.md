@@ -1,30 +1,32 @@
 ---
 sidebar_position: 3
 ---
-# Powerups
+# Карты усиления
 
-There are several different types of powerup cards you can draw from the hider deck. These cards can be played at any time and allow you to take a particular type of advantageous action a single time; once powerup cards have been used, they are discarded and leave your hand. You only need to inform the seekers that you are using a powerup if that powerup has some kind of direct effect on them that they need to know about. These are the powerups in the hider deck:
+В колоде скрывающегося есть несколько разных типов усилений. Эти карты можно сыграть в любой момент, и каждая из них позволяет совершить одноразовое выгодное действие. После использования карта усиления сбрасывается и покидает твою руку. Сообщать ищущим о том, что ты играешь усиление, нужно только в том случае, если оно оказывает на них непосредственное влияние. Вот какие усиления входят в колоду:
 
-### Veto
+### Вето
 
-The veto powerup can be played in response to any question instead of answering. The seekers are given no answer to their question, and are instead informed that you have used a veto. The question is still considered to have been asked, and therefore can only be asked again for its additional cost. Since you have not answered their question, however, you are given no reward and do not draw any cards from the hider deck. You may play a veto at any time during the response window after a question has been asked.
+Карта вето позволяет тебе не отвечать на любой заданный вопрос. Вместо этого ты сообщаешь ищущим, что используешь вето. Ответ они не получают, но сам вопрос считается заданным — это значит, что повторно его можно будет задать только за дополнительную плату. Так как ты не дал ответа, никакой награды ты не получаешь и карты из колоды не тянешь. Вето можно сыграть в любое время в течение окна ответа на вопрос.
 
-### Randomize
+### Рандомизировать вопрос
 
-The randomize powerup can be played in response to any question instead of answering. After the seekers have been informed that you have used a randomize powerup, they must choose–at random, either using a random number generator or dice–a different unasked question from the same category *(e.g. a 10 mile radar might become a 50 mile radar.)* This question is then automatically asked instead, and you provide an answer as normal. The original question is **not** considered to have been asked, and can therefore be asked again for its original cost. If the randomize causes a question to be asked that returns a null answer, this is permitted (tough luck, though). You may play a randomize at any time during the response window after a question has been asked.
+Эта карта также играется вместо ответа на заданный вопрос. После того как ты объявляешь о её использовании, ищущие должны случайным образом выбрать другой неиспользованный вопрос из той же категории (например, если был задан вопрос про радар на 15 км, он может смениться на радар на 80 км). Новый вопрос автоматически считается заданным, и ты отвечаешь на него как обычно. При этом оригинальный вопрос не считается заданным и может быть использован позже за ту же цену. Если результатом случайного выбора стал вопрос, который не даёт никакой информации — ну, не повезло. Randomize можно сыграть в любой момент в течение окна ответа.
 
-### Discard 1, draw 2 and Discard 2, draw 3
+### Сброс 1 — добор 2 / Сброс 2 — добор 3
 
-These powerups can be played at any time and allow you to dispose of some undesirable cards in your hand in exchange for new random draws. For example, if you play 'Discard 1, draw 2' you will discard one undesirable card from your hand, and draw and keep two new ones. Because the 'Discard 1, draw 2' card wil also leave your hand when you play it, you will end up with the same number of cards you started with. If you do not have enough extra cards to discard, these powerups cannot be played.
+Эти усиления можно использовать в любой момент, чтобы избавиться от ненужных карт и заменить их случайными. Например, если ты сыграл карту «Сбрось 1 — добери 2», ты сбрасываешь одну карту из руки, после чего тянешь и оставляешь себе две новые. Поскольку сама карта усиления тоже уходит в сброс при использовании, итоговое количество карт в руке не изменится. Если у тебя недостаточно карт для сброса (например, ты хочешь сыграть «Сбрось 2», но у тебя только одна карта) — это усиление использовать нельзя.
 
-### Draw 1, expand maximum hand size by 1
+### Добор 1 + увеличение лимита руки
 
-This powerup can be played at any time and immediately does two things: firstly, it allows you to draw and keep 1 card from the top of the deck. Secondly, it expands your hand to hold one extra card for the rest of the round, meaning you can keep up to 7 cards at once (or 8 if two of these powerups have been played.)
+Позволяет тебе немедленно добрать одну карту из колоды, а также увеличить лимит карт в руке на 1 до конца раунда. Например, вместо стандартных 6 карт ты теперь можешь держать 7 (или 8, если использовал две такие карты за раунд).
 
-### Duplicate
+### Дублировать карту
 
-The duplicate powerup can be played as an exact copy of another card–curse, powerup, or time bonus–currently in your hand. Once played, the original card will remain in your hand and can still be played later. If a duplicate remains in your hand at the end of the round, it can be used as a copy of any time bonus in your hand, effectively doubling that bonus.
+Эта карта позволяет скопировать любую другую карту у тебя в руке — усиление, проклятие или бонус ко времени. При этом оригинальная карта остаётся у тебя, и ты можешь сыграть её позже. Если дубликат остался в руке до конца раунда, его можно использовать как копию любого бонуса ко времени, effectively удваивая его эффект.
 
-### Move
+### Смена зоны укрытия
 
-The move powerup, if played at the right moment, can be one of the most powerful cards in the game. When played, you are granted a certain amount of time based on game size to establish a **new hiding zone**. The rules for finding a new hiding zone apply as usual; you must center yourself on a new transit station, and you can only use valid transit to reach your new location. While you move, your hiding timer is paused, and the seekers must stay where they are and refrain from asking questions until the move timer is up. At this point, the game resumes, and your hiding timer continues from where it was at the moment you played the move powerup. It is crucial to do this at the perfect moment, as playing the move comes at a severe cost–you must immediately **discard your entire hand and inform the seekers of your original transit station after playing it**. Given that the move cannot be played during the end game, this means that you must be confident that the seekers are close to finding you, *and* that you are better off starting from scratch instead of using the cards you've already accumulated over the course of your round. Play it wisely!
+Одна из самых мощных карт в игре, если использовать её в нужный момент. Сыграв «Переезд», ты получаешь определённое количество времени (в зависимости от размера игры), чтобы выбрать новую зону укрытия. Все стандартные правила укрытия сохраняются: ты должен центрироваться на новой транспортной станции и использовать только допустимые виды транспорта для перемещения. Пока ты переезжаешь, таймер укрытия останавливается, а ищущие не могут задавать вопросы и должны оставаться на месте. Как только время переезда заканчивается, таймер укрытия продолжает идти с того момента, на котором остановился.
+
+Но цена — очень высокая: сразу после использования карты ты сбрасываешь всю руку и сообщаешь ищущим название своей изначальной транспортной станции. Переезд нельзя использовать в финальной фазе игры, так что его применение оправдано только в тех случаях, когда ты уверен, что ищущие вот-вот тебя найдут, и ты готов начать всё с нуля, отказавшись от всех накопленных карт. Используй с умом!
