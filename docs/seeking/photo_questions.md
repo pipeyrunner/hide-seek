@@ -6,7 +6,7 @@ sidebar_position: 7
 
 Photo questions follow the format, "Send me a photo of \_\_\_\_." Valid answers are a photo that meets the full specifications of the photo question, or "I cannot answer the question," in situations where the subject of the photograph doesn't exist in the hiding zone. Hiders have ten minutes to answer in small and medium games, and twenty minutes to answer in large games. All photos must be sent in your phone's normal aspect ratio. Photos are a useful way of getting a general sense of where the hider is, or for verifying that you've arrived at the right location, but you cannot access Google Street View to assess photos or verify stations from afar.
 
-These are photo questions available to the seekers in **<LabelPill label='SMALL'/> sized games**:
+These are photo questions available to the seekers in **<LabelPill label='Маленький'/> sized games**:
 
 #### Any Building Visible from Transit Station
 
