@@ -2,12 +2,16 @@
 sidebar_position: 7
 ---
 
-# Asking Questions
+# Вопросы прячущемуся
 
-In order to gather information about the hider's location, the seekers will have to ask questions from the **investigation book**. These questions can be asked at any time, as long as the previous question has been answered, and must be answered truthfully by the hider within 5 minutes, with the exception of photo questions, which must be answered within 10 minutes in small and medium games, and 20 minutes in large games. We ask hiders to make a good faith effort to answer all questions in the allotted time. However, if questions are not answered in the allowed time window, the hider's time is paused until the question is answered, and the hider will recieve no cards in exchange for answering.
+Чтобы узнать, где находится прячущийся, ищущие должны задавать вопросы из книги расследований. Вопросы можно задавать в любое время — главное, чтобы предыдущий уже был полностью обработан. На каждый вопрос прячущийся обязан ответить в течение 5 минут, кроме случаев с фото-вопросами: на них даётся 10 минут в малых и средних играх и 20 минут в больших.
 
-After a question has been answered, the hider may draw and keep a certain number of cards from the **hider deck**, indicated in the **investigation book**, depending on the category of question asked. (For more information on asking questions, visit [Seeking](../seeking))
+прячущийся должен прилагать добросовестные усилия, чтобы уложиться в отведённое время. Если лимит всё же превышен, его таймер ставится на паузу до момента ответа, и в этом случае он не получает карты за ответ.
 
-Once a question has been asked, it cannot be asked again unless the seekers choose to **pay its cost twice**. So, for example, a question that would typically allow a hider to draw 3 cards and keep 1 would now allow a hider to draw 3, keep 1, then draw 3, and keep 1 again (importanty: hiders cannot draw 6 and keep 2, they must draw 3 and pull 1 two seperate times, in this example.) Should seekers want to ask a question a third time, its cost would be triple; a fourth time, the cost quadrupled, and so on.
+После ответа на вопрос прячущийся тянет и оставляет себе определённое количество карт из колоды — точное число зависит от категории вопроса и указано в книге расследований. (Чтобы узнать больше о процессе допроса, см. раздел [Seeking](../seeking))
 
-As you gather information about the hider's location, you can use the internet for research to develop your theories. **The only prohibited source for information is Google Street View**; everything else is fair game.
+Один и тот же вопрос нельзя задать повторно, если только ищущие не оплатят его стоимость дважды. Например: если вопрос в первый раз позволяет прячущемуся вытянуть 3 карты и оставить 1, то при повторной оплате он тянет ещё 3 и оставляет ещё 1 — по отдельности, а не 6 сразу с выбором двух.
+Если ищущие захотят задать тот же вопрос третий раз, его стоимость утраивается, четвёртый — учетверяется, и так далее.
+
+Во время игры ищущие могут использовать интернет для сбора информации и проверки своих гипотез.
+Единственный запрещённый источник — Google Street View. Всё остальное допустимо.
