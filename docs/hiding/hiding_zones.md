@@ -2,14 +2,23 @@
 sidebar_position: 2
 ---
 
-# Hiding Zones
+# Зона укрытия
 
-Your hiding zone is a circle located somewhere within the game map–once the seekers start seeking, this zone is your new home.
+Твоя зона укрытия — это круг, расположенный где-то на игровой карте. Как только ищейки начинают поиски, эта зона становится твоим новым домом.
 
-Depending on game size, you'll have a certain amount of time–the hiding period–to get from wherever the round starts to your hiding zone. Much like any other part of the game, you'll only be able to use your pre-established transit system to get to your hiding zone during this time, so make sure you plan on going somewhere you know you can get to. If the hiding period ends and you're somewhere else, then that's where your hiding zone is.
+В зависимости от размера игры у тебя будет определённое количество времени — период укрытия — чтобы добраться от места старта раунда до своей зоны укрытия. Как и во всех остальных частях игры, для передвижения в этот период ты можешь использовать только заранее установленную транспортную систему, так что обязательно выбирай такое место, до которого точно сможешь добраться. Если период укрытия закончится, а ты окажешься в другом месте — оно и станет твоей зоной укрытия.
 
-Choosing the right hiding zone is the single most impactful decision you'll make during your run, but there's rarely a "right" answer for where to hide. Out-of-the-way locations on the edges of your transit network can be harder to identify and travel to during the long game, but that sparseness is a double-edged sword; once the seekers have narrowed down the map, the relative lack of possible transit stations near your location can make it much easier to identify your exact hiding zone. Likewise, the densest parts of your map offer the protection of complexity, but offer the seekers easier transit opportunities and leave you exposed to a potentially devastating tentacle question.
+Выбор зоны укрытия — самое важное решение в игре, но редко можно назвать какое-то одно место «правильным». Удалённые локации на окраинах твоей транспортной сети могут быть менее очевидными и труднее доступными во время долгой игры, но эта отдалённость — палка о двух концах: когда карта будет сузилась, малое количество доступных транспортных станций рядом может упростить ищейкам определение твоей зоны. В то же время, самые насыщенные районы карты обеспечивают защиту за счёт сложности, но и дают ищейкам больше транспортных возможностей и повышают риск получения опасного вопроса-щупальца.
 
-**Every hiding zone must be centered on a transit station**; there may be other transit stations within your zone, but you'll have to choose a particular transit station to be "your" transit station. Many of the seekers' questions will reference this station or force you to take pictures around it, so it's important that you know which station this is. The rest of your zone extends a certain distance outwards from this station–in small and medium games, this zone is drawn as a ¼-mile radius from the icon for that station on your map; in large games, it is a ½-mile radius. You must stay in this circle for your entire round.
+Каждая зона укрытия обязательно должна быть сосредоточена вокруг транспортной станции. В пределах зоны могут быть и другие станции, но ты должен выбрать одну конкретную станцию в качестве своей. Многие вопросы от ищейок будут ссылаться на эту станцию или требовать фотографий рядом с ней, поэтому важно точно знать, какая станция является твоей. Остальная часть зоны — это круг определённого радиуса вокруг этой станции: в малых и средних играх радиус составляет ¼ мили (примерно 400 метров), а в больших играх — ½ мили (примерно 800 метров). Ты обязан оставаться внутри этого круга на протяжении всей игры.
 
-When in your hiding zone, you're free to do whatever you like–go shopping, eat a meal, see the sights–but don't get too distracted! Many photo questions will involve going somewhere else in your zone to take a photo of something in a fairly short window of time. If you'd like, you can take these photos ahead of time to give you more flexibility to freely wander your zone. We would also recommend spending some time scoping out a final hiding spot, which we detail on the next page.
+Находясь в зоне укрытия, ты можешь делать что угодно — ходить по магазинам, поесть, осматривать достопримечательности — но не забывай, что многие фото-вопросы потребуют быстро переместиться по зоне и сделать снимок в течение ограниченного времени. При желании ты можешь сделать такие фотографии заранее, чтобы потом иметь больше свободы в перемещениях. Мы также рекомендуем заранее выбрать финальное укрытие, о чём рассказывается на следующей странице.
+
+
+
+
+
+
+
+
+
