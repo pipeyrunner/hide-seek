@@ -1,108 +1,113 @@
 ---
 sidebar_position: 4
 ---
-# Curses
+# Проклятия
 
-Curse cards are played against the seekers as a means to slow them down, prevent them from asking questions, or just to annoy them. Every curse is unique, and has some kind of one-time effect on the seekers that lasts for a certain duration; much like powerups, once a curse has been used, it is then discarded and removed from your hand.
+Карты проклятий используются против ищейок, чтобы замедлить их, не дать им задавать вопросы или просто досадить. Каждое проклятие уникально и оказывает одноразовое воздействие на ищейок в течение определённого времени. Как и усиления, после использования карта проклятия сбрасывается и удаляется из руки.
 
-Curses cannot necessarily be played at any time; each curse has a **casting cost** that must be met before it can be played. In some cases, these casting costs are resources that must be paid by the hider, such as discarding other cards in your hand. In other cases, these casting costs reference certain conditions of the game, such as requiring that seekers are at least 10 miles away (You may notice that, on the cards, these casting costs are sometimes different for different game sizes, which will be indicated by the game size icons next to each cost.)
+Проклятия нельзя разыгрывать в любой момент: каждое из них имеет свою цену наложения, которую необходимо выполнить перед розыгрышем. Иногда это ресурсы, которые должен потратить укрывающийся (например, сброс других карт из руки). В других случаях цена наложения зависит от игровых условий — например, требование, чтобы ищейки находились как минимум в 10 милях от укрывающегося. (Обрати внимание: цена может меняться в зависимости от размера игры — это указано с помощью соответствующих иконок на карте.)
 
-You may play multiple curses at once, **but there cannot be more than one active curse preventing the seekers from asking questions or taking transit**. If a curse is actively preventing the seekers from asking questions or taking transit, you must wait for the curse to be cleared before you can play another curse. In these cases, the seekers must inform you once they have cleared a curse.
+Можно разыгрывать несколько проклятий одновременно, но не может быть двух активных проклятий, одновременно запрещающих ищейкам задавать вопросы или пользоваться транспортом. Если такое проклятие уже активно, то до его окончания или снятия новое наложить нельзя. В этих случаях ищейки обязаны сообщить, когда проклятие снято.
 
-For any rule disputes, here are additional notes for each curse in the hider deck:
+Для споров по правилам — ниже даны дополнительные примечания к каждому из проклятий:
 
-### Curse of the Luxury Car
+### Проклятье карспоттера
 
-You must be able to identify the car in question when sending the photo, and the seekers must agree that it is, in fact, the car that you claim that it is. Use the MSRP of the car, factoring it its year of production, and disregarding any add-ons or modifications that may have been paid for. (For example: upgrades to the car's interior, special tires, custom colors, etc.) The photo sent to the seekers must include enough of the car for it to be identifiable. All of these rules also apply to the car found by the seekers. If you cannot confirm a car's exact production year or exact model, both sides must come to a consensus on which model and year to use for determining price.
+Ты должен суметь идентифицировать машину на фото, и ищейки должны согласиться с тем, что это именно та машина, которую ты называешь. Используй рекомендованную розничную цену  в зависимости от года выпуска, игнорируя модификации (например, обивку салона, шины, цвет и т. д.). На фото должно быть достаточно деталей, чтобы машину можно было опознать. То же самое относится к машине, найденной ищейками. Если невозможно точно определить модель/год, обе стороны должны договориться, какую версию использовать.
 
-### Curse of the Bridge Troll
+### Проклятие мостового тролля
 
-"Bridge" is defined as any elevated structure, acting as a path, road or railway, intended to be crossed by pedestrians, cars, or other vehicles. All seekers must have some part of their body under some part of the bridge when the next question is asked. If there are no bridges on the game map, this curse should be removed from the deck.
+«Мост» — это любое приподнятое сооружение (дорога, тропа, рельсы), по которому могут пройти/проехать люди, автомобили или транспорт. Все ищейки должны оказаться под мостом, когда зададут следующий вопрос. Если на карте игры мостов нет, уберите это проклятие из колоды.
 
-### Curse of the Drained Brain
+### Проклятие склеротика
 
-This curse may be used (and its price paid) during the time interval between a question and its answer, allowing a player to discard their hand before receiving the reward from a given question. You may not, however, ban the question that has just been asked, even if you have not yet answered it. Questions removed from the game using this curse cannot be asked, even for increased cost.
+Это проклятие можно использовать (и оплатить его стоимость) в интервале между вопросом и ответом, позволяя игроку сбросить всю руку до получения награды за этот вопрос. Однако ты не можешь запретить уже заданный вопрос, даже если ещё не ответил на него. Вопросы, удалённые с помощью этого проклятия, не могут быть заданы повторно, даже за увеличенную стоимость.
 
-### Curse of the Water Weight
+### Проклятие водоноса
 
-Any liquid already traveling with the seekers at the time that this card is played (e.g. water bottles) does not count. The liquid can be in any number of containers, and can be passed back and forth between the seekers at any time. The liquid can be sat down when the seekers are stationary or on transit, but it is considered "abandoned" once it is no longer within 10 feet of any seeker. The hider must be informed of their bonus immediately. "Body of water" within this context does not necessarily mean natural, but it cannot be a pool and must be large enough to be marked on the map.
+Любая жидкость, которая уже находится у ищущих на момент активации карты (например, бутылка воды), не засчитывается. Жидкость может находиться в любом количестве контейнеров и передаваться между ищущими в любое время. Её можно временно ставить, когда игроки стоят или находятся в транспорте, но если жидкость находится далее чем в 5 метрах от любого игрока — она считается оставленной. Скрывающемуся необходимо сразу сообщить о начислении бонуса. Под "водоёмом" понимается объект, отображаемый на карте, и это не обязательно должен быть природный объект, но бассейн не считается подходящим вариантом.
 
-### Curse of the Zoologist
+### Проклятие зоолога
 
-"Bug" in this context refers to any insect, arachnid, diplopoda, chilopoda, or anything else that would be colloquially and commonly referred to as a "bug". "Wild" in this context means undomesticated and not kept in human captivity, including large-scale outdoor instances of captivity, such as farms or sanctuaries. The photo must include enough of the animal to be recognizable within its category. If there is any dispute as to an animal's classification, defer to Wikipedia. Animals outside of any of these categories (such as crustaceans) cannot be used for this curse.
+"Насекомым" в данном случае считается любое существо, которое в обиходе называют "жучком" — насекомые, паукообразные, двупарноногие многоножки, сороконожки и т.п. "Диким" считается животное, не находящееся в неволе, включая крупные открытые зоны содержания (фермы, заповедники). Фото должно ясно показывать, к какой категории относится животное. При спорных ситуациях касательно классификации, используйте Википедию. Животные, не относящиеся к этим группам (например, ракообразные), не подходят для этого проклятия.
 
-### Curse of the Egg Partner
+### Проклятие анти-кастрата
 
-The egg can be from any type of animal, but it must be a real egg (a chocolate egg or a plastic egg, for example, would not count.) Any visible fracture, however small, counts as killing the egg. If you do not want to buy items during the course of your game, or object to this curse on ethical grounds, this curse should be removed from the deck. For any other curse that requires all seekers to do something, the egg counts as a seeker. For example, using the Curse of the Lemon Phylactery after this curse has been played would require the egg to have a lemon attached to it.
+Яйцо может быть любого происхождения (куриное, перепелиное и т.п.), но оно должно быть настоящим — пластиковые или шоколадные яйца не подойдут. Любая, даже самая маленькая трещина считается "смертью" яйца. Если ты не хочешь тратить деньги во время игры или у тебя есть этические возражения против этого задания, лучше исключить это проклятие из колоды. В контексте других проклятий, требующих действий от всех ищущих, яйцо считается ещё одним игроком. Например, после активации Проклятия лимонной филактерии к яйцу тоже должен быть прикреплён лимон.
 
-### Curse of the Jammed Door
+### Проклятие заклинившей двери
 
-Seekers must roll two d6 dice. Dice can only be rolled to enter a doorway once the doorway is visible to the seekers. For example, if you are attempting to roll to enter a train, you cannot roll the dice before the train arrives; you must be able to see the train door first. Doorways within a building that lead to other parts of the same building, such as a store within a train station, do not need to pass a dice check. If there is any reasonable dispute as to whether something counts as a seperate building, err on the side of doing a dice check. If the curse expires while a doorway is on cooldown, that cooldown also immediately expires.
+Ищущие должны бросить два шестигранных кубика (d6). Бросок можно делать только когда дверь уже видно. Например, если игроки хотят войти в поезд, они должны подождать, пока поезд прибудет и дверь станет видимой. Двери внутри одного здания (например, магазин в здании вокзала) не требуют броска. При спорных случаях — лучше всё же бросить кубики. Если проклятие заканчивается, а дверь всё ещё на "перезарядке", этот таймер обнуляется.
 
-### Curse of the Spotty Memory
+### Проклятие девичьей памяти
 
-The seekers should assign die numbers to each category before their first roll. For small-sized games, which only include five categories of questions, a six would result in a reroll.
+Ищущие должны заранее распределить номера на кубике по категориям вопросов. В малых играх, где категорий пять, выпадение шестёрки означает переброс.
 
-### Curse of the Bird Guide
+### Проклятие орнитолога
 
-The bird must be in frame from the moment the video starts. It is considered "in frame" so long as there is any recognizable portion of the bird on camera. The seekers have unlimited attempts to accomplish this.
+Птица должна быть в кадре с самого начала видео. "В кадре" означает, что на видео видна хоть какая-то часть птицы. Количество попыток не ограничено.
 
-### Curse of the Unguided Tourist
+### Проклятие топографического кретина
 
-The human-built structure in question cannot be any part of a road, including curbs or sidewalks. If you are playing in a country or area with highly limited Google Street View coverage (such as Germany), this curse should be removed from the deck.
+Строение, которое нужно найти, должно быть рукотворным, но не частью дороги — бордюры и тротуары не засчитываются. В странах с ограниченным покрытием Google Street View (например, в Германии) это проклятие стоит убрать из колоды.
 
 ### Curse of the Ransom Note
 
-You cannot begin fulfilling the casting cost of this curse if you would be otherwise unable to play a curse; once the cost is fulfilled, this curse must be cast immediately. The printed material cannot be printed by the seekers; the letters should be gathered from magazines, newspapers, or any other material that the seekers encounter in the wild. "Coherence" in this context does not necessarily mean complete sentences, but the hider should be able to discern the meaning of the question without further clarification. You may use easy-to-understand abbreviations for certain words (such as "2" instead of "to.") If the question requires additional context outside of the basic sentence itself, this context does NOT need to be provided in the form of a ransom note. For example, if you are asking a thermometer question, you can simply ask something along the lines of, "Went 5 miles. Hotter/colder?" Any information about where you started and ended the thermometer can be provided as normal, in the form of a location pin or text.
+Это проклятие нельзя активировать, если ты не можешь накладывать проклятия в принципе. Как только условия выполнены - ты обязан сразу его использовать. Текст нельзя напечатать - буквы нужно вырезать из журналов, газет или любых других материалов, которые найдешь. Предложения могут быть неполными, но смысл должен быть понятен. Можно использовать простые сокращения (например "2" вместо "to"). Если вопрос требует пояснений (как в случае с "термометром"), не обязательно делать "записку с угрозами". Достаточно написать что-то вроде "Прошел 5 км. Горячее/холоднее?". Дополнительную информацию (точки старта и финиша) можно указать как обычно - меткой на карте или текстом.
 
-### Curse of the Mediocre Travel Agent
+### Проклятие посредственного турагента
 
-"Publicly accessible" in this context follows the same rules as "publicly accessible" in the context of hiding spots. The destination does not need to be a single point; it can be a small general area like a park or store. The souvenir can be literally any physical object. It does not need to be with the seekers at all times, but it must be with them at the moment that the hider is caught.
+Место, куда направляются ищущие, должно быть "публично доступным" по тем же правилам, что и финальное укрытие. Это может быть не конкретная точка, а зона — например, парк или магазин. В качестве сувенира подойдёт любой физический объект. Его необязательно носить всё время, но он должен быть с игроками в момент поимки.
 
-### Curse of the Impressionable Consumer
+### Проклятие впечатлительного потребителя
 
-Any object or display whose primary purpose is to raise awareness of a product, service, or business counts as an advertisement. If the advertisement is for a specific service, such as a massage, the seekers must pay for and receive the service advertised. If the advertisement is for a location but not a specific service, such as an amusement park, the seekers must enter that location. Locations that are not private businesses, such as a public park, do not count. If you do not want to be forced to potentially spend money to fulfill this curse, it should be removed from the deck.
+Любой объект или инсталляция, основное назначение которой — рекламировать продукт, услугу или бизнес, считается рекламой. Если реклама касается конкретной услуги (например, массажа), её необходимо оплатить и получить. Если реклама ведёт в определённое место, но не предлагает конкретную услугу (например, парк развлечений), ищущие должны войти туда. Объекты, не являющиеся частными бизнесами (например, городской парк), не считаются. Если ты не хочешь рисковать своими деньгами, стоит исключить это проклятие.
 
-### Curse of the U-Turn
+### Проклятие разворота
 
-"Next Station," in this context, refers to the next station that the seekers' current mode of transit will stop at; if there are any stops along the line that their current route will skip, those should be disregarded. If you are not sure whether the seekers are on transit, or whether their route will stop at a particular station, you may ask them for that information. If there is any ambiguity, you should tell them what you believe their next station is when this curse is cast to confirm that you didn't misread their tracker. Even if the seekers' current mode of transit would eventually bring them closer to you, this curse may still be played so long as their next station is further; a line that heads in your direction but temporarily curves away is a particularly advantageous situation for this curse.
+"Следующая станция" означает следующую остановку текущего транспорта ищущих. Пропущенные остановки игнорируются. Если неясно, на чём едут игроки или какая следующая станция, уточни это у них. Даже если маршрут в целом ведёт к тебе, но следующая станция дальше — ты всё равно можешь разыграть проклятие. Особенно эффективно это работает, если линия временно отклоняется от нужного направления.
 
-### Curse of the Cairn
+### Проклятие каменщика
 
-You cannot begin fulfilling the casting cost of this curse if you would be otherwise unable to play a curse; once the cost is fulfilled, this cast must be cast immediately. "Found in nature," in this context, does not necessarily mean found in a natural space or untouched by humans; it simply means that you must find the rocks yourself, and cannot buy them.
+Нельзя начинать собирать камни, если нет возможности разыграть проклятие. Как только камни собраны, проклятие нужно применить сразу. Камни должны быть найдены в природе, а не куплены. При этом неважно, находится ли место в дикой природе — главное, чтобы ты нашёл их сам.
 
-### Curse of the Distant Cuisine
+### Проклятие далекой кухни
 
-The restaurants used in this curse must explicit reference a single country or region within a single country within either their name or some other public-facing material such as a menu. If a restaurant associates itself with multiple countries, or a region larger than a single country (such as an "Asian" restaurant), it cannot be used for this curse. Distance from a given country is measured from your exact location to the nearest point in that country.
+Ресторан должен явно указывать на конкретную страну или регион (в названии или меню). Рестораны с общей географией (например, "азиатская кухня") не подходят. Расстояние до страны определяется от твоего точного положения до ближайшей её точки.
 
-### Curse of the Lemon Phylactery
+### Проклятие лимонохвата
+Лимон должен быть настоящим. Он может быть прикреплён любым способом, но всё время должен касаться кожи или одежды игрока. Если только лимон упадет, об этом нужно немедленно сообщить скрывающемуся и он получит вознаграждение.
 
-The lemon must be a real lemon. It can be affixed using any means, but must be constantly touching the seekers's skin or clothes. Once the lemon falls, the hider should be informed of their bonus immediately.
+### Проклятие бурмалдиньо
 
-### Curse of the Gambler's Feet
+Используется шестигранный кубик. Если игроков несколько, они могут бросать по отдельности или использовать общий результат. Если случайно сделано больше шагов — нужно бросать кубик и "отрабатывать" недостающие броски. Намеренное нарушение не допускается, за исключением ситуаций, когда это необходимо для безопасности (например, переход оживлённой улицы).
 
-The die rolled for this curse must be a d6. If there are multiple seekers, seekers may choose to roll independently or have one die dictate steps for all seekers at once; either is acceptable. If seekers accidentally take extra steps, they should stop and roll the die retroactively until they have made up for all the unaccounted steps. Seekers cannot take unaccounted steps on purpose. except in situation where it would be unsafe to not take extra steps (such as crossing a busy road.)
+### Проклятие виселицы
 
-### Curse of the Hidden Hangman
+Слово должно быть реальным, существовать в словаре, и быть на языке, на котором ведётся игра. Например, английское слово не подходит, если все говорят только по-русски. Если скрывающийся не отвечает в течение 30 секунд — проклятие автоматически снимается.
 
-The chosen five-letter word must be a real word, found in a dictionary, in the language that the game is being played in. You cannot, for example, use a French word if all players only speak English. If the hider ever fails to respond to a query in 30 seconds, this curse is instantly cleared.
+### Проклятие бесконечного кубика
 
-### Curse of the Endless Tumble
+Расстояние в 30 метров измеряется параллельно земле. Кубик можно бросать по наклонной поверхности. Если кубик теряется или не показывает однозначную грань — бросок не засчитывается. Бонус скрывающемуся начисляется сразу.
 
-100 feet is measured parallel to the ground. The die can, and likely should, be rolled on an inclined surface. If the die is lost or does not land cleanly on one side, it cannot be counted. Any bonuses awarded to the hider should be delivered immediately.
+### Проклятие правого поворота
 
-### Curse of the Right Turn
+Работает только на пересечениях улиц — то есть между автомобильными дорогами или тротуарами вдоль них. Не действует в помещениях и в местах без улиц.
 
-This curse only applies to street intersections, meaning the intersection between two roads intended for cars (or pedestrian sidewalks along those roads.) This curse would not have any effects indoors, or in an area where there are no streets.
+### Проклятие городского исследователя
 
-### Curse of the Urban Explorer
+Все вопросы, заданные до активации проклятия во время поездки, должны быть всё равно решены. Вопросы можно задавать вне станции, но нельзя находиться на платформе или в здании, связанном с ней.
 
-Any pending questions that were asked on transit before this curse was played must still be answered. Questions can still be asked outside of transit stations, but seekers cannot be on a platform or in any building associated with the transit station when asking questions.
+### Проклятие переполненной чаши
 
-### Curse of the Overflowing Chalice
+Вопросы на соответствие: тяни 4, бери 1.
+Измерительные: тяни 4, бери 1.
+Термометрические: тяни 3, бери 1.
+Радарные: тяни 3, бери 1.
+Фотозадания: тяни 2, бери 1.
+Щупальцевые: тяни 5, бери 2.
 
-Matching questions become draw 4, keep 1. Measuring questions become draw 4, keep 1. Thermometer questions become draw 3, keep 1. Radar questions become draw 3, keep 1. Photo questions become draw 2, keep 1. Tentacle questions become draw 5, keep 2.
+### Проклятие лабиринта
 
-### Curse of the Labyrinth
+"Решаемый" означает, что можно провести непрерывную линию от входа до выхода. Отсчёт времени начинается с первой линии — время на подготовку не учитывается. Можно начать новый лабиринт в любой момент, но время не сбрасывается. Пользоваться интернетом или другими материалами запрещено — лабиринт должен быть создан "из головы".
 
-"Solvable," in this context, refers to a conventional solution to the maze–you must be able to draw an unbroken line from the start of the maze to the end of the maze. Your time limit begins from the moment you draw your first line; time spent gathering materials does not count. You may discard your maze and start drawing a new maze at any point, but you cannot restart your timer. You may not consult the internet or any other materials when drawing your maze; it must come entirely from your own head.
