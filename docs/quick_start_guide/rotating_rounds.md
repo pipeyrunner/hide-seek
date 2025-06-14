@@ -2,10 +2,26 @@
 sidebar_position: 10
 ---
 
-# Rotating Rounds
+# Смена раундов
 
-The hider is considered found once the seekers are **within 5 feet of them and have spotted them**. If the seekers are near the hider but haven't yet identified them, then the seeker hasn't been caught. At this point, the hider's clock is stopped, and all time bonus cards currently in the hider's hand are added to their time total.
+Считается, что прячущийся найден, когда ищущие подошли к нему ближе чем на 1,5 метра и визуально идентифицировали его. Если ищущие находятся рядом, но ещё не распознали игрока, он не считается пойманным. В момент обнаружения:
 
-After the hider is caught, the new hider is permitted up to 10 minutes for any final planning before their hiding period begins. During this time, the new seekers should reshuffle all cards back into the deck and hand it off to the new hider, turn on their trackers, exchange the investigation book, and ensure the new hider's tracker is turned off. They will begin the next round from the last hider's hiding spot.
+Фиксируется время укрытия игрока
 
-After each player has completed the predetermined number of hiding rounds, **the player with the longest single hiding run is declared the winner**.
+Все бонусные карты времени из руки прячущегося добавляются к его общему результату
+
+Смена игрока:
+После поимки новому прячущемуся даётся до 10 минут на подготовку перед началом своего раунда. В это время ищущие должны:
+
+Перетасовать все карты и передать колоду новому игроку
+
+Активировать свои трекеры
+
+Передать журнал расследования
+
+Убедиться, что трекер нового прячущегося выключен
+
+Новый раунд начинается с места, где был найден предыдущий игрок.
+
+Определение победителя:
+После завершения всех запланированных раундов побеждает игрок с самым долгим одиночным временем укрытия (учитывается лучший результат, а не сумма раундов).
