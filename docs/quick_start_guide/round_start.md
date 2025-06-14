@@ -4,21 +4,49 @@ sidebar_position: 5
 
 # Round Start
 
-At the start of each round, one player/team will become the hider, while the remaining players will band together to play as the round's seekers. The order in which each player hides should be determined, at random, before the game begins.
+В начале каждого раунда один игрок/команда становится прячущимся, а остальные объединяются в группу ищущих. Очерёдность, в которой игроки будут прятаться, определяется случайным образом до начала игры.
 
-While all players are still at the starting location–which can be anywhere within the game map–there are a few items to be distributed. The hider recieves the **hider deck**, and the seekers take the **investigation book**. We also recommend each side takes a **rulebook** to reference in case there is need for clarification or if any rule discrepancies arise. Optionally, the seekers might also choose to print out a map of their game area so that they can mark it as they play, and carry writing implements to take notes. Both sides should also keep at least **two dice** on them at all times, as these are used for various different things throughout the game.
+Подготовка оборудования:
+Пока все игроки находятся на стартовой локации (это может быть любая точка в пределах игровой карты), необходимо распределить следующие предметы:
 
-Each round begins with a **hiding period**. During this time, the hider can use their legs and public transit to travel to any transit station within the map's boundaries. Once the hiding period has concluded, the hider must stay within their hiding zone for the rest of the round. The hiding period is determined by the game size:
+Прячущийся получает колоду прячущегося (hider deck)
 
-import SizeLevels from '@site/src/components/SizeLevels';
+Ищущие берут журнал расследования (investigation book)
 
-<SizeLevels
-leftTitle="Game Size"
-rightTitle="Hiding Period"
-align="right"
-small={`30 minutes`}
-medium={`60 minutes`}
-large={`180 minutes`}
-/>
+Рекомендуем каждой стороне иметь при себе книгу правил для разрешения спорных ситуаций
 
-Lastly, all seekers should make sure to turn on some form of tracker during this period to ensure the hider can follow their movements throughout the round. You can use real GPS trackers if happen to have them, but the easiest option for most people is to download one of the many free smartphone apps that allow other phones to track your phone's location. (We use Apple's "Find My" app, but Google Maps also allows for live location sharing if any players are using Android phones.)
+Дополнительно ищущие могут взять распечатанную карту игровой зоны для пометок и письменные принадлежности для заметок
+
+Обе стороны должны иметь при себе минимум две игральные кости, которые понадобятся в различных игровых ситуациях
+
+Период укрытия:
+Каждый раунд начинается с периода укрытия. В это время прячущийся может:
+
+Передвигаться пешком или на общественном транспорте
+
+Добраться до любой транспортной станции в пределах игровой карты
+
+По окончании периода укрытия игрок должен оставаться в пределах своей зоны укрытия до конца раунда. Длительность периода укрытия зависит от масштаба игры:
+
+
+Маленький - 30 минут
+
+Средний - 60 минут
+
+Большой - 180 минут
+
+
+
+
+Важный момент для ищущих:
+В течение периода укрытия все ищущие обязательно должны включить трекер местоположения, чтобы прячущийся мог следить за их перемещениями.
+
+Варианты отслеживания:
+
+GPS-трекеры (если у вас есть специальные устройства)
+
+Смартфоны (самый простой вариант):
+• Для iPhone: приложение «Find My» (поиск друзей)
+• Для Android: Google Maps (функция «Поделиться геопозицией»)
+
+Совет: Проверьте работу трекера до начала раунда и убедитесь, что у всех есть стабильный интернет!
