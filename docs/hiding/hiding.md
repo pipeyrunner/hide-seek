@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
 ---
-# Hiding
+# Прятки
 
-As the hider, it is your job to stay hidden for as long as possible; stay hidden for longer than anyone else, and the game is yours. At the start of each run, you'll be given a certain amount of time to choose–and travel to–a hiding zone somewhere on your map. While the seekers close in, you'll have to juggle the tasks of answering questions, scoping out a perfect final hiding spot, and assembling the perfect hand using cards from the hider deck.
+В роли прячущегося твоя задача — оставаться незаметным как можно дольше; продержись дольше всех, и победа за тобой. В начале каждого раунда тебе даётся определённое время, чтобы выбрать и добраться до зоны укрытия где-то на карте. Пока ищейки приближаются, тебе придётся совмещать несколько задач: отвечать на вопросы, подбирать идеальное финальное укрытие и собирать идеальную комбинацию карт из колоды прячущегося.
