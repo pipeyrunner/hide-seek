@@ -1,117 +1,89 @@
 ---
 sidebar_position: 3
 ---
+# Вопросы на совпадение
 
-# Matching Questions
 
-Matching Questions follow the format, "Is your nearest \_\_\_\_ the same as my \_\_\_\_" Valid answers are **yes** or **no**. Hiders have five minutes to answer. These questions can be useful at any point in the game, though they often require the seekers to move in order to optimize their efficacy. **It is important to note that if locations are not within a map's boundaries, players must operate as if they do not exist**. For example, if the seekers asked if they shared the same nearest commercial airport as the hider, but the only commercial airports were outside the map's boundaries, it would return a null answer (null answers count as answered questions, and hiders get to draw cards).
+Формат вопроса:
+«Является ли ваш ближайший ____ тем же, что и мой ____?»
+Допустимые ответы: «да» или «нет». У прячущегося есть 5 минут на ответ.
 
-After a matching question has been answered, the hider may **draw 3 cards and keep 1**.
+Особенности:
 
-Here's a little diagram to help illistrate how matching questions can work:
+Действительны на любом этапе игры.
+Часто требуют перемещения ищущих для максимальной эффективности
 
+Если объекты находятся за границами игровой карты — считаются несуществующими (ответ = null, но карты всё равно берутся)
+
+После ответа прячущийся берёт 3 карты и оставляет 1
+
+Пример:
 ![](../assets/seeking_matching_questions.png)
 
-These are the matching questions available to the seekers:
+Категории вопросов
+## Транспорт
+### Коммерческий аэропорт
+Проверяется через Google Flights ([flights.google.com](https://flights.google.com)). Если аэропортов нет в границах карты — ответ null. 
 
-### Transit
+### Линия транспорта
+Условие: ищущие должны находиться в движущемся транспорте.
+Ответ «да» только если их транспорт остановится на станции прячущегося (проезд без остановки = «нет»).
 
-#### Commercial Airport
+### Длина названия станции
+Считаются все символы (включая пробелы и дефисы). Учитывается название в вашем картографическом приложении.
 
-If there is any ambiguity, an airport is considered commercial if you can view flights to/from it via Google Flights ([flights.google.com](https://flights.google.com))
+### Улица или дорога
+Граница — смена названия. Безымянные пути ограничены перекрёстками.
 
-#### Transit Line
+## Административные деления
+#### 1-й уровень
+Штаты (США), кантоны (Швейцария), префектуры (Япония).
 
-_Important: In order to ask this question, seekers must be on the form of transit, and it must be moving._
+#### 2-й уровень
+Округа (США), районы (Швейцария), субпрефектуры (Япония).
 
-The answer is yes if the transit the seekers are currently riding would stop at the hider's station. For clarity, best practice is for seekers to screenshot all the stations their transit would stop at and send them to the hider.
+#### 3-й уровень
+Муниципалитеты (границы могут быть неочевидны — уточняйте!).
 
-If the seekers are on a limited-stop/express train that passes through the hider's station but does not stop at it, the hider should answer "no". A "yes" answer is only given when the seekers' train would _stop_ at the hider's station.
+#### 4-й уровень
+Например, районы Нью-Йорка или специальные округа Токио (если есть).
 
-#### Station Name's Length
+## Природа
+#### Гора
+Определяется по иконке в приложении.
 
-Number of characters (hyphens and spaces count) in the station, as defined by your mapping app, if the app includes the word "station," that counts.
+#### Массив суши
+Непрерывная территория без водных преград. Если спорно — обсудите до игры.
 
-#### Street or Path
+#### Парк
+Измеряется от иконки на карте (даже если вы внутри большого парка, но ближе к маленькому).
 
-A street or path is considered to have ended when it aquires a different name. This includes changing from, say, "Jet Lag St. East" to "Jet Lag St. West"
+## Места интереса
+#### Парк аттракционов
 
-If a street or path is unnamed, it is considered to start or end wherever it has an intersection.
+#### Зоопарк
 
-### Administrative Divisions
+#### Аквариум
 
-#### 1st Administrative Division
+#### Гольф-поле
+Только полноценные поля (мини-гольф и driving range не считаются).
 
-This is the biggest formal category of division. For the US, it would be states. In Switzerland, cantons, in Japan, prefectures.
+#### Музей
 
-#### 2nd Administrative Division
+#### Кинотеатр
 
-A more detailed level of division. In the US, this is counties. In Switzerland, districts. In Japan, subprefectures.
+## Общественные объекты
+####Больница
 
-#### 3rd Administrative Division
+#### Библиотека
 
-One more level down. In the US, Switzerland, and Japan, this would be municipality. Municipality borders can be occasionally difficult to define, so it's up to the seekers to clarify ambiguity.
+####Иностранное консульство
+Почётные консульства не учитываются.
 
-#### 4th Administrative Division
+## Важно:
 
-Some places have no fourth administrative division, but many larger cities do. For example, New York City has boroughs, Zurich has districts, Tokyo has special wards.
+Все измерения производятся от иконки на карте (даже если это приводит к нелогичным результатам).
 
-### Natural
+Ищущие должны чётко формулировать критерии (например, отправлять скриншот с отмеченными объектами).
 
-#### Mountain
-
-Anything correctly classified as a mountain by your mapping app. Measure distance from the map icon.
-
-#### Landmass
-
-An area of land that is in one piece, not broken up by a waterway. If the hider is on a landmass that is entirely surrounded by the landmass the seekers are on, it counts as a match.
-
-We urge players to be reasonable about this. There's a lot of interesting geography discussion to be had about what's its own landmass and what isn't. Is Cape Cod its own landmass or part of a peninsula, merely cut off by an artificial waterway? Hard to say! If your geography has any weird edge cases, we encourage you to discuss them beforehand. In game, as always, it is up to the seekers to clarify any ambiguity when they are asking a question.
-
-#### Park
-
-Anything correctly classified as a park by your mapping app. Measure distance from the map icon.
-
-There's a possibility that measuring to the map icon can lead to strange outcomes–for example, if you are in a very large park but far from the center, you may be several miles from that park's map icon. You might be closer to the icon of a smaller, nearby park. This could mean that you are forced to say that your nearest park is the small one even though you are literally in the bigger park. Nonetheless, measuring to the map icon is the best, most objective way we've found to handle these questions, so we encourge sticking to that system even when it produces these edge case outcomes.
-
-### Places of Interest
-
-#### Amusement Park
-
-Anything correctly categorized as an amusement park by your mapping app. Measure distance from the map icon.
-
-#### Zoo
-
-Anything correctly categorized as a zoo by your mapping app. Measure distance from the map icon.
-
-#### Aquarium
-
-Anything correctly categorized as an aquarium by your mapping app. Measure distance from the map icon.
-
-#### Golf Course
-
-An outdoor golf course. Miniature golf does not count. Driving ranges do not count. Measure distance from the map icon.
-
-_We urge seekers to clarify their understanding of what counts when sending this question._
-
-#### Museum
-
-Anything correctly categorized as a museum by your mapping app. Measure distance from the map icon.
-
-#### Movie Theater
-
-Anything correctly categorized as a movie theater by your mapping app. Measure distance from the map icon.
-
-### Public Utilities
-
-#### Hospital
-
-Anything correctly categorized as a hospital by your mapping app. Measure distance from the map icon.
-
-#### Library
-
-Anything correctly categorized as a library by your mapping app. Measure distance from the map icon.
-
-#### Foreign Consulate
-
-Anything correctly categorized as a foreign consulate by your mapping app. Exclude honorary consulates. Measure distance from the map icon.
+Для спорных случаев рекомендуем договариваться до начала игры.
