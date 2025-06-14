@@ -2,8 +2,9 @@
 sidebar_position: 5
 ---
 
-# Customizing Your Deck
+# Кастомизация колоды
 
-We've provided you with a default hider deck that should most likely work out of the box without any adjustments. We do, however, encourage you to tinker with the deck and have provided some blank cards to help you customize it if you wish.
+Мы подготовили для тебя стандартную колоду скрывающегося — её можно использовать «из коробки», не внося никаких изменений. Тем не менее, мы настоятельно рекомендуем тебе поэкспериментировать с ней: в наборе есть несколько пустых карт, которые позволят добавить что-то своё.
+Колода прячущегося включает в себя набор проклятий, которые, на наш взгляд, хорошо сбалансированы и выполнимы в большинстве игровых условий. Но, конечно, возможны ситуации, когда какие-то проклятия окажутся невозможными или, как минимум, слишком сложными в рамках конкретной местности или формата вашей игры. Кроме того, в колоде есть карты, которые требуют небольших денежных затрат — или просто могут не подойти под ту атмосферу, которую ты хочешь создать. Такие проклятия лучше заранее убрать. Если ты решишь исключить какие-то карты, мы предлагаем заменить их на собственные идеи — для этого и предназначены пустые карты. В целом, мы рекомендуем соблюдать такое соотношение: 50% бонусов ко времени, 25% усилений и 25% проклятий. Но это не жёсткое правило — можешь варьировать пропорции в зависимости от того, насколько много контроля ты хочешь оставить скрывающемуся.
 
-The hider deck includes a set of curse cards that we believe are well-balanced and should be doable in _most_ conditions, but it is entirely possible that there are curses that are **not possible** or at least not feasible given the scope or area of your game. There are also curses that may require spending small amounts of money–or are otherwise undesirable for the vibe that you are trying to cultivate–that you may want to take out of the deck. If you decide to remove any curses, we'd encourage you to use the blank cards to write some custom curses of your own to replace them. Generally, we recommend that your deck be about **50% time bonus cards, 25% powerup cards, and 25% curses**, but these ratios can be adjusted up or down depending on how much agency you want to give the hider.
+
