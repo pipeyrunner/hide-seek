@@ -2,16 +2,41 @@
 sidebar_position: 4
 ---
 
-# Global Hide and Seek
+# Всемирные прятки
 
-Should you do this? No. Will it work? Probably not. Is someone going to try anyway? Almost certainly. So here are a few thoughts on how _Hide and Seek_ could work across the entire globe.
+Стоит ли так делать? Нет. Сработает ли это? Скорее всего, нет. Кто-то всё равно попробует? Ещё бы! Поэтому вот несколько соображений о том, как Прятки могли бы работать в глобальном масштабе.
 
-Firstly, you almost certainly won't be able to dictate a _specific_ list of transit networks that are included in your game, so you'll have to set a general set of parameters for valid transit stations instead. For example, this might include "commercial airports that serve at least 100,000 passengers annually," and "non-metro train stations."
+Во-первых, составить конкретный список транспортных сетей для всей игры будет практически невозможно. Придётся установить общие критерии для допустимых станций. Например:
 
-Secondly, the basic time scale we've provided for **large games** would not work here. You would need to use a new global time scale. Hiding periods would last 24 hours. Scalable time bonuses, time penalties, and time limits would follow large-scale values multiplied by 5.
+коммерческие аэропорты с пассажиропотоком от 100 000 человек в год
 
-Many–or most–curses would need to be removed and replaced. Curses that aim to slow seekers down by distracting them with an activity–such as Curse of the Cairn–would be essentially useless at this scale. You would almost certainly want to write new curses that correspond with the amount of time and money being spent in this version of the game. Perhaps a curse that sends the seekers scuba diving for a particular kind of shell? A curse that forces them to climb a mountain of a certain height? A curse that forces them to camp on a deserted island?
+железнодорожные станции (кроме метро)
 
-You'll also need to add more questions, in almost every category. Add hemisphere, continent, and country to matching; add the equator and national capital to measuring; add much larger radars; additional thermometers; probably a whole new larger category of tentacles. All kinds of stuff.
+Во-вторых, стандартные временные рамки для больших игр здесь не подойдут. Потребуется глобальная шкала времени:
 
-Anyway, there's almost no way that this game could be properly balanced. Don't do it. Spend your money on something sensible. Put it in a mutual fund or something. Please don't do this. (But if you do, let us know. We're just the tiniest bit interested in what might happen.)
+период укрытия — 24 часа
+
+бонусы/штрафы по времени увеличиваются в 5 раз
+
+Многие (если не большинство) проклятий придётся переработать. Те, что просто отвлекают ищущих (вроде Проклятия каменщика), на таком масштабе бесполезны. Понадобятся новые, соответствующие уровню затрат — например:
+
+Проклятие, заставляющее ищущих найти под водой определенный вид ракушки
+
+Проклятие с восхождением на гору заданной высоты
+
+Проклятие с ночёвкой на необитаемом острове
+
+Потребуется расширить все категории вопросов:
+
+Добавить полушария, континенты и страны в вопросы на совпадение
+
+Включить экватор и столицы в вопросы на измерение
+
+Увеличить радиусы радаров
+
+Добавить новые термометры
+
+Создать целую новую категорию "Щупальца" для глобального масштаба
+
+
+Балансировать такую игру практически невозможно. Не делайте этого. Лучше вложите деньги во что-то разумное. В паевой фонд, например. Пожалуйста, не надо. (Но если решитесь — расскажите нам. Нам всё же слегка любопытно, что из этого выйдет.)
