@@ -140,7 +140,7 @@ export default function CardDeckGallery() {
 	return (
 		<main>
 			{renderSection('Временные бонусы', timeBonuses)}
-			{renderSection('усиления', powerups)}
+			{renderSection('Усиления', powerups)}
 			{renderSection('Проклятия', curses)}
 			{renderSection('Бланки', blankCard)}
 
