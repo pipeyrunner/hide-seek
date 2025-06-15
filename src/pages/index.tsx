@@ -29,14 +29,14 @@ export default function Home() {
 					</div>
 
 					<p className='tagline'>
-						A real-world game
+						Детская игра
 						<br />
-						played on public transit
+						которая выросла вместе с вами
 					</p>
 
 					<div className='badges'>
 						<span className='badge'>AGES 14+</span>
-						<span className='badge'>2-4+ PLAYERS</span>
+						<span className='badge'>2-4+ игрока</span>
 					</div>
 
 					<div
@@ -48,13 +48,13 @@ export default function Home() {
 						}}
 					>
 						<Link className='button' to='/docs/quick_start_guide'>
-							Rule Book
+							Правила
 						</Link>
 						<Link className='button' to='/investigation/matching'>
-							Investigation Book
+							Списки вопросов
 						</Link>
 						<Link className='button' to='/your_deck'>
-							Your Deck
+							Ваша колода
 						</Link>
 					</div>
 				</div>
