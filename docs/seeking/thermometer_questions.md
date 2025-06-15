@@ -2,27 +2,37 @@
 sidebar_position: 6
 ---
 
-# Thermometer Questions
+# Вопросы горячо/холодно
 
-Thermometer questions follow the format, "After traveling \_\_\_\_, am I hotter or colder?" Valid answers are **hotter** or **colder**. Hiders have five minutes to answer. When starting a thermometer question, you should inform the hider that you are starting a thermometer and send them your current location (we recommend sending a pin through Google or Apple Maps.) Then, after traveling a sufficient distance–measured as the crow flies–send them your new location. If the new location is closer to the hider's current location, then you are hotter. Otherwise, you are colder. These questions are a good way of determining whether you are moving in the right direction.
+Вопросы горячо/холодно следуют формату:
+«После перемещения на [расстояние], мне стало теплее или холоднее?»
+Допустимые ответы: «теплее» или «холоднее». У прячущегося есть 5 минут, чтобы ответить.
 
-After a thermometer question has been answered, the hider may **draw 2 cards and keep 1**.
+Когда вы начинаете вопрос горячо/холодно, вы должны уведомить прячущегося, что начинаете измерять, и отправить ему свою текущую геолокацию (мы рекомендуем присылать пин через Google Maps или Apple Maps).
+Затем, переместившись на достаточное расстояние (по прямой линии), вы отправляете прячущемуся новую геолокацию.
+Если новое местоположение ближе к текущему месту нахождения прячущегося, то ответ будет «теплее».
+Если дальше — «холоднее».
 
-Here's a little diagram to help illustrate how thermometer questions can work:
+Такие вопросы — хороший способ понять, движетесь ли вы в правильном направлении.
+
+После того как вопрос-теплометр был отвечен, прячущийся может вытянуть 2 карты и оставить 1.
+
+
+Пример работы вопроса горячо/холодно:
 
 ![After traveling 10 miles, am I hotter or colder?](../assets/seeking_thermometer_questions.png)
 
-import LabelPill from '@site/src/components/LabelPill';
+### Вопросы горячо/холодно доступные в маленьких играх:
 
-These are the thermometer questions available to the seekers in <LabelPill label='SMALL'/> **sized games**:
+- 500 метров
+- 1,5 километра
+- 5 километров
 
-- ½ Mile
-- 3 Miles
+### Для средних и больших игр добавьте следующие вопросы: 
 
-### For <LabelPill label='MEDIUM' fontSize='1rem'/> and <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
+- 10 километров
+- 15 километров
 
-- 10 Miles
+### Для больших игр добавьте:
 
-### For <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
-
-- 50 Miles
+- 50 километров
