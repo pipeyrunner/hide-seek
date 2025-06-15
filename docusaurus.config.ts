@@ -144,7 +144,7 @@ const config: Config = {
 					],
 				},
 			],
-			copyright: ``,
+			copyright: `Культурная бочка`,
 		},
 		prism: {
 			theme: prismThemes.github,
