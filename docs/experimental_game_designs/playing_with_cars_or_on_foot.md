@@ -2,14 +2,33 @@
 sidebar_position: 2
 ---
 
-# Playing With Cars (Or On Foot)
+# Игра без общественного транспорта (на машинах или пешком)
 
-It is not lost on us that your hometown may not have sufficient public transit to play even the smallest version of _Hide and Seek_. Of course, there's always the possibility of playing when you're out of town, but you may still be determined to make it work with cars and feet. In this case, you'll have to make a few modifications to the game's traditional ruleset:
+Мы прекрасно понимаем, что в вашем родном городе может не быть развитого общественного транспорта даже для самой компактной версии Пряток. Конечно, можно играть во время поездок, но если вы полны решимости адаптировать игру под автомобили и пешие перемещения, вот необходимые изменения правил:
 
-**Setting your map:** Without a transit system, setting your map will become a matter of simply setting map borders. Make sure that these are drawn carefully, as it'll be even easier to confuse what is or isn't a valid hiding spot without a transit system.
+### Определение игровой зоны
+Без транспортной системы границы карты становятся единственным ориентиром. Подходите к их обозначению особенно тщательно — без привязки к станциям легко запутаться в допустимых местах укрытия.
 
-**Hiding zones:** Hiding zones will still be drawn as a circle with a radius of varying size, depending on game size, somewhere on the map. Instead of being achored to a transit station, you should choose a **street terminus** to act as the center of your zone–that means the point at which one street ends, either at an intersection with another street, or a dead end. This street terminus should serve the same role as your transit station; photos that would normally be taken at a transit station would be taken there, questions referencing transit station names would reference that street's name, etc.
+### Зоны укрытия
+Сохраняется принцип круговой зоны с переменным радиусом (в зависимости от масштаба игры), но центром теперь служит:
 
-**Questions:** Most questions will still work as intended. Ignore any questions that reference transit frequency. As mentioned, some questions that reference the hider's transit station will reference their street terminus instead.
+Конечная точка улицы — место, где улица заканчивается (перекрёсток или тупик)
+Эта точка заменяет транспортную станцию:
 
-**Curses:** Any curse that cannot be played while the seekers are on transit should not be played when the seekers are in a moving car. Curses that prevent the seekers from taking "transportation" or "transit"–or impede them from doing something in transit–include cars.
+Фото делаются здесь
+
+Вопросы о станциях трактуются относительно названия этой улицы
+
+### Адаптация вопросов
+
+Большинство вопросов работают без изменений
+
+Исключаются вопросы о расписании транспорта
+
+Вопросы о станциях применяются к конечной точке улицы
+
+### Особенности проклятий
+
+Проклятия, несовместимые с перемещением на транспорте, активируются только когда машина стоит
+
+Проклятия, ограничивающие использование "транспорта", распространяются и на автомобили
