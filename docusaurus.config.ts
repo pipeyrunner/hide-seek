@@ -108,7 +108,7 @@ const config: Config = {
 			style: 'dark',
 			links: [
 				{
-					title: 'Hide and Seek',
+					title: 'Прятки',
 					items: [
 						{
 							label: 'Правила',
@@ -122,41 +122,29 @@ const config: Config = {
 							label: 'Списки вопросов',
 							to: '/investigation/matching',
 						},
+						
+					],
+				},
+				
+				{
+					title: 'Общая информация',
+					items: [
+						{
+							label: 'Авторы адаптации',
+							href: 'https://t.me/cult_bochki',
+						},
+						{
+							label: 'Создатели',
+							href: 'https://www.youtube.com/@jetlagthegame',
+						},
 						{
 							label: 'Справка',
 							to: '/disclaimer',
 						},
 					],
 				},
-				{
-					title: 'Community',
-					items: [
-						{
-							label: 'YouTube',
-							href: 'https://www.youtube.com/c/jetlagthegame',
-						},
-						
-					],
-				},
-				{
-					title: 'From the Creator',
-					items: [
-						{
-							label: 'Portfolio',
-							href: 'https://collinj.dev',
-						},
-						{
-							label: 'GitHub',
-							href: 'https://github.com/teakivy',
-						},
-						{
-							label: 'X/Twitter',
-							href: 'https://twitter.com/TeakIvyYT',
-						},
-					],
-				},
 			],
-			copyright: `Мы не являемся создателями игры. Перед вами онлайн версия карточной игры, переведенная на русский язык для удобство использования.`,
+			copyright: ``,
 		},
 		prism: {
 			theme: prismThemes.github,
