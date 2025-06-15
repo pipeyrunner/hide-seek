@@ -6,9 +6,9 @@ type LabelPillProps = {
 };
 
 const colorMap: Record<string, string> = {
-	МАЛЕНЬКИЙ: '#ffc800',
-	СРЕДНИЙ: '#ff8c00',
-	БОЛЬШОЙ: '#fc1403',
+	SMALL: '#ffc800',
+	MEDIUM: '#ff8c00',
+	LARGE: '#fc1403',
 };
 
 const LabelPill: React.FC<LabelPillProps> = ({
