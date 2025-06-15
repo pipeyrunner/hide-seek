@@ -9,8 +9,8 @@ type ExternalRedirectModalProps = {
 };
 
 export default function ExternalRedirectModal({
-	title = 'Leaving This Site',
-	description = "Just so you know—you're about to leave our site. The external website may have different content or policies.",
+	title = 'Вы покидаете этот сайт',
+	description = "Вы переходите на сторонний сайт, авторы не несут никакой ответственности за содержимое и безопасность стороннего сайта",
 	url,
 	displayUrl,
 }: ExternalRedirectModalProps) {
@@ -48,7 +48,7 @@ export default function ExternalRedirectModal({
 			>
 				<h1 style={{ marginBottom: '1rem' }}>{title}</h1>
 				<p>
-					You're about to visit an <strong>external website</strong>:
+					Вы переходите на <strong>сторонний сайт</strong>:
 				</p>
 				<p
 					style={{ fontStyle: 'italic', marginBottom: '1rem', color: 'green' }}
@@ -84,7 +84,7 @@ export default function ExternalRedirectModal({
 						}
 						onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#fff')}
 					>
-						Go Back
+						Вернуться
 					</button>
 					<button
 						onClick={handleContinue}
@@ -106,7 +106,7 @@ export default function ExternalRedirectModal({
 							(e.currentTarget.style.backgroundColor = '#ff3b3b')
 						}
 					>
-						Continue
+						Продолжить
 					</button>
 				</div>
 			</div>
