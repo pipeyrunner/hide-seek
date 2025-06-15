@@ -2,6 +2,6 @@
 sidebar_position: 5
 ---
 
-# Ending Your Game
+# Завершение игры
 
-Generally, _Hide and Seek_ ends once the predetermined number of rounds is complete. If, however, you're playing with a hard out _(i.e. you have a flight home or, you know, need to go to school/work)_ we would also recommend setting an end-of-game timer. In that case, the game would end whenever you reach the predetermined number of rounds or the timer runs out, whichever comes first.
+Обычно _Прятки_ заканчиваются после заранее установленного количества раундов. Однако, если вы играете с жёстким ограничением по времени (например, у вас рейс домой или — ну, нужно идти в школу/на работу), мы рекомендуем также установить таймер окончания игры. В таком случае игра завершится либо по достижении заданного количества раундов, либо когда истечёт таймер — в зависимости от того, что произойдёт раньше.
