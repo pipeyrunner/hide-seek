@@ -2,25 +2,32 @@
 sidebar_position: 5
 ---
 
-# Radar Questions
+# Радарные вопросы
 
-Radar questions follow the format, "Are you within \_\_\_\_ of me?" Valid answers are **yes** or **no**. Hiders have five minutes to answer. These questions are a good way of verifying whether you are in the right general area, or crossing off a particularly dense part of the map. (It is easiest to measure these distances using a long press or right click in Google Maps, and using the "Measure" tool.) It's important to note that radars are asking about your location, not your hiding zone. If the radar would encompass part of your hiding zone, but not your location at the time of answering, it would be a miss.
+Радарные запросы формулируются как:
+«Ты находишься в пределах ____ от меня?»
+Допустимыми ответами являются только «да» или «нет». На ответ у прячущегося игрока есть 5 минут.
 
-After a radar question has been answered, the hider may **draw 2 cards and keep 1**.
+Радарные вопросы — отличный способ проверить, находитесь ли вы в нужном районе, или исключить подозрительно плотную зону на карте. Удобнее всего измерять расстояние через Google Maps: зажмите точку или кликните правой кнопкой мыши и выберите инструмент "Измерить расстояние".
 
-Here's a little diagram to help illustrate how radar questions can work:
+Важно: радар относится к вашему текущему положению, а не ко всей зоне, в которой вы прячетесь.
+Если радар охватывает часть зоны, но не ту точку, в которой вы находитесь в момент ответа, — это считается промахом.
 
-![Are you within 100 miles of me?](../assets/seeking_radar_questions.png)
+После ответа на радарный вопрос прячущийся игрок может вытянуть 2 карты и оставить 1 из них.
 
-These are the radar questions available to the seekers:
+Вот наглядный пример как такой вопрос работает на карте:
 
--   ¼ Mile
--   ½ Mile
--   1 Mile
--   3 Miles
--   5 Miles
--   10 Miles
--   25 Miles
--   50 Miles
--   100 Miles
--   Choose (for this, you may use any distance you wish)
+![ты в радиусе 100 миль от меня?](../assets/seeking_radar_questions.png)
+
+Вот список радарных вопросов, которые могут задавать игроки, ищущие прячущегося. Все они следуют формату:
+
+-   500 метров
+-   1 километр
+-   2 километра
+-   5 километров
+-   8 километров
+-   15 километров
+-   40 километров
+-   80 километров
+-   150 километров
+-   Радар на выбор (Можете назначить любой радиус радара на ваш выбор)
