@@ -81,7 +81,7 @@ const config: Config = {
 					type: 'docSidebar',
 					sidebarId: 'tutorialSidebar',
 					position: 'left',
-					label: 'Rulebook',
+					label: 'Правила',
 				},
 				{ to: '/cards', label: 'Cards', position: 'left' },
 				{
