@@ -2,50 +2,57 @@
 sidebar_position: 8
 ---
 
-# Tentacle Questions
+# Вопросы осьминоги
 
-Tentacle questions follow the format, "Within \_\_\_\_ miles of me, which \_\_\_\_ are you nearest to? (You must also be within \_\_\_\_ miles)" If the hider is within the reach of the tentacle question, they must answer with the name of one of the locations requested. If the hider is not within reach of the tentacle question, they may simply answer that they are not within reach. Hiders have five minutes to answer. These questions are most useful near the end of the game, to quickly dispense of density at an extremely high cost. To help visualize this, think of each of these locations (say, all the zoos) becoming tentacles that shoot out from the seekers. They feel around, and one will hit the hider and ping back.
+Эти вопросы формулируются так:
 
-After a tentacle question has been answered, the hider may **draw 4 cards and keep 2**.
+«В пределах ___ километров от меня, к какому ___ ты ближе всего? (Ты также должен находиться в пределах ___ километров)»
 
-Here's a little diagram to help illustrate how tentacle questions can work:
+Если прячущийся действительно находится в пределах действия вопроса, он обязан ответить названием ближайшего из указанных объектов. Если он не находится в пределах зоны действия, он может просто ответить:
+«Я вне зоны».
 
-![Within 15 miles of me, which zoo are you nearest to?](../assets/seeking_tentacle_questions.png)
+У прячущегося есть 5 минут, чтобы ответить на вопрос.
 
-import LabelPill from '@site/src/components/LabelPill';
+🧠 Подумай о вопросе-щупальце как о сети объектов — например, всех зоопарков — которые "вытягиваются" от ищущего игрока в разные стороны. Если одно из щупалец задевает прячущегося, оно "пингует" — и вы получаете точку отсчёта.
 
-**Tentacle question cannot be used in <LabelPill label='SMALL'/> games**. These are the tentacle questions available to the seekers in **<LabelPill label='MEDIUM'/> sized games**:
+## После ответа прячущийся может вытянуть 4 карты и оставить 2.
 
-#### Museums Within 1 Mile
+Пример отображения вопроса-осьминога на карте:
 
-Anything correctly categorized as a museum by your mapping app.
+![В радиусе 25 километров от меня, к какому зоопарку ты ближе всего?](../assets/seeking_tentacle_questions.png)
 
-#### Libraries Within 1 Mile
+## ⚠️ Вопросы-щупальца запрещены в маленьких играх.
 
-Anything correctly categorized as a library by your mapping app.
 
-#### Movie Theaters Within 1 Mile
+## Доступные вопросы-щупальца в играх формата Средний:
+(в пределах 1 км)
 
-Anything correctly categorized as a movie theater by your mapping app.
+### Ближайший музей
+Любое место, обозначенное как музей в вашем картографическом приложении.
 
-#### Hospitals Within 1 Mile
+### Ближайшая библиотека
+Любое место, обозначенное как библиотека в вашем картографическом приложении.
 
-Anything correctly categorized as a hospital by your mapping app.
+### Ближайший кинотеатр
+Любое место, обозначенное как кинотеатр в вашем картографическом приложении.
 
-### For <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
+### Ближайшая больница
+Любое место, обозначенное как больница в вашем картографическом приложении. Используются категории на вашей карте — например, Google Maps
 
-#### Metro Lines Within 15 Miles
+## Дополнительно для игр формата Большой:
+(в пределах 15 км)
 
-These will be drawn as colored lines in Google Maps.
+### Ближайшая линия метро
+Используйте цветные линии, отображаемые на Google Maps
 
-#### Zoos Within 15 Miles
+### Ближайший зоопарк
+Любое место, обозначенное как зоопарк в вашем картографическом приложении.
 
-Anything correctly categorized as a zoo by your mapping app.
+### Ближайший океанариум
+Любое место, обозначенное как океанариум в вашем картографическом приложении.
 
-#### Aquariums Within 15 Miles
+### Ближайший парк аттракционов
+Любое место, обозначенное как парк аттракционов в вашем картографическом приложении.
 
-Anything correctly categorized as an aquarium by your mapping app.
 
-#### Amusement Parks Within 15 Miles
 
-Anything correctly categorized as an amusement park by your mapping app.
