@@ -4,7 +4,7 @@ import '../pages/investigationBook.css';
 
 const navItems = [
 	{ label: 'Соответствие', path: '/investigation/matching' },
-	{ label: 'измерение', path: '/investigation/measuring' },
+	{ label: 'Измерение', path: '/investigation/measuring' },
 	{ label: 'Горячо/холодно', path: '/investigation/thermometer' },
 	{ label: 'Радар', path: '/investigation/radar' },
 	{ label: 'Осьминог', path: '/investigation/tentacles' },
@@ -48,7 +48,7 @@ export default function InvestigationNav() {
 			</div>
 			<div className='investigation-nav-divider' />
 			<button className='nav-reset' onClick={handleReset}>
-				Reset All
+				Удалить введенные данные
 			</button>
 		</div>
 	);
