@@ -9,24 +9,9 @@ export default function Disclaimer() {
 				style={{ maxWidth: 800, margin: '2rem auto', padding: '1rem' }}
 			>
 				<h1>Disclaimer</h1>
+				
 				<p>
-					This website is an unofficial, fan-made digital recreation of the
-					physical game <strong>Jet Lag: Hide and Seek</strong>, which is sold
-					by Wendover Productions and{' '}
-					<a
-						href='https://store.nebula.tv/products/hideandseek'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						Jet Lag: The Game via the Nebula store
-					</a>
-					.
-				</p>
-
-				<p>
-					I am not affiliated with Jet Lag: The Game, Wendover Productions, or
-					Nebula. This site was built as a personal project and is intended for
-					informational and recreational purposes only. It is not endorsed by or
+					It is not endorsed by or
 					associated with the creators of the original product.
 				</p>
 
