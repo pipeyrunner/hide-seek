@@ -4,98 +4,81 @@ sidebar_position: 7
 
 # Photo Questions
 
-Photo questions follow the format, "Send me a photo of \_\_\_\_." Valid answers are a photo that meets the full specifications of the photo question, or "I cannot answer the question," in situations where the subject of the photograph doesn't exist in the hiding zone. Hiders have ten minutes to answer in small and medium games, and twenty minutes to answer in large games. All photos must be sent in your phone's normal aspect ratio. Photos are a useful way of getting a general sense of where the hider is, or for verifying that you've arrived at the right location, but you cannot access Google Street View to assess photos or verify stations from afar.
 
-These are photo questions available to the seekers in **<LabelPill label='Маленький'/> sized games**:
 
-#### Any Building Visible from Transit Station
+Фотозапросы оформляются по шаблону: «Пришли мне фото ____». На такой вопрос можно ответить одним из двух способов:
+— отправить фотографию, которая полностью соответствует требованиям запроса,
+— либо честно ответить «Я не могу ответить на этот вопрос», если запрашиваемый объект отсутствует в зоне, где прячется игрок.
 
-Must stand directly outside a station entrance. If there are multiple entrances, you may choose. Must include roof and both sides, with the top of the building in the top ⅓ of the frame.
+В маленьких и средних играх на ответ даётся 10 минут, в больших — 20 минут. Все фотографии должны быть сделаны в стандартном соотношении сторон вашей камеры, без фильтров, режимов и обрезок.
 
-#### Widest Street
+Фото позволяют составить общее представление о местоположении игрока или подтвердить, что вы прибыли в нужную точку. Однако использовать Google Street View для анализа снимков или дистанционного подтверждения станций — запрещено.
 
-Must include both sides of the street; does not have to include background.
+## В маленьких играх доступны следующие фото-запросы:
 
-#### Tree
 
-Must include the entire tree.
+#### Любое здание, видимое от выхода со станции
+Сделать фото у одного из выходов со станции (на выбор), здание должно полностью помещаться в кадре: крыша и обе стороны, верхняя часть здания — в верхней трети кадра.
 
-#### Tallest Structure in Your Current Sightline
+#### Самая широкая улица
+Должны быть видны обе стороны улицы, фон не обязателен.
 
-This is the tallest building from your perspective, not the objectively tallest building. If you can see the Burj Khalifa miles and miles away, but a nearby apartment building is taller from your perspective/sightline, you would send the apartment building.
+#### Дерево
+Фотография должна охватывать всё дерево целиком.
 
-Must include top and both sides. The top must be in the top **⅓** of the frame.
+#### Самое высокое строение в поле зрения
+Речь о самом высоком здании именно с вашей точки зрения, а не об объективно самом высоком. Если вдалеке видно Бурдж-Халифу, но ближний жилой дом выглядит выше, нужно отправить фото этого дома.
+На фото должны быть видны крыша и обе стороны, верх здания — в верхней трети кадра.
 
-#### You
+#### Вы
+Селфи в стандартном режиме: телефон перпендикулярен земле, рука полностью вытянута, основной объектив, без зума.
 
-Selfie mode. Phone perpendicular to ground, arm fully extended, using your phone's default lens with no zoom.
+#### Небо
+Положите телефон на землю и снимите вертикально вверх, без зума.
 
-#### The Sky
+## В средних и больших играх добавляются:
 
-Place phone on ground, shoot directly up using your phone's default lens with no zoom.
 
-import LabelPill from '@site/src/components/LabelPill';
+#### Самое высокое здание, видимое от выхода со станции
+Аналогично «в поле зрения» — оценивается высота с вашей точки зрения. Снимок делается прямо у одного из выходов (на выбор), в кадре — крыша и обе стороны, верх здания — в верхней трети кадра.
+Важно: само здание станции не считается, если только на нём не стоит здание с другой функцией (например, MetLife Building над Grand Central Station — засчитывается).
 
-### For <LabelPill label='MEDIUM' fontSize='1rem'/> and <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
+#### Трассировка ближайшей улицы или тропы
+Улица или тропа должны быть видимы на карте. Обведите от перекрёстка до перекрёстка. Можно:
+ сделать скриншот карты и закрасить всё кроме нужного отрезка,
+ положить бумагу на экран телефона и обвести вручную.
 
-#### Tallest Building Visible from Transit Station
+#### Два здания
+Сфотографируйте нижние четыре этажа двух зданий.
 
-This is the tallest building from your perspective, not the objectively tallest building. If you can see the Burj Khalifa miles and miles away, but a nearby apartment building is taller from your perspective/sightline, you would send the apartment building.
+#### Внутри ресторана
+Снимок делается через окно с улицы, без зума.
 
-Must stand directly outside a station entrance. If there are multiple entrances, you may choose. Must include roof and both sides, with the top of the building in the top ⅓ of the frame.
+#### Парк
+Снимок делается с расстояния 2 метра от любого объекта, телефон перпендикулярен земле, без зума.
 
-In general, the transit station itself cannot count as the tallest building visible from the transit station. The exception would be if atop the transit station is a tall building whose purpose is unrelated to the transit station. For example, atop Grand Central Station is the MetLife building. This would count as the tallest building visible from the transit station.
+#### Продуктовый проход
+Сделать снимок с одного конца прохода, прямо по его длине. Без зума.
 
-#### Trace Nearest Street/Path
+#### Место поклонения
+На фото должен быть участок размером примерно 1,5 × 1,5 м, содержащий три уникальных элемента, позволяющих точно сопоставить снимок с реальным местом.
 
-Street/path must be visible on mapping app; trace intersection to intersection.
+#### Платформа
+То же требование: 1,5 × 1,5 м с тремя отличимыми элементами. Фото должно быть таким, чтобы человек, пришедший на это место, мог однозначно подтвердить совпадение.
 
-This can be a little tricky to do; we have a few methods. One is to screenshot this on your phone, then use the drawing tools on your phone's photo editing app to black out everything but the street. Another is to put a piece of paper over your phone and trace with a pen/pencil/marker.
+### В больших играх добавляются ещё:
+#### 0,8 км улиц с трассировкой
+Непрерывный маршрут с 5 поворотами, без возвратов. Фото должно быть ориентировано по северу. Улицы должны отображаться на картах. Используйте те же методы трассировки, что описаны выше.
 
-#### 2 Buildings
+#### Самая высокая гора, видимая от станции
+Снова — самая высокая по видимой перспективе. Если вдалеке видна гора Эверест, но ближняя гора кажется выше, нужно фотографировать её. До 3× зума, вершина — в верхней трети кадра.
 
-Must include bottom and up to four stories.
+#### Крупнейший водоём в зоне
+До 3× зума. В кадре должны быть либо оба берега, либо горизонт. Водоёмы, полностью находящиеся вне зоны, не считаются. Если часть большого водоёма заходит в зону, но в ней есть меньший по площади водоём — побеждает тот, который в целом больше.
 
-#### Restaurant Interior
+#### Пять зданий
+Сфотографируйте нижние четыре этажа пяти зданий.
 
-No zoom. Must take the picture through the window from outside the restaurant.
+# После ответа на фото-запрос прячущийся игрок тянет 1 карту и оставляет её себе.
 
-#### Park
 
-No zoom, phone perpendicular to the ground. Must stand 5 feet from any obstruction.
-
-#### Grocery Store Aisle
-
-No zoom. Stand at the end of the aisle, shoot directly down.
-
-#### Place of Worship
-
-Must include a 5' × 5' section with three distinct elements. The litmus test for the distinct elements is: if someone went to that place and found what you took a picture of, they could confidently match it, and be sure it wasn't taken somewhere else.
-
-#### Train Platform
-
-Must include a 5' × 5' section with three distinct elements. The litmus test for the distinct elements is: if someone went to that place and found what you took a picture of, they could confidently match it, and be sure it wasn't taken somewhere else.
-
-### For <LabelPill label='LARGE' fontSize='1rem'/> Sized Games, Add the Following:
-
-#### ½ Mile of Streets Traced
-
-Must be continuous, include 5 turns, with no doubling back. Send north-south oriented. Streets must appear on mapping app.
-
-As mentioned before, this can be a little tricky to do; we have a few methods. One is to screenshot this on your phone, then use the drawing tools on your phone's photo editing app to black out everything but the street. Another is to put a piece of paper over your phone and trace with a pen/pencil/marker.
-
-#### Tallest Mountain Visible from Transit Station
-
-Tallest from your perspective/sightline. If you could see Mount Everest many many miles away, but another nearby mountain looks taller from your perspective, you would send the nearby mountain.
-
-Max 3x zoom; top of mountain must be in top ⅓ of frame.
-
-#### The Biggest Body of Water in Your Zone
-
-Max 3x zoom. Must include either both sides of body of water or the horizon. If a body of water is visible from the hider's zone, but no part of it touches the zone, it does not count. However, if a large body of water partially touches the hider's zone, but the part of it inside the zone is smaller than another body of water in the zone, the larger overall body water would still be considered the largest in the zone.
-
-#### 5 Buildings
-
-Must include bottom and up to four stories.
-
-After a photo question has been answered, the hider may **draw 1 card and keep 1**.
