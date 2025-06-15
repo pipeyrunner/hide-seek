@@ -3,9 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 
 type SizeLevelsProps = {
-    small: string;
-    medium: string;
-    large: string;
+    маленький: string;
+    средний: string;
+    большой: string;
     leftTitle?: string;
     rightTitle?: string;
     align?: 'left' | 'right';
