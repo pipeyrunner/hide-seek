@@ -10,7 +10,7 @@ type ExternalRedirectModalProps = {
 
 export default function ExternalRedirectModal({
 	title = 'Вы покидаете этот сайт',
-	description = "Вы переходите на сторонний сайт, авторы не несут никакой ответственности за содержимое и безопасность стороннего сайта",
+	description = "Вы переходите на сторонний сайт. Авторы не несут никакой ответственности за содержимое и безопасность стороннего сайта",
 	url,
 	displayUrl,
 }: ExternalRedirectModalProps) {
