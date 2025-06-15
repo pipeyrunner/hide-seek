@@ -3,12 +3,12 @@ import { useLocation, useHistory } from '@docusaurus/router';
 import '../pages/investigationBook.css';
 
 const navItems = [
-	{ label: 'Matching', path: '/investigation/matching' },
-	{ label: 'Measuring', path: '/investigation/measuring' },
-	{ label: 'Thermometer', path: '/investigation/thermometer' },
-	{ label: 'Radar', path: '/investigation/radar' },
-	{ label: 'Tentacles', path: '/investigation/tentacles' },
-	{ label: 'Photos', path: '/investigation/photos' },
+	{ label: 'Соответствие', path: '/investigation/matching' },
+	{ label: 'измерение', path: '/investigation/measuring' },
+	{ label: 'Горячо/холодно', path: '/investigation/thermometer' },
+	{ label: 'Радар', path: '/investigation/radar' },
+	{ label: 'Осьминог', path: '/investigation/tentacles' },
+	{ label: 'Фото', path: '/investigation/photos' },
 ];
 
 export default function InvestigationNav() {
@@ -17,7 +17,7 @@ export default function InvestigationNav() {
 
 	const handleReset = () => {
 		const confirm = window.confirm(
-			'Are you sure you want to reset all investigation notes? This will delete all your progress and cannot be undone.'
+			'Вы точно хотите сбросить все записи расследования? Это действие полностью удалит весь ваш прогресс, и отменить его будет невозможно.'
 		);
 		if (!confirm) return;
 
