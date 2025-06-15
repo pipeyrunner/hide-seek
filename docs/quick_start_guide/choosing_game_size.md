@@ -10,14 +10,14 @@ sidebar_position: 2
 
 Средний - Охватывает крупный город, агломерацию или целый регион. Игра обычно длится около одного дня. Примеры: Москва; Нью-Йорк; Большой Лондон
 
-Большой - хватывает большой регион, целую страну или несколько маленьких стран. Игра обычно длится от 2 до 4 дней. Примеры: Швейцария; Япония; Бенилюкс
+Большой - Охватывает большой регион, целую страну или несколько маленьких стран. Игра обычно длится от 2 до 4 дней. Примеры: Швейцария; Япония; Бенилюкс
 
 import SizeLevels from '@site/src/components/SizeLevels';
 
 <SizeLevels
-small={`Spans a single town, small city, or portion of a large city; lasts 4–8 hours\n*Examples: Lower Manhattan; Winston-Salem, NC*`}
-medium={`Spans a major city, metro area, or region; lasts about 1 day\n*Examples: Hong Kong; New York City; Greater London, UK*`}
-large={`Spans a large region, an entire country, or several small countries; lasts 2 to 4 days\n*Examples: Switzerland; Japan; New England, US*`} align='left'
+small={`Охватывает один небольшой город, часть крупного города или весь город поменьше. Игра обычно длится от 4 до 8 часов. Примеры: Москва в пределах ТТК; Санкт-Петербург*`}
+medium={`Охватывает крупный город, агломерацию или целый регион. Игра обычно длится около одного дня. Примеры: Москва; Нью-Йорк; Большой Лондон*`}
+large={`Охватывает большой регион, целую страну или несколько маленьких стран. Игра обычно длится от 2 до 4 дней. Примеры: Швейцария; Япония; Бенилюкс*`} align='left'
 />
 
 
