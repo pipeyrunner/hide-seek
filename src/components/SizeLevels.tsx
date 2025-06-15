@@ -3,9 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 
 type SizeLevelsProps = {
-    МАЛЕНЬКИЙ: string;
-    СРЕДНИЙ: string;
-    БОЛЬШОЙ: string;
+    small: string;
+    medium: string;
+    large: string;
     leftTitle?: string;
     rightTitle?: string;
     align?: 'left' | 'right';
@@ -70,28 +70,28 @@ const SizeRow: React.FC<SizeRowProps> = ({
 );
 
 const SizeLevels: React.FC<SizeLevelsProps> = ({
-    МАЛЕНЬКИЙ,
-    СРЕДНИЙ,
-    БОЛЬШОЙ,
+    small,
+    medium,
+    large,
     leftTitle,
     rightTitle,
     align = 'right',
 }) => {
     const sizes = [
         {
-            label: 'МАЛЕНЬКИЙ',
+            label: 'SMALL',
             color: '#ffffff',
             bgColor: '#ffc800',
             content: маленький,
         },
         {
-            label: 'СРЕДНИЙ',
+            label: 'MEDIUM',
             color: '#ffffff',
             bgColor: '#ff8c00',
             content: средний,
         },
         {
-            label: 'БОЛЬШОЙ',
+            label: 'LARGE',
             color: '#ffffff',
             bgColor: '#fc1403',
             content: большой,
