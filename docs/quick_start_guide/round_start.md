@@ -25,8 +25,8 @@ sidebar_position: 5
 import SizeLevels from '@site/src/components/SizeLevels';
 
 <SizeLevels
-leftTitle="Game Size"
-rightTitle="Hiding Period"
+leftTitle="Масштаб игры"
+rightTitle="Время укрытия"
 align="right"
 small={`30 минут`}
 medium={`60 минут`}
