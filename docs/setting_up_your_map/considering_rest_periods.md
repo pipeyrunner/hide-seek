@@ -2,6 +2,10 @@
 sidebar_position: 4
 ---
 
-# Considering Rest Periods
+# Периоды отдыха
 
-If your game is large enough to potentially span multiple days, you will also need to set rest periods for each day. For the sake of fairness, we recommend doing this ahead of time. These can be as long as you'd like, so long as all players reset to their exact positions when the game resumes. We'd recommend a minimum of 10 hours, in order for all players to get sufficient rest.
+Если ваша игра достаточно масштабна и может растянуться на несколько дней, вам нужно заранее установить периоды отдыха на каждый день. Для справедливости мы рекомендуем договориться об этом заранее.
+
+Продолжительность отдыха может быть любой, при условии, что все игроки вернутся точно в те же места, где они находились, когда игра прервалась. Мы рекомендуем минимум 10 часов отдыха, чтобы все участники могли полноценно восстановиться.
+
+
