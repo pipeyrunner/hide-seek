@@ -17,8 +17,8 @@ const config: Config = {
 
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
-	organizationName: 'teakivy', // Usually your GitHub org/user name.
-	projectName: 'jet-lag', // Usually your repo name.
+	organizationName: 'pipeyrunner', // Usually your GitHub org/user name.
+	projectName: 'jetlag', // Usually your repo name.
 
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -71,7 +71,7 @@ const config: Config = {
 		// Replace with your project's social card
 		image: 'img/docusaurus-social-card.jpg',
 		navbar: {
-			title: 'Hide and Seek',
+			title: 'Прятки',
 			logo: {
 				alt: 'Jet Lag Logo',
 				src: 'img/jetlag.png',
