@@ -23,8 +23,8 @@ export default function Home() {
 						</h1>
 						<div className='line'></div>
 						<div className='subline-container' style={{}}>
-							<span className='subline left'>a transit game</span>
-							<span className='subline right'>find your friends</span>
+							<span className='subline left'>транспортная игра</span>
+							<span className='subline right'>найди своих друзей</span>
 						</div>
 					</div>
 
