@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 
 export default function Disclaimer() {
 	return (
-		<Layout title='Disclaimer'>
+		<Layout title='Справка'>
 			<main
 				className='container'
 				style={{ maxWidth: 800, margin: '2rem auto', padding: '1rem' }}
