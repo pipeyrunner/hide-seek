@@ -12,5 +12,13 @@ sidebar_position: 2
 
 Большой - хватывает большой регион, целую страну или несколько маленьких стран. Игра обычно длится от 2 до 4 дней. Примеры: Швейцария; Япония; Бенилюкс
 
+import SizeLevels from '@site/src/components/SizeLevels';
+
+<SizeLevels
+small={`Spans a single town, small city, or portion of a large city; lasts 4–8 hours\n*Examples: Lower Manhattan; Winston-Salem, NC*`}
+medium={`Spans a major city, metro area, or region; lasts about 1 day\n*Examples: Hong Kong; New York City; Greater London, UK*`}
+large={`Spans a large region, an entire country, or several small countries; lasts 2 to 4 days\n*Examples: Switzerland; Japan; New England, US*`} align='left'
+/>
+
 
 Ещё одно важное решение, которое нужно принять относительно продолжительности игры — стоит ли добавлять дополнительные раунды. В базовой версии игры каждый игрок или команда прячутся только один раз — когда все завершили свой ход, побеждает тот, кто прятался дольше всего. Мы считаем стандартным вариантом игры один раунд на игрока, и рекомендуем придерживаться его, если только вы не готовы уделить игре значительно больше времени. Если же вы всё-таки решите добавить дополнительные раунды, время не суммируется — учитывается только лучший результат игрока за один раунд.
