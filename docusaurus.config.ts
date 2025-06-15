@@ -83,23 +83,23 @@ const config: Config = {
 					position: 'left',
 					label: 'Правила',
 				},
-				{ to: '/cards', label: 'Cards', position: 'left' },
+				{ to: '/cards', label: 'Карты', position: 'left' },
 				{
 					to: '/investigation/matching',
-					label: 'Investigation Book',
+					label: 'Списки вопросов',
 					position: 'left',
 					activeBaseRegex: '/investigation/',
 				},
 				{
 					to: '/your_deck',
-					label: 'Your Deck',
+					label: 'Ваша колода',
 					position: 'left',
 				},
 
-				{ to: '/map_generator', label: 'Map Generator', position: 'right' },
+				{ to: '/map_generator', label: 'Генератор карт', position: 'right' },
 				{
-					href: 'https://github.com/teakivy/jet-lag',
-					label: 'GitHub',
+					href: 'https://t.me/cult_bochki',
+					label: 'ТГ',
 					position: 'right',
 				},
 			],
@@ -111,19 +111,19 @@ const config: Config = {
 					title: 'Hide and Seek',
 					items: [
 						{
-							label: 'Rulebook',
+							label: 'Правила',
 							to: '/docs/quick_start_guide',
 						},
 						{
-							label: 'Cards',
+							label: 'Карты',
 							to: '/cards',
 						},
 						{
-							label: 'Investigation Book',
+							label: 'Списки вопросов',
 							to: '/investigation/matching',
 						},
 						{
-							label: 'Disclaimer',
+							label: 'Справка',
 							to: '/disclaimer',
 						},
 					],
@@ -132,17 +132,10 @@ const config: Config = {
 					title: 'Community',
 					items: [
 						{
-							label: 'Nebula',
-							href: 'https://nebula.tv/jetlag',
-						},
-						{
 							label: 'YouTube',
 							href: 'https://www.youtube.com/c/jetlagthegame',
 						},
-						{
-							label: 'Discord',
-							href: 'https://discord.com/invite/jetlag',
-						},
+						
 					],
 				},
 				{
@@ -163,7 +156,7 @@ const config: Config = {
 					],
 				},
 			],
-			copyright: `Copyright © ${new Date().getFullYear()} Collin Jones. Not affiliated with Jet Lag: The Game, Nebula, or Wendover Productions.`,
+			copyright: `Мы не являемся создателями игры. Перед вами онлайн версия карточной игры, переведенная на русский язык для удобство использования.`,
 		},
 		prism: {
 			theme: prismThemes.github,
