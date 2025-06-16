@@ -5,25 +5,25 @@ import InvestigationNav from '../../components/investigationNav';
 
 export default function Radar() {
 	return (
-		<Layout title='4. Radar'>
+		<Layout title='4. Радар'>
 			<InvestigationNav />
 			<InvestigationForm
-				title='4. RADAR'
-				chips={['DRAW 2, PICK 1', '5 MINUTES']}
-				prompt='Are you within Distance of me?'
+				title='4. Радар'
+				chips={['Вытяни 2, возьми 1', '5 минут']}
+				prompt='Ты находишься в пределах _____ от меня?'
 				storageKey='radarNotes'
 				fields={{
-					'All Games': [
-						'¼ Mile',
-						'½ Mile',
-						'1 Mile',
-						'3 Miles',
-						'5 Miles',
-						'10 Miles',
-						'25 Miles',
-						'50 Miles',
-						'100 Miles',
-						'CHOOSE',
+					'Все игры': [
+						'500 метров',
+						'1 километр',
+						'2 километра',
+						'5 километров',
+						'10 километров',
+						'15 километров',
+						'30 километров',
+						'50 километров',
+						'150 километров',
+						'Любой радиус радара',
 					],
 				}}
 			/>
