@@ -81,9 +81,7 @@ export default function DisclaimerBanner({ overlay = false }: Props) {
 				transition: 'transform 0.3s ease-out',
 			}}
 		>
-			This is an <strong>unofficial fan-made recreation</strong> of the game
-			<em> Jet Lag: Hide and Seek</em>. It is not affiliated with Jet Lag,
-			Nebula, or Wendover Productions.
+			А
 			<Link
 				to='/disclaimer'
 				style={{
