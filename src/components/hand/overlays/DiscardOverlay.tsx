@@ -103,10 +103,10 @@ function DiscardOverlay({
 			<CardButton
 				title={
 					discardSelection.length !== discardCount
-						? `SELECT ${discardCount - discardSelection.length} MORE CARD${
-								discardCount - discardSelection.length > 1 ? 'S' : ''
+						? `ВЫБЕРИТЕ еще ${discardCount - discardSelection.length} карт${
+								discardCount - discardSelection.length === 1 ? 'у' : 'ы'
 						  }`
-						: `DISCARD ${discardCount} CARD${discardCount > 1 ? 'S' : ''}`
+						: `сбросить ${discardCount} карт${discardCount === 1 ? 'у' : ''}`
 				}
 				disabled={discardSelection.length !== discardCount}
 				backgroundColor={'#ff3b3b'}
