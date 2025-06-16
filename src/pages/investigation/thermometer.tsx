@@ -5,17 +5,17 @@ import InvestigationNav from '../../components/investigationNav';
 
 export default function Thermometer() {
 	return (
-		<Layout title='3. Thermometer'>
+		<Layout title='3. Горячо/холодно'>
 			<InvestigationNav />
 			<InvestigationForm
-				title='3. THERMOMETER'
-				chips={['DRAW 2, PICK 1', '5 MINUTES']}
-				prompt="I've just traveled (at least) Distance. Am I hotter or colder?"
+				title='3. Горячо/холодно'
+				chips={['Вытяни 2, возьми 1', '5 минут']}
+				prompt="Я только что преодолел (как минимум) _____. Стало жарче или холоднее?"
 				storageKey='thermometerNotes'
 				fields={{
-					'All Games': ['½ Mile', '3 Miles'],
-					'Add for Medium & Large': ['10 Miles'],
-					'Add for Large': ['50 Miles'],
+					'Все игры': ['1 километр', '5 километров'],
+					'Для средних и больших игр': ['15 километров'],
+					'Только для больших игр': ['50 километров'],
 				}}
 			/>
 		</Layout>
