@@ -39,7 +39,7 @@ function DiscardOverlay({
 						fontFamily: 'VAG Rounded Next, sans-serif',
 					}}
 				>
-					Select {discardCount} card{discardCount > 1 ? 's' : ''} to discard.
+					Select {discardCount} card{discardCount = 1 ? 'f' : ''} to discard.
 				</h2>
 			)}
 
