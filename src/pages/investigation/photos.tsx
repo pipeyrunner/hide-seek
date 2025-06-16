@@ -88,16 +88,16 @@ export default function Photos() {
 	};
 
 	return (
-		<Layout title='6. Photos'>
+		<Layout title='6. Фото'>
 			<InvestigationNav />
 			<div className='investigation-container'>
-				<h1 className='investigation-title'>6. PHOTOS</h1>
+				<h1 className='investigation-title'>6. Фото</h1>
 				<div className='investigation-chips'>
-					<span className='chip'>DRAW 1</span>
-					<span className='chip'>S/M: 10 MIN</span>
-					<span className='chip'>L: 20 MIN</span>
+					<span className='chip'>Возьми 1</span>
+					<span className='chip'>Мал/Сред: 10 мин</span>
+					<span className='chip'>Больш: 20 мин</span>
 				</div>
-				<p className='investigation-question'>Send a photo of Subject</p>
+				<p className='investigation-question'>Отправь фото заданного объекта</p>
 
 				{Object.entries(allPrompts).map(([section, prompts]) => (
 					<div key={section} className='investigation-section'>
