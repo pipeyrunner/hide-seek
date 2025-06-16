@@ -5,25 +5,25 @@ import InvestigationNav from '../../components/investigationNav';
 
 export default function Tentacles() {
 	return (
-		<Layout title='5. Tentacles'>
+		<Layout title='5. Осьминог'>
 			<InvestigationNav />
 			<InvestigationForm
-				title='5. TENTACLES'
-				chips={['DRAW 4, PICK 2', '5 MINUTES']}
-				prompt='Of all the Places within DISTANCE of me, which are you closest to? (You must also be within DISTANCE.)'
+				title='5. Осьминог'
+				chips={['вытяни 4, возьми 2', '5 минут']}
+				prompt='Из всех мест в пределах _____ от меня, к какому из них ты ближе всего? (Ты тоже должен быть в этом радиусе.)'
 				storageKey='tentaclesNotes'
 				fields={{
-					'Medium & Large Games (1 Mile)': [
-						'Museums',
-						'Libraries',
-						'Movie Theaters',
-						'Hospitals',
+					'Средние и большие игры (1,5 километра)': [
+						'Музеи',
+						'Библиотеки',
+						'Кинотеатры',
+						'Больницы',
 					],
-					'Large Games Only (15 Miles)': [
-						'Metro Lines',
-						'Zoos',
-						'Aquariums',
-						'Amusement Parks',
+					'Только большие игры (25 километров)': [
+						'Линии метро',
+						'Зоопарки',
+						'Океанариумы',
+						'Парки развлечений',
 					],
 				}}
 			/>
