@@ -4,29 +4,29 @@ import InvestigationNav from '../../components/investigationNav';
 import uploadPlaceholder from '/static/img/default-placeholder.png';
 
 const allPrompts: Record<string, string[]> = {
-	'All Games': [
-		'A Tree',
-		'The Sky',
-		'You',
-		'Widest Street',
-		'Tallest Structure in Your Sightline',
-		'Any Building Visible from Station',
+	'Все игры': [
+		'Дерево',
+		'Небо',
+		'Селфи',
+		'Самая широкая улица',
+		'Самое высокое здание с твой перспективы',
+		'Любое здание видимое со станции',
 	],
-	'Add for Medium & Large': [
-		'Tallest Building Visible from Station',
-		'Trace Nearest Street/Path',
-		'Two Buildings',
-		'Restaurant Interior',
-		'Train Platform',
-		'Park',
-		'Grocery Store Aisle',
-		'Place of Worship',
+	'Для средних и больших игр': [
+		'Самое высокое здание видимое со станции',
+		'Чертеж ближайшей улицы/тропинки',
+		'Два здания',
+		'Интерьер ресторана',
+		'Платформа станции',
+		'Парк',
+		' Отдел продуктового магазина',
+		'Место поклонения/почитания',
 	],
-	'Add for Large': [
-		'½ Mile of Streets Traced',
-		'Tallest Mountain Visible from Station',
-		'Biggest Body of Water in Your Zone',
-		'Five Buildings',
+	'Для больших игр': [
+		'чертеж ближайшей улицы (мин. 800 метров)',
+		'Самая высокая гора видимая со станции',
+		'Самый большой водный объект в твоей зоне',
+		'Пять зданий',
 	],
 };
 
