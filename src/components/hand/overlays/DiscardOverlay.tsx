@@ -106,7 +106,7 @@ function DiscardOverlay({
 						? `Выберите еще ${discardCount - discardSelection.length} карт${
 								discardCount - discardSelection.length > 1 ? 'ы' : ''
 						  }`
-						: `Сбросить ${discardCount} карт${discardCount = 1 ? 'у' : ''}${discardCount > 1 ? 'ы' : ''}`
+						: `Сбросить ${discardCount}`
 				}
 				disabled={discardSelection.length !== discardCount}
 				backgroundColor={'#ff3b3b'}
