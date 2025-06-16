@@ -39,7 +39,7 @@ function DiscardOverlay({
 						fontFamily: 'VAG Rounded Next, sans-serif',
 					}}
 				>
-					Select {discardCount} card{discardCount > 1 ? 's' : ''} to discard.
+					Выберите {discardCount} карту{discardCount > 1 ? 's' : ''} для сброса.
 				</h2>
 			)}
 
@@ -103,10 +103,10 @@ function DiscardOverlay({
 			<CardButton
 				title={
 					discardSelection.length !== discardCount
-						? `SELECT ${discardCount - discardSelection.length} MORE CARD${
+						? `Выберите ${discardCount - discardSelection.length} больше карт${
 								discardCount - discardSelection.length > 1 ? 'S' : ''
 						  }`
-						: `DISCARD ${discardCount} CARD${discardCount > 1 ? 'S' : ''}`
+						: `Сбросить ${discardCount} карту${discardCount > 1 ? 'S' : ''}`
 				}
 				disabled={discardSelection.length !== discardCount}
 				backgroundColor={'#ff3b3b'}
