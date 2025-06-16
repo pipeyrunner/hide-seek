@@ -5,43 +5,43 @@ import InvestigationNav from '../../components/investigationNav';
 
 export default function Measuring() {
 	return (
-		<Layout title='2. Measuring'>
+		<Layout title='2. Измерение'>
 			<InvestigationNav />
 			<InvestigationForm
-				title='2. MEASURING'
-				chips={['DRAW 3, PICK 1', '5 MINUTES']}
-				prompt='Compared to me, are you closer to or further from _______?'
+				title='2. Измерение'
+				chips={['вытяни 3, возьми 1', '5 минут']}
+				prompt='По сравнению со мной, ты ближе или дальше от _____?'
 				storageKey='measuringNotes'
 				fields={{
-					Transit: [
-						'A Commercial Airport',
-						'A High Speed Train Line',
-						'A Rail Station',
+					Транспорт: [
+						'Коммерческий аэропорт',
+						'Пути поездов дальнего следования',
+						'Железнодорожная станция',
 					],
-					Borders: [
-						'An International Border',
-						'A 1st Admin. Div. Border',
-						'A 2nd Admin. Div. Border',
+					Граница: [
+						'Международная граница',
+						'Граница округа',
+						'Граница города',
 					],
-					Natural: [
-						'Sea Level',
-						'A Body of Water',
-						'A Coastline',
-						'A Mountain',
-						'A Park',
+					'Природные объекты': [
+						'Уровень моря',
+						'Водный объект',
+						'Береговая линия',
+						'Гора',
+						'Парк',
 					],
-					'Places of Interest': [
-						'An Amusement Park',
-						'A Zoo',
-						'An Aquarium',
-						'A Golf Course',
-						'A Museum',
-						'A Movie Theater',
+					'Места интереса': [
+						'Парк развлечения',
+						'Зоопарк',
+						'Океанариум',
+						'Поле для гольфа',
+						'Музей',
+						'Кинотеатр',
 					],
-					'Public Utilities': [
-						'A Hospital',
-						'A Library',
-						'A Foreign Consulate',
+					'Общественные объекты': [
+						'Больница',
+						'Библиотека',
+						'Иностранное консульство (МФЦ в Москве)',
 					],
 				}}
 			/>
