@@ -8,33 +8,33 @@ export default function Matching() {
 		<Layout title='1. Matching'>
 			<InvestigationNav />
 			<InvestigationForm
-				title='1. MATCHING'
-				chips={['DRAW 3, PICK 1', '5 MINUTES']}
-				prompt='Is your nearest _______ the same as my nearest _______?'
+				title='1. Соответствие'
+				chips={['Тяни 3, возьми 1', '5 минут']}
+				prompt='Является ли твой ближайший _____ тем же, что и мой ближайший _____?'
 				storageKey='matchingNotes'
 				fields={{
-					Transit: [
-						'Commercial Airport',
-						'Transit Line',
-						'Station’s Name Length',
-						'Street or Path',
+					Транспорт: [
+						'Коммерческий аэропорт',
+						'Линия транспорта',
+						'Длина названия станции',
+						'Улица или дорога',
 					],
-					'Administrative Divisions': [
-						'1st Admin. Division',
-						'2nd Admin. Division',
-						'3rd Admin. Division',
-						'4th Admin. Division',
+					'Административные деления': [
+						'Округ',
+						'Город',
+						'Административный округ',
+						'Район',
 					],
-					Natural: ['Mountain', 'Landmass', 'Park'],
-					'Places of Interest': [
-						'Amusement Park',
-						'Zoo',
-						'Aquarium',
-						'Golf Course',
-						'Museum',
-						'Movie Theater',
+					'Природные объекты': ['Гора', 'Landmass', 'Парк'],
+					'Места интереса': [
+						'Парк развлечений',
+						'Зоопарк',
+						'Океанариум',
+						'Поле для гольфа',
+						'Музей',
+						'Кинотеатр',
 					],
-					'Public Utilities': ['Hospital', 'Library', 'Foreign Consulate'],
+					'Общественные объекты': ['Больница', 'Библиотека', 'Иностранное консульство (МФЦ в Москве)'],
 				}}
 			/>
 		</Layout>
