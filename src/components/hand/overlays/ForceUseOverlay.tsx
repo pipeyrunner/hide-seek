@@ -38,8 +38,7 @@ function ForceUseOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				You must use or discard {forceUseCards} card
-				{forceUseCards > 1 ? 's' : ''} before drawing more.
+				Надо использовать или сбросить {forceUseCards} карт{forceUseCards === 1 ? 'у' : forceUseCards > 1 && forceUseCards < 5 ? 'ы' : ''} перед тем, как тянуть новые.
 			</h2>
 			<div
 				style={{
@@ -88,7 +87,7 @@ function ForceUseOverlay({
 							}}
 						>
 							<CardButton
-								title={'USE'}
+								title={'Использовать'}
 								backgroundColor={'#202b39'}
 								onClick={() => {
 									if (currentOverlay !== OverlayType.FORCE_USE) return;
@@ -102,7 +101,7 @@ function ForceUseOverlay({
 								}
 							/>
 							<CardButton
-								title={'DISCARD'}
+								title={'Сбросить'}
 								backgroundColor={'#ff3b3b'}
 								onClick={() => {
 									if (currentOverlay !== OverlayType.FORCE_USE) return;
