@@ -129,7 +129,7 @@ function UseCardOverlay({
 						}}
 					>
 						<CardButton
-							title={'CONFIRM USE'}
+							title={'Использовать'}
 							backgroundColor={'#202b39'}
 							onClick={() => {
 								if (currentOverlay !== OverlayType.USE_CARD) return;
@@ -297,7 +297,7 @@ function UseCardOverlay({
 							disabled={useCard !== null && !useCard.canUse(hand)}
 						/>
 						<CardButton
-							title={'CANCEL'}
+							title={'Отмена'}
 							backgroundColor={'#ff3b3b'}
 							onClick={() => {
 								if (currentOverlay !== OverlayType.USE_CARD) return;
