@@ -77,16 +77,14 @@ export const cardDefinitions: Card[] = [
 		file: 'powerup_discard_1_draw_2',
 		count: 4,
 		hasMorePages: true,
-		cannotUseText:
-			'You cannot use this card as you do not have a card in your hand.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет карты в руке.',
 		canUse: (hand) => hand.length > 1,
 	},
 	{
 		file: 'powerup_discard_2_draw_3',
 		count: 4,
 		hasMorePages: true,
-		cannotUseText:
-			'You cannot use this card as you do not have 2 cards in your hand.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет 2 карт в руке.',
 		canUse: (hand) => hand.length > 2,
 	},
 	{
@@ -99,8 +97,7 @@ export const cardDefinitions: Card[] = [
 		file: 'powerup_duplicate_another_card',
 		count: 2,
 		hasMorePages: true,
-		cannotUseText:
-			'You cannot use this card as you do not have a card in your hand.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет карты в руке.',
 		canUse: (hand) => hand.length > 1,
 	},
 	{
@@ -125,96 +122,88 @@ export const cardDefinitions: Card[] = [
 		file: 'curse_bridge_troll',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			'To use this card, you must be (S 1) (M 5) (L 30) miles away from the seekers.',
+		useText: 'Чтобы использовать эту карту, ты должен быть на расстоянии (S 1.5) (M 8) (L 48) километров от искателей.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_cairn',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, you must build a rock tower.',
+		useText: 'Чтобы использовать эту карту, ты должен построить башню из камней.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_distant_cuisine',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, you must be at the restaurant.',
+		useText: 'Чтобы использовать эту карту, ты должен быть в ресторане.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_drained_brain',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, you must discard your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить свою руку.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_egg_partner',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard 2 cards from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have 2 cards in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить 2 карты из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет 2 карт в руке.',
 		canUse: (hand) => hand.length > 2,
 	},
 	{
 		file: 'curse_endless_tumble',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			"To use this card, you must roll a die. If it's a 5 or a 6, this card has no effect.",
+		useText: 'Чтобы использовать эту карту, ты должен бросить кубик. Если выпадет 5 или 6, карта не сработает.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_gamblers_feet',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			"To use this card, you must roll a die. If it's an even number, this card has no effect.",
+		useText: 'Чтобы использовать эту карту, ты должен бросить кубик. Если выпадет чётное число, карта не сработает.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_hidden_hangman',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard 2 cards from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have 2 cards in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить 2 карты из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет 2 карт в руке.',
 		canUse: (hand) => hand.length > 2,
 	},
 	{
 		file: 'curse_impressionable_consumer',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			"If you use this card, the seekers' next question is free. (This is handled by the game, be sure to log the next question.)",
+		useText: 'Если ты используешь эту карту, следующий вопрос искателей будет бесплатным. (Это обрабатывается игрой, не забудь записать следующий вопрос.)',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_jammed_door',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard 2 cards from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have 2 cards in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить 2 карты из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет 2 карт в руке.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_labyrinth',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, you must draw a maze.',
+		useText: 'Чтобы использовать эту карту, ты должен нарисовать лабиринт.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_lemon_phylactery',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard a powerup from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have a powerup in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить усиление из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет усиления в руке.',
 		canUse: (hand) => {
 			for (let card of hand) if (card.file.includes('powerup_')) return true;
 			return false;
@@ -224,50 +213,45 @@ export const cardDefinitions: Card[] = [
 		file: 'curse_luxury_car',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, you must send the seekers a photo of a car.',
+		useText: 'Чтобы использовать эту карту, ты должен отправить искателям фото машины.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_mediocre_travel_agent',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			"To use this card, the seekers' vacation destination must be further from you than their current location.",
+		useText: 'Чтобы использовать эту карту, место отпуска искателей должно быть дальше от тебя, чем их текущее местоположение.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_overflowing_chalice',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard a card from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have a card in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить карту из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет карты в руке.',
 		canUse: (hand) => hand.length > 1,
 	},
 	{
 		file: 'curse_ransom_note',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			'To use this card, you must spell out "ransom note" as a ransom note.',
+		useText: 'Чтобы использовать эту карту, ты должен выложить "выкупное письмо" как выкупное письмо.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_right_turn',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard a card from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have a card in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить карту из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет карты в руке.',
 		canUse: (hand) => hand.length > 1,
 	},
 	{
 		file: 'curse_spotty_memory',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard a time bonus from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have a time bonus in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить бонус времени из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет бонуса времени в руке.',
 		canUse: (hand) => {
 			for (let card of hand) if (card.file.includes('time_bonus')) return true;
 			return false;
@@ -277,46 +261,43 @@ export const cardDefinitions: Card[] = [
 		file: 'curse_the_bird_guide',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, you must send the seekers a video of a bird.',
+		useText: 'Чтобы использовать эту карту, ты должен отправить искателям видео с птицей.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_the_unguided_tourist',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, the seekers must be outside.',
+		useText: 'Чтобы использовать эту карту, искатели должны быть на улице.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_the_uturn',
 		count: 1,
 		hasMorePages: false,
-		useText: 'To use this card, the seekers must be heading the wrong way.',
+		useText: 'Чтобы использовать эту карту, искатели должны двигаться в неправильном направлении.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_urban_explorer',
 		count: 1,
 		hasMorePages: true,
-		useText: 'To use this card, you must discard 2 cards from your hand.',
-		cannotUseText:
-			'You cannot use this card as you do not have 2 cards in your hand.',
+		useText: 'Чтобы использовать эту карту, ты должен сбросить 2 карты из руки.',
+		cannotUseText: 'Ты не можешь использовать эту карту, так как у тебя нет 2 карт в руке.',
 		canUse: (hand) => hand.length > 2,
 	},
 	{
 		file: 'curse_water_weight',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			'To use this card, the seekers must be within 1,000 feet of a body of water.',
+		useText: 'Чтобы использовать эту карту, искатели должны быть в 300 метрах от водоёма.',
 		canUse: (hand) => true,
 	},
 	{
 		file: 'curse_zoologist',
 		count: 1,
 		hasMorePages: false,
-		useText:
-			'To use this card, you must send the seekers a photo of an animal.',
+		useText: 'Чтобы использовать эту карту, ты должен отправить искателям фото животного.',
 		canUse: (hand) => true,
 	},
 ];
