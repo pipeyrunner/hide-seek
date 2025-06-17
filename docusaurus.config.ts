@@ -96,7 +96,7 @@ const config: Config = {
 					position: 'left',
 				},
 
-				{ to: '/map_generator', label: 'Генератор карт', position: 'right' },
+				{ to: '/map_generator', label: 'Онлайн игровая карта', position: 'right' },
 				{
 					href: 'https://t.me/cult_bochki',
 					label: 'ТГ',
