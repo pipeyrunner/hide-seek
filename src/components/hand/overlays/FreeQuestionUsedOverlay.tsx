@@ -20,11 +20,10 @@ function FreeQuestionUsedOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				Due to the Curse of the Impressionable Consumer, you have recieived no
-				reward for this question.
+				Из-за Проклятья Легковерного Покупателя ты не получил награды за этот вопрос.
 			</h2>
 			<CardButton
-				title={'OK'}
+				title={'Понял'}
 				backgroundColor={'#ff3b3b'}
 				onClick={() => {
 					if (currentOverlay !== OverlayType.FREE_QUESTION_USED) return;
