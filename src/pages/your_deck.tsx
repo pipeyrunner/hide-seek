@@ -218,7 +218,7 @@ export default function YourDeckPage() {
 	]);
 
 	return (
-		<Layout title='Your Hand' description='Draw cards from the deck'>
+		<Layout title='Ваша рука' description='Возьмите карты из колоды'>
 			<main
 				className='container'
 				style={{
@@ -255,7 +255,7 @@ export default function YourDeckPage() {
 							onClick={() => setCurrentOverlay(OverlayType.PAST_USED_CARDS)}
 							style={{ float: 'left' }}
 						>
-							Past Cards
+							Прошлые карты
 						</button>
 					</div>
 					<div className='investigation-nav-divider' />
@@ -263,7 +263,7 @@ export default function YourDeckPage() {
 						className='nav-reset'
 						onClick={() => setCurrentOverlay(OverlayType.RESET_CONFIRM)}
 					>
-						Reset Game
+						Сбросить игру
 					</button>
 				</div>
 
