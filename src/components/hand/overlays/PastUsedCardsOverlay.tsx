@@ -26,10 +26,10 @@ function PastUsedCardsOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				Past Cards
+				Прошлые карты
 			</h2>
 			<CardButton
-				title={'CLOSE'}
+				title={'Закрыть'}
 				backgroundColor={'#ff3b3b'}
 				onClick={() => {
 					if (currentOverlay !== OverlayType.PAST_USED_CARDS) return;
