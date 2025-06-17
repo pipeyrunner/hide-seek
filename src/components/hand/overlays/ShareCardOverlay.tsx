@@ -27,9 +27,9 @@ function ShareCardOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				Share this card with the seekers.
+				Отправить эту карту ищейкам.
 				<br />
-				Be sure to include any additional information that may be needed.
+				Убедись что ты предоставил ищейкам всю информацию необходимую для розыгрыша этой карты.
 			</h2>
 
 			<div
@@ -78,7 +78,7 @@ function ShareCardOverlay({
 						}}
 					>
 						<CardButton
-							title={'SHARE CARD'}
+							title={'Поделиться картой'}
 							backgroundColor={'#ff3b3b'}
 							onClick={() => {
 								if (currentOverlay !== OverlayType.SHARE_CARD) return;
@@ -94,7 +94,7 @@ function ShareCardOverlay({
 							}}
 						/>
 						<CardButton
-							title={'CLOSE'}
+							title={'Закрыть'}
 							backgroundColor={'#202b39'}
 							onClick={() => {
 								if (currentOverlay !== OverlayType.SHARE_CARD) return;
