@@ -3,9 +3,12 @@ import Link from '@docusaurus/Link';
 
 type Props = {
 	overlay?: boolean;
+	disabled?: boolean; // Добавлен пропс disabled
 };
 
-export default function DisclaimerBanner({ overlay = false }: Props) {
+export default function DisclaimerBanner({ overlay = false, disabled = false }: Props) {
+	if (disabled) return null; // Отключаем баннер, если disabled=true
+
 	const [show, setShow] = useState(false);
 	const [closing, setClosing] = useState(false);
 
@@ -72,11 +75,11 @@ export default function DisclaimerBanner({ overlay = false }: Props) {
 				fontSize: '0.9rem',
 				fontWeight: 500,
 				position: overlay ? 'fixed' : 'relative',
-				top: overlay ? '3.75rem' : undefined, // adjust depending on navbar height
+				top: overlay ? '3.75rem' : undefined,
 				left: 0,
 				width: '100%',
 				zIndex: 1,
-				borderBottom: '1px solidrgb(197, 50, 50)',
+				borderBottom: '1px solid rgb(197, 50, 50)',
 				transform: closing ? 'translateY(-100%)' : 'translateY(0)',
 				transition: 'transform 0.3s ease-out',
 			}}
@@ -114,4 +117,3 @@ export default function DisclaimerBanner({ overlay = false }: Props) {
 		</div>
 	);
 }
-
