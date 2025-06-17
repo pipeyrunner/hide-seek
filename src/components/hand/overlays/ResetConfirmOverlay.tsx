@@ -20,11 +20,10 @@ function ResetConfirmOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				Are you sure you want to reset the game? This will discard all cards in
-				your hand and reset the deck.
+				Ты уверен что хочешь сбросить прогресс? Это удалит все карты из твоей руки и обнулит колоду. Этот процесс необратим.
 			</h2>
 			<CardButton
-				title={'YES, RESET'}
+				title={'Да, сбросить'}
 				backgroundColor={'#ff3b3b'}
 				onClick={() => {
 					if (currentOverlay !== OverlayType.RESET_CONFIRM) return;
@@ -39,7 +38,7 @@ function ResetConfirmOverlay({
 				}}
 			/>
 			<CardButton
-				title={'NO, CANCEL'}
+				title={'Нет, отменить'}
 				backgroundColor={'#202b39'}
 				onClick={() => {
 					if (currentOverlay !== OverlayType.RESET_CONFIRM) return;
