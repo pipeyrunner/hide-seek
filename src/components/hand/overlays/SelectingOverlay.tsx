@@ -62,7 +62,7 @@ function SelectingOverlay({
 						fontFamily: 'VAG Rounded Next, sans-serif',
 					}}
 				>
-					Click Cards to Select Them
+					Нажми на карты, чтобы выбрать
 				</h2>
 			)}
 			<div
@@ -141,10 +141,10 @@ function SelectingOverlay({
 			<CardButton
 				title={
 					selectedCards.length !== maxSelectedCards
-						? `SELECT ${maxSelectedCards - selectedCards.length} MORE CARD${
-								maxSelectedCards - selectedCards.length > 1 ? 'S' : ''
+						? `Выбери ещё ${maxSelectedCards - selectedCards.length} карт${
+								maxSelectedCards - selectedCards.length === 1 ? 'у' : 'ы'
 						  }`
-						: `KEEP ${maxSelectedCards} CARD${maxSelectedCards > 1 ? 'S' : ''}`
+						: `Оставь ${maxSelectedCards} карт${maxSelectedCards === 1 ? 'у' : 'ы'}`
 				}
 				disabled={selectedCards.length !== maxSelectedCards}
 				backgroundColor={'#ff3b3b'}
