@@ -42,7 +42,7 @@ export default function Layout(props: Props): ReactNode {
 			<AnnouncementBar />
 
 			<Navbar />
-			<DisclaimerBanner overlay={isHome} />
+			<DisclaimerBanner overlay={isHome} disabled={true} />
 
 			<div
 				id={SkipToContentFallbackId}
