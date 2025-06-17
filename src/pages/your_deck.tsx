@@ -272,7 +272,7 @@ export default function YourDeckPage() {
 					setCurrentOverlay={setCurrentOverlay}
 				/>
 
-				<h2 style={{ marginTop: '2rem' }}>Your Hand</h2>
+				<h2 style={{ marginTop: '2rem' }}>Ваша рука</h2>
 				<div
 					style={{
 						display: 'flex',
