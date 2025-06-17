@@ -39,7 +39,7 @@ function DiscardOverlay({
 						fontFamily: 'VAG Rounded Next, sans-serif',
 					}}
 				>
-					Выберите {discardCount} карт{discardCount === 1 ? 'у' : 'ы'} для сброса.
+					Выбери {discardCount} карт{discardCount === 1 ? 'у' : discardCount > 1 && discardCount < 5 ? 'ы' : ''} для сброса.
 				</h2>
 			)}
 
@@ -103,10 +103,8 @@ function DiscardOverlay({
 			<CardButton
 				title={
 					discardSelection.length !== discardCount
-						? `ВЫБЕРИТЕ еще ${discardCount - discardSelection.length} карт${
-								discardCount - discardSelection.length === 1 ? 'у' : 'ы'
-						  }`
-						: `сбросить ${discardCount} карт${discardCount === 1 ? 'у' : ''}`
+						? `Выбери еще ${discardCount - discardSelection.length} карт${discardCount - discardSelection.length === 1 ? 'у' : discardCount - discardSelection.length > 1 && discardCount - discardSelection.length < 5 ? 'ы' : ''}`
+						: `Сбрось ${discardCount} карт${discardCount === 1 ? 'у' : discardCount > 1 && discardCount < 5 ? 'ы' : ''}`
 				}
 				disabled={discardSelection.length !== discardCount}
 				backgroundColor={'#ff3b3b'}
