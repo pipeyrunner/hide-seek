@@ -82,7 +82,7 @@ function ShowcaseOverlay({
 							}}
 						>
 							<CardButton
-								title={'USE'}
+								title={'Использовать'}
 								backgroundColor={'#202b39'}
 								onClick={() => {
 									if (currentOverlay !== OverlayType.SHOWCASE) return;
@@ -95,7 +95,7 @@ function ShowcaseOverlay({
 								disabled={card.file.includes('time_bonus_')}
 							/>
 							<CardButton
-								title={'DISCARD'}
+								title={'Сбросить'}
 								backgroundColor={'#ff3b3b'}
 								onClick={() => {
 									if (currentOverlay !== OverlayType.SHOWCASE) return;
@@ -112,7 +112,7 @@ function ShowcaseOverlay({
 							/>
 							{showcaseShowCancel && (
 								<CardButton
-									title={'CANCEL'}
+									title={'Отменить'}
 									backgroundColor={'#202b39'}
 									onClick={() => {
 										if (currentOverlay !== OverlayType.SHOWCASE) return;
