@@ -35,7 +35,7 @@ export default function Home() {
 					</p>
 
 					<div className='badges'>
-						<span className='badge'>AGES 14+</span>
+						<span className='badge'>14+</span>
 						<span className='badge'>2-4+ игрока</span>
 					</div>
 
