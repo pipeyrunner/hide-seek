@@ -1,36 +1,36 @@
 const questionTypes = [
 	{
-		title: 'MATCHING',
+		title: 'Соответствие',
 		color: '#202b39',
 		drawn: 3,
 		maxSelection: 1,
 	},
 	{
-		title: 'MEASURING',
+		title: 'Измерение',
 		color: '#4a9a5e',
 		drawn: 3,
 		maxSelection: 1,
 	},
 	{
-		title: 'RADAR',
+		title: 'Радар',
 		color: '#f56d3e',
 		drawn: 2,
 		maxSelection: 1,
 	},
 	{
-		title: 'THERMOMETER',
+		title: 'Горячо/холодно',
 		color: '#feb846',
 		drawn: 2,
 		maxSelection: 1,
 	},
 	{
-		title: 'TENTACLES',
+		title: 'Осьминог',
 		color: '#8969a6',
 		drawn: 4,
 		maxSelection: 2,
 	},
 	{
-		title: 'PHOTO',
+		title: 'Фото',
 		color: '#80b2c6',
 		drawn: 1,
 		maxSelection: 1,
@@ -69,7 +69,7 @@ function QuestionSelectOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				Which type of question did you answer?
+				На какой тип вопроса ты ответил?
 			</h2>
 
 			<div
@@ -118,7 +118,7 @@ function QuestionSelectOverlay({
 				</div>
 
 				<CardButton
-					title='CANCEL DRAW'
+					title='Отменить'
 					backgroundColor='#ff3b3b'
 					onClick={() => {
 						setCurrentOverlay(OverlayType.NONE);
