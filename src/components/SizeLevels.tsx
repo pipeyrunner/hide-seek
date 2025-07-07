@@ -79,7 +79,7 @@ const SizeLevels: React.FC<SizeLevelsProps> = ({
 }) => {
     const sizes = [
         {
-            label: 'SMALL',
+            label: 'МАЛЕНЬКИЙ',
             color: '#ffffff',
             bgColor: '#ffc800',
             content: small,
