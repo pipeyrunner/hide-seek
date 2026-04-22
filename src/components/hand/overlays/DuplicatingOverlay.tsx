@@ -31,7 +31,7 @@ function DuplicatingOverlay({
 					fontFamily: 'VAG Rounded Next, sans-serif',
 				}}
 			>
-				Выбери карту для копирования
+				Выбери карту для дублирования
 			</h2>
 
 			<div
@@ -80,7 +80,7 @@ function DuplicatingOverlay({
 			</div>
 
 			<CardButton
-				title={duplicateSelection === null ? `Выбери карту` : `Скопировать карту`}
+				title={duplicateSelection === null ? `Выбери карту` : `Дублировать карту`}
 				disabled={duplicateSelection === null}
 				backgroundColor={'#ff3b3b'}
 				onClick={() => {
